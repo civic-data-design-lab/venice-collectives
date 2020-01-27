@@ -27,6 +27,7 @@
     "express": "^4.16.4",
     "express-session": "^1.17.0",
     "google-auth-library": "^5.5.1",
+    "isotope-layout": "^3.0.6",
     "mongoose": "^5.7.7",
     "nodemon": "^1.19.4",
     "react": "^16.7.0",

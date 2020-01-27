@@ -30,35 +30,57 @@
   <h1> Collective Impressions</h1>
     <br>
     <main_body>
-      <h2>openness</h2>
+      <div class = iconLabel>
+        <h2>openness</h2>
+        <img src="static/css/icon.png" width=25 /> 
+      </div>
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li>
+      </ul> 
+
+
+
       <div class="d-flex justify-content-left my-4">
         <p>CLOSED</p>
           <input class="border-0" type="range" min="0" max="30" />
         <p>OPEN</p>
       </div>
       <br>
-      <h2>completeness</h2>
+      <div class = iconLabel>
+        <h2>completeness</h2>
+        <img src="static/css/icon.png" width=25 />
+      </div>
       <div class="d-flex justify-content-left my-4">
         <p>MINIMAL</p>
           <input class="border-0" type="range" min="0" max="30" />
         <p>HOLISTIC</p>
       </div>
       <br>
-      <h2>size</h2>
+      <div class = iconLabel>
+        <h2>size</h2>
+        <img src="static/css/icon.png" width=25 />
+      </div>
       <div class="d-flex justify-content-left my-4">
         <p>SITED</p>
           <input class="border-0" type="range" min="0" max="30" />
         <p>GLOBAL</p>
       </div>
       <br>
-      <h2>analog/digital</h2>
+      <div class = iconLabel>
+        <h2>analog/digital</h2>
+        <img src="static/css/icon.png" width=25 />
+      </div>
       <div class="d-flex justify-content-left my-4">
         <p>OFFLINE-ONLY</p>
           <input class="border-0" type="range" min="0" max="30" />
         <p>ONLINE-ONLY</p>
       </div>
       <br>
-      <h2>centralization</h2>
+      <div class = iconLabel>
+        <h2>centralization</h2>
+        <img src="static/css/icon.png" width=25 />
+      </div>
       <div class="d-flex justify-content-left my-4">
         <p>DECENTRALIZED</p>
           <input class="border-0" type="range" min="0" max="30" />
@@ -68,7 +90,33 @@
 
     <!-- Beginning of content div-->
     <div class = "flex-item content u-textCenter"> 
-      <h2> Sorted Stuff</h2>
+      <h3> Sort Bar Here</h3>
+      <br>
+      <div class = "flex-sort">
+      <!-- <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitColumns" }'>
+        <div class = "grid item">1</div>
+        <div class = "grid item">2</div>
+        <div class = "grid item">3</div>
+        <div class = "grid item">4</div>
+        <div class = "grid item">5</div>
+      </div> -->
+      <li class = "flex-card">1</li>
+      <li class = "flex-card">2</li>
+      <li class = "flex-card">3</li>
+      <li class = "flex-card">4</li>
+      <li class = "flex-card">5</li>
+      <li class = "flex-card">6</li>
+      <li class = "flex-card">7</li>
+      <li class = "flex-card">8</li>
+      <li class = "flex-card">9</li>
+      <li class = "flex-card">10</li>
+      <li class = "flex-card">11</li>
+      <li class = "flex-card">12</li>
+      <li class = "flex-card">13</li>
+      <li class = "flex-card">14</li>
+      <li class = "flex-card">15</li>
+
+    </div>
     <div> <!-- Closing the content div-->
     </main_body>
   </div> <!-- Closing the u-flex div-->
@@ -78,6 +126,10 @@
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> <!-- Link to isotope!-->
+<script src="index.js"></script> <!-- Links to JS file!--> 
+<!-- Popper js Bootstrap files needed for dropdown-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </html>
