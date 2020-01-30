@@ -64,8 +64,8 @@ p{
   padding: 5px;
   width: 200px;
   height: 250px;
-  margin-top: 10px;
-  
+  /* margin-top: 10px; */
+  margin:10px;
   line-height: 150px;
   color: white;
   font-weight: bold;
