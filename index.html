@@ -26,140 +26,203 @@
 <body>
   <!-- Beginning of the sideBar div-->
   <div class="flex-container">
-  <div class = "sideBar flex-item u-textCenter">
-  <h1> Collective Impressions</h1>
-    <br>
+  <div class = "sideBar flex-item">
+  <h1 class = "title"> Collective Impressions</h1>
+
     <main_body>
-      <div class = iconLabel>
-        <h2>openness</h2>
-        <img src="static/css/icon.png" width=25 /> 
+
+      <div class = "slider">
+        <div class = iconLabel>
+          <h2>openness</h2>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p></li>
+           </ul>
+           <img src="static/css/icon.png" width=25 /> 
+          </div>
+        <label for ="closed" id ="left">CLOSED</label> 
+        <label for ="open" id = "right" > OPEN</label>
+          <input type="range" min="0" max="30" id="open-closed" />
       </div>
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p></li>
-      </ul> 
 
-
-
-      <div class="d-flex justify-content-left my-4">
-        <p>CLOSED</p>
-          <input class="border-0" type="range" min="0" max="30" id="open-closed" />
-        <p>OPEN</p>
-      </div>
-      <br>
+      <div class = "slider">
       <div class = iconLabel>
         <h2>completeness</h2>
-        <img src="static/css/icon.png" width=25 />
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p></li>
+         </ul>
+         <img src="static/css/icon.png" width=25 /> 
+        </div>
+      <label for ="closed" id ="left">MINIMAL</label> 
+      <label for ="open" id = "right" >HOLISTIC</label>
+          <input type="range" min="0" max="30" id="minimal-holistic"/>
       </div>
-      <div class="d-flex justify-content-left my-4">
-        <p>MINIMAL</p>
-          <input class="border-0" type="range" min="0" max="30" />
-        <p>HOLISTIC</p>
-      </div>
-      <br>
+
+      <div class = "slider">
       <div class = iconLabel>
         <h2>size</h2>
-        <img src="static/css/icon.png" width=25 />
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p></li>
+         </ul>
+         <img src="static/css/icon.png" width=25 /> 
+        </div>
+      <label for ="closed" id ="left">SITED</label> 
+      <label for ="open" id = "right" >GLOBAL</label>
+          <input type="range" min="0" max="30" id="sited-global" />
       </div>
-      <div class="d-flex justify-content-left my-4">
-        <p>SITED</p>
-          <input class="border-0" type="range" min="0" max="30" />
-        <p>GLOBAL</p>
-      </div>
-      <br>
+
+      <div class = "slider">
       <div class = iconLabel>
         <h2>analog/digital</h2>
-        <img src="static/css/icon.png" width=25 />
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p></li>
+         </ul>
+         <img src="static/css/icon.png" width=25 /> 
+        </div>
+      <label for ="closed" id ="left">OFFLINE-ONLY</label> 
+      <label for ="open" id = "right" >ONLINE-ONLY</label>
+          <input type="range" min="0" max="30" id ="offline-online"/>
       </div>
-      <div class="d-flex justify-content-left my-4">
-        <p>OFFLINE-ONLY</p>
-          <input class="border-0" type="range" min="0" max="30" />
-        <p>ONLINE-ONLY</p>
-      </div>
-      <br>
+
+      <div class = "slider">
       <div class = iconLabel>
         <h2>centralization</h2>
-        <img src="static/css/icon.png" width=25 />
-      </div>
-      <div class="d-flex justify-content-left my-4">
-        <p>DECENTRALIZED</p>
-          <input class="border-0" type="range" min="0" max="30" />
-        <p>SINGLE-LEADER</p>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p></li>
+         </ul>
+         <img src="static/css/icon.png" width=25 /> 
+        </div>
+      <label for ="closed" id ="left">DECENTRALIZED</label> 
+      <label for ="open" id = "right" >SINGLE-LEADER</label>
+          <input type="range" min="0" max="30" id ="decentralized-singleLeader" />
       </div>
     </div> <!-- Closing the sideBar div-->
-
+    <hr width="10" size="100%">
     <!-- Beginning of content div-->
     <div class = "flex-item content u-textCenter"> 
       <h3> Sort Bar Here</h3>
       <br>
       <div class = "flex-sort" id="card-grid">
-      <!-- <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitColumns" }'>
-        <div class = "grid item">1</div>
-        <div class = "grid item">2</div>
-        <div class = "grid item">3</div>
-        <div class = "grid item">4</div>
-        <div class = "grid item">5</div>
-      </div> -->
-      <li class = "flex-card">
-        1
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        2
-        <p class="openness">15</p>
-      </li>
-      <li class = "flex-card">
-        3
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        4
-        <p class="openness">15</p>
-      </li>
-      <li class = "flex-card">
-        5
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        6
-        <p class="openness">15</p>
-      </li>
-      <li class = "flex-card">
-        7
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        8
-        <p class="openness">15</p>
-      </li>
-      <li class = "flex-card">
-        9
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        10
-        <p class="openness">15</p>
-      </li>
-      <li class = "flex-card">
-        11
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        12
-        <p class="openness">10</p>
-      </li>
-      <li class = "flex-card">
-        13
-        <p class="openness">30</p>
-      </li>
-      <li class = "flex-card">
-        14
-        <p class="openness">1</p>
-      </li>
-      <li class = "flex-card">
-        15
-        <p class="openness">15</p>
-      </li>
+
+         <li class = "flex-card">
+          <span class="openness">10</span>
+          <span class="completeness"> 20</p>
+          <span class="size"> 13</span>
+          <span class="analogDigital"> 13</span>
+          <span class="centralization"> 19</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness"> 15</span>
+          <span class="completeness"> 25</span>
+          <span class="size"> 22</span>
+          <span class="analogDigital"> 19</span>
+          <span class="centralization"> 19</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">10</span>
+          <span class="completeness">40</span>
+          <span class="size"> 26</span>
+          <span class="analogDigital"> 17</span>
+          <span class="centralization"> 9</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">15</span>
+          <span class="completeness">11</span>
+          <span class="size"> 14</h2>
+          <span class="analogDigital"> 13</span>
+          <span class="centralization"> 29</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">10</span>
+          <span class="completeness">5</span>
+          <span class="size"> 12</span>
+          <span class="analogDigital"> 8</span>
+          <span class="centralization"> 19</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">15</span>
+          <span class="completeness">7</span>
+          <span class="size"> 18</span>
+          <span class="analogDigital"> 8</span>
+          <span class="centralization"> 9</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">10</span>
+          <span class="completeness">19</span>
+          <span class="size"> 20</span>
+          <span class="analogDigital"> 9</span>
+          <span class="centralization"> 29</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">15</span>
+          <span class="completeness">21</span>
+          <span class="size"> 7</span>
+          <span class="analogDigital"> 13</span>
+          <span class="centralization"> 21</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">10</span>
+          <span class="completeness">20</span>
+          <span class="size"> 2</span>
+          <span class="analogDigital"> 30</span>
+          <span class="centralization"> 24</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">15</span>
+          <span class="completeness">21</span>
+          <span class="size"> 18</span>
+          <span class="analogDigital"> 13</span>
+          <span class="centralization"> 25</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">10</p>
+          <span class="completeness">25</span>
+          <span class="size"> 23</span>
+          <span class="analogDigital"> 13</span>
+          <span class="centralization"> 19</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">10</span>
+          <span class="completeness">4</span>
+          <span class="size"> 8</span>
+          <span class="analogDigital"> 2</span>
+          <span class="centralization"> 29</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">30</span>
+          <span class="completeness">18</p>
+          <span class="size"> 4</span>
+          <span class="analogDigital"> 3</span>
+          <span class="centralization"> 19</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">1</span>
+          <span class="completeness">15</span>
+          <span class="size"> 28</span>
+          <span class="analogDigital"> 12</span>
+          <span class="centralization"> 14</span>
+        </li>
+        <li class = "flex-card">
+          <span class="openness">15</span>
+          <span class="completeness">13</span>
+          <span class="size"> 22</span>
+          <span class="analogDigital"> 14</span>
+          <span class="centralization"> 12</span>
+        </li>
 
     </div>
     <div> <!-- Closing the content div-->

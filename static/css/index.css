@@ -16,10 +16,37 @@ p{
     font-size: 10px;
 
 }
+/* h1 Title styling*/
+.title{
+  margin-bottom: 5%;
+}
 
 /* Icon Label styling */
-.iconLabel { position: relative; }
-.iconLabel  img { position: absolute; bottom: 8px; right: 8px }
+.iconLabel { 
+  background-color: black;
+}
+/* .iconLabel  img { 
+  position: absolute; 
+  bottom: 8px; 
+  right: 8px 
+} */
+
+.dropdown-menu{
+  background-image: url("static/css/icon.png");
+}
+
+/* Slider styling */
+.slider {
+  margin-bottom: 10%;
+}
+
+/* Slider text styling */
+#right{
+  float:right;
+}
+#left{
+  float:left;
+}
 
 /* Card Styling */
 .sideBar{
@@ -33,7 +60,6 @@ p{
 
 .flex-item{
   margin-left: 16px;
-  /* flex-basis: 0; */
   flex-grow: 1;
   flex-basis: auto;
   flex-shrink: 1;
@@ -62,52 +88,21 @@ p{
 .flex-card {
   background:#D3D3D3;
   padding: 5px;
-  width: 200px;
-  height: 250px;
-  /* margin-top: 10px; */
+  width: 300px;
+  height: 300px;
   margin:10px;
   line-height: 150px;
   color: white;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 1em;
   text-align: center;
 }
+
 
 /* Dropdown Styling */
 .dropdown-menu{
   width: 30%;
 }
-
-/* .grid-item { 
-  width: 25%;
-  background-color: blue;
- } */
- .grid {
-  border: 1px solid #333;
-}
-
-
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-
- .grid-item {
-  position: relative;
-  float: left;
-  width: 25%;
-  height: 100px;
-  margin: 5px;
-  padding: 10px;
-  background: #D3D3D3;
-  color: white;
-  font-size: 50px;
-}
-.grid-item--width2 { width: 50%; }
-
 
 
 /* Slider Styling */
