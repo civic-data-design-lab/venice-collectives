@@ -24,64 +24,30 @@ $('document').ready( function (){
     });
 
   /* Open-closed filter */
-  $('#open-closed').click(function(){
-    let open_filter = parseInt($(this).val())
+  function create_filter(filter, number) {
+    return (parseInt( number, 10 ) < filter + 5) && (parseInt( number, 10 ) > filter - 5)
+  }
+
+  $('input').click(function(){
+    let open_filter = parseInt($('#open-closed').val())
+    let complete_filter = parseInt($('#minimal-holistic').val())
+    let sited_filter = parseInt($('#sited-global').val())
+    let offline_filter = parseInt($('#offline-online').val())
+    let decent_filter = parseInt($('#decentralized-singleLeader').val())
     
     grid.arrange({ filter: function() {
-        var number = $(this).find('.openness').text();
+      var open_num = $(this).find('.openness').text();
+      var complete_num = $(this).find('.completeness').text();
+      var sited_num = $(this).find('.size').text();
+      var offline_num = $(this).find('.analogDigital').text();
+      var decent_num = $(this).find('.centralization').text();
+
         // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
-        return (parseInt( number, 10 ) < open_filter + 5) && (parseInt( number, 10 ) > open_filter - 5) ; 
+      console.log((create_filter(open_filter, open_num) && create_filter(complete_filter, complete_num) && create_filter(sited_filter, sited_num) && create_filter(offline_filter, offline_num) && create_filter(decent_filter, decent_num) ))
+      return (create_filter(open_filter, open_num) || create_filter(complete_filter, complete_num) || create_filter(sited_filter, sited_num) || create_filter(offline_filter, offline_num) || create_filter(decent_filter, decent_num) ); 
       } 
     })
   })
-
-  /* Minimal-holistic filter */
-  $('#minimal-holistic').click(function(){
-    let complete_filter = parseInt($(this).val())
-    
-    grid.arrange({ filter: function() {
-        var number = $(this).find('.completeness').text();
-        // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
-        return (parseInt( number, 10 ) < complete_filter + 10) && (parseInt( number, 10 ) > complete_filter - 10) ; 
-      } 
-    })
-  })
-
-    /* Sited-global filter */
-    $('#sited-global').click(function(){
-      let size_filter = parseInt($(this).val())
-      
-      grid.arrange({ filter: function() {
-          var number = $(this).find('.size').text();
-          // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
-          return (parseInt( number, 10 ) < size_filter + 10) && (parseInt( number, 10 ) > size_filter - 10) ; 
-        } 
-      })
-    })
-
-      /* Offline-online filter */
-    $('#offline-online').click(function(){
-    let analogDigital_filter = parseInt($(this).val())
-    
-    grid.arrange({ filter: function() {
-        var number = $(this).find('.analogDigital').text();
-        // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
-        return (parseInt( number, 10 ) < analogDigital_filter + 5) && (parseInt( number, 10 ) > analogDigital_filter - 5) ; 
-      } 
-    })
-  })
-
-       /* Decentralized-singleLeader filter */
-       $('#decentralized-singleLeader').click(function(){
-        let centralization_filter = parseInt($(this).val())
-        
-        grid.arrange({ filter: function() {
-            var number = $(this).find('.centralization').text();
-            // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
-            return (parseInt( number, 10 ) < centralization_filter + 5) && (parseInt( number, 10 ) > centralization_filter - 5) ; 
-          } 
-        })
-      })
 
 });
 
