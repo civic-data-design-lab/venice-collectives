@@ -1,10 +1,14 @@
 // Dropdown for each slider definition
-$('ul.nav li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-}, function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-});
+// $('ul.nav li.dropdown').click(function() {
+// //   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+// // }, function() {
+// //   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+//   $("#dropdown").dropdown("toggle");
+// });
 
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 
 //Isotope integration to filter cards with sliders
 $('document').ready( function (){
@@ -23,7 +27,7 @@ $('document').ready( function (){
       }
     });
 
-  /* Open-closed filter */
+  /* Create generic template filter */
   function create_filter(filter, number) {
     return (parseInt( number, 10 ) < filter + 5) && (parseInt( number, 10 ) > filter - 5)
   }

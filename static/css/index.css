@@ -3,19 +3,25 @@ h2{
     font-weight: bold;  
     background-color: black;
     text-align: center;
-
+    padding:10px;
 }
 
 h1{
   font-weight: bold;
+  margin-bottom:5px;
 }
 
+h3{
+  margin:2% 5%;
+  text-align:right;
+}
 
 p{
     color: black;
     font-size: 10px;
 
 }
+
 /* h1 Title styling*/
 .title{
   margin-bottom: 5%;
@@ -24,15 +30,33 @@ p{
 /* Icon Label styling */
 .iconLabel { 
   background-color: black;
+  margin-bottom: 20px;
 }
-/* .iconLabel  img { 
-  position: absolute; 
-  bottom: 8px; 
-  right: 8px 
-} */
+.iconLabel img { 
+  float:right;
+  vertical-align: middle; /* This doesn't do anything yet*/
+}
+
+.btn-secondary{
+  width:100%;
+  font-size: 35px;
+  background-color: black;
+  font-weight:bold;
+}
+
+.popover{
+  max-width: 30%; /* Max Width of the popover (depending on the container!) */
+}
+
 
 .dropdown-menu{
-  background-image: url("static/css/icon.png");
+  /* background-image: url("static/css/icon.png"); */
+  /* content: '\f05a';
+  font-family: "Font Awesome 5 Free"; */
+  font-size: 10px;
+  color: #fff;
+  display: inline-block;
+  width: 30%;
 }
 
 /* Slider styling */
@@ -82,7 +106,6 @@ p{
   display: flex;
   
   -webkit-flex-flow: row wrap;
-  justify-content: space-around;
 }
 
 .flex-card {
@@ -96,12 +119,6 @@ p{
   font-weight: bold;
   font-size: 1em;
   text-align: center;
-}
-
-
-/* Dropdown Styling */
-.dropdown-menu{
-  width: 30%;
 }
 
 
