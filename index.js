@@ -1,11 +1,3 @@
-// Dropdown for each slider definition
-// $('ul.nav li.dropdown').click(function() {
-// //   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-// // }, function() {
-// //   $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-//   $("#dropdown").dropdown("toggle");
-// });
-
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
