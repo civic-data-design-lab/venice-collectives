@@ -3,28 +3,32 @@ $(function () {
 })
 
 //Isotope integration to filter cards with sliders
-$('document').ready( function (){
+var grid
+
+var initGrid =  function() {
   // init isotope
-  var grid = new Isotope( '#card-grid', {
+  grid = new Isotope( '#card-grid', {
     // options
-      itemSelector: '.flex-card',
-      layoutMode: 'fitRows',
-      order: 'random',
-      getSortData: {
-        openness: '.openness parseInt',  
-        completeness: '.completeness parseInt',
-        size: '.size parseInt',
-        analogDigital: '.analogDigital parseInt',
-        centralization: '.centralization parseInt',
-      }
-    });
+    itemSelector: '.flex-card',
+    layoutMode: 'fitRows',
+    order: 'random',
+    getSortData: {
+      openness: '.openness parseInt',  
+      completeness: '.completeness parseInt',
+      size: '.size parseInt',
+      analogDigital: '.analogDigital parseInt',
+      centralization: '.centralization parseInt',
+    }
+  })  
+}
+
+function create_filter(filter, number) {
+  return (parseInt( number, 10 ) < filter + 5) && (parseInt( number, 10 ) > filter - 5)
+}
 
   /* Create generic template filter */
-  function create_filter(filter, number) {
-    return (parseInt( number, 10 ) < filter + 5) && (parseInt( number, 10 ) > filter - 5)
-  }
 
-  $('input').click(function(){
+  $('input').change(function(){
     let open_filter = parseInt($('#open-closed').val())
     let complete_filter = parseInt($('#minimal-holistic').val())
     let sited_filter = parseInt($('#sited-global').val())
@@ -45,5 +49,23 @@ $('document').ready( function (){
     })
   })
 
-});
-
+$(document).ready(function(){
+  var addCards = $.getJSON('data/test.json',function(data){
+    console.log(data)
+    var template = $('.card-list .flex-card.template')
+    $.each(data,function(key,item) {
+      var card = template.clone()
+      card.find('.item-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
+      card.find('.item-title').text(item.title)
+      card.find('.item-description').text(item.description)
+      $.each(item.values,function(k,val) {
+        console.log(k)
+        var span = $('<span/>').addClass(k).text(val)
+        card.find('.item-data').append(span)
+      })
+      card.removeClass('template')
+      $('.card-list').append(card)
+    })
+  })
+  addCards.done(()=>{initGrid()})
+})

@@ -1,0 +1,54 @@
+[
+  {
+    "ID": 1,
+    "title": "Title",
+    "description": "Description",
+    "image": "user.png",
+    "values": {
+      "openness": 10,
+      "completeness": 15,
+      "size": 25,
+      "analogDigital": 5,
+      "centralization": 10
+    }
+  },
+  {
+    "ID": 2,
+    "title": "Title2",
+    "description": "Description2",
+    "image": "user.png",
+    "values": {
+      "openness": 15,
+      "completeness": 5,
+      "size": 20,
+      "analogDigital": 18,
+      "centralization": 1
+    }
+  },
+  {
+    "ID": 3,
+    "title": "Title",
+    "description": "Description",
+    "image": "user.png",
+    "values": {
+      "openness": 20,
+      "completeness": 10,
+      "size": 15,
+      "analogDigital": 10,
+      "centralization": 29
+    }
+  },
+  {
+    "ID": 4,
+    "title": "Title3",
+    "description": "Description3",
+    "image": "user.png",
+    "values": {
+      "openness": 25,
+      "completeness": 25,
+      "size": 10,
+      "analogDigital": 20,
+      "centralization": 5
+    }
+  }
+]

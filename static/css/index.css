@@ -260,4 +260,6 @@ input[type=range]:focus::-ms-fill-upper {
   background: #6b6b6b;
 }
 
-
+.template {
+  display: none;
+}
