@@ -90,9 +90,9 @@ p{
 }
 
 .background-image{
-  width:300px;
-  height:300px;
-  padding: 30px 30px;
+  width:90%;
+  height:80%;
+  padding: 20% 10%;
 }
 
 .item-image{
@@ -171,12 +171,12 @@ p{
   transform: rotateY(180deg);
 }
 
-.flex-card:active .flex-card-inner{
+.flex-card:active .flex-card-expand{
   transform: scale(2); 
 
 } 
 
-.flex-card-front, .flex-card-back, .flex-card-expand {
+.flex-card-front, .flex-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -196,12 +196,12 @@ p{
   padding: 30px 30px;
 }
 
-/* .flex-card-expand{
+.flex-card-expand{
   background-color: white;
   color: black;
   transform: scale(2);
   padding: 30px 30px;
-} */
+}
 
 /* If flex button is pushed */
 .button-expand{

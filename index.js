@@ -49,15 +49,16 @@ function create_filter(filter, number) {
     })
   })
 
+// Function that reads in csv data to be 
 $(document).ready(function(){
   var addCards = $.getJSON('data/test.json',function(data){
     console.log(data)
     var template = $('.card-list .flex-card.template')
     $.each(data,function(key,item) {
       var card = template.clone()
-      card.find('.item-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
+      card.find('.background-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
       card.find('.item-title').text(item.title)
-      card.find('.item-description').text(item.description)
+      card.find('.item-description').text(item.description.split(' ').slice(0, 40).join(' '))
       card.find('.button-expand').append(item.title)
       $.each(item.values,function(k,val) {
         console.log(k)
@@ -72,6 +73,12 @@ $(document).ready(function(){
   addCards.done(()=>{initGrid()})
 })
 
-$('.button-expand').onClick( 
-  $(this).toggleClass('flex card:active')
-  )
+//Once button is clicked, change the card to expanded that you can x out of!
+function expand(){
+  $('.flex-card-collapse').replaceWith('.flex-card-expand')
+  ('.flex-card-expand').show();
+}
+// function collapse(){
+//   $('.flex-card-expand').replaceWith('.flex-card-collapse')
+//   ('.flex-card-expand').hide();
+// }
