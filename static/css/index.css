@@ -166,7 +166,9 @@ p{
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
+.flex-card:hover {
+  z-index: 5;
+}
 .flex-card:hover .flex-card-inner {
   transform: rotateY(180deg);
 }
@@ -201,6 +203,13 @@ p{
   color: black;
   transform: scale(2);
   padding: 30px 30px;
+  display: none;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2));
+}
+
+.template {
+  display: none;
 }
 
 /* If flex button is pushed */
@@ -301,6 +310,3 @@ input[type=range]:focus::-ms-fill-upper {
   background: #6b6b6b;
 }
 
-.template {
-  display: none;
-}

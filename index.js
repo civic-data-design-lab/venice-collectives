@@ -56,7 +56,7 @@ $(document).ready(function(){
     var template = $('.card-list .flex-card.template')
     $.each(data,function(key,item) {
       var card = template.clone()
-      card.find('.background-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
+      card.find('.background-image, .item-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
       card.find('.item-title').text(item.title)
       card.find('.item-description').text(item.description.split(' ').slice(0, 40).join(' '))
       card.find('.button-expand').append(item.title)
@@ -74,11 +74,13 @@ $(document).ready(function(){
 })
 
 //Once button is clicked, change the card to expanded that you can x out of!
-function expand(){
-  $('.flex-card-collapse').replaceWith('.flex-card-expand')
-  ('.flex-card-expand').show();
+function expand(e){
+  var back = $(e.target).parents('.flex-card-back')
+  back.find('.flex-card-collapse').hide()
+  back.find('.flex-card-expand').show()
 }
-// function collapse(){
-//   $('.flex-card-expand').replaceWith('.flex-card-collapse')
-//   ('.flex-card-expand').hide();
-// }
+function collapse(e){
+  var back = $(e.target).parents('.flex-card-back')
+  back.find('.flex-card-collapse').show()
+  back.find('.flex-card-expand').hide()
+}
