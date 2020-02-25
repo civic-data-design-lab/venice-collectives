@@ -58,14 +58,20 @@ $(document).ready(function(){
       card.find('.item-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
       card.find('.item-title').text(item.title)
       card.find('.item-description').text(item.description)
+      card.find('.button-expand').append(item.title)
       $.each(item.values,function(k,val) {
         console.log(k)
         var span = $('<span/>').addClass(k).text(val)
         card.find('.item-data').append(span)
       })
+      $('.item-data').hide();
       card.removeClass('template')
       $('.card-list').append(card)
     })
   })
   addCards.done(()=>{initGrid()})
 })
+
+$('.button-expand').onClick( 
+  $(this).toggleClass('flex card:active')
+  )

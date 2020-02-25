@@ -1,8 +1,8 @@
 [
   {
     "ID": 1,
-    "title": "Title",
-    "description": "Description",
+    "title": "Abby of Gennessee",
+    "description": "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups.",
     "image": "user.png",
     "values": {
       "openness": 10,
@@ -14,8 +14,8 @@
   },
   {
     "ID": 2,
-    "title": "Title2",
-    "description": "Description2",
+    "title": "Equal Exchange",
+    "description": "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups.",
     "image": "user.png",
     "values": {
       "openness": 15,
@@ -27,8 +27,8 @@
   },
   {
     "ID": 3,
-    "title": "Title",
-    "description": "Description",
+    "title": "South Mountain Company",
+    "description": "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups.",
     "image": "user.png",
     "values": {
       "openness": 20,
@@ -40,8 +40,8 @@
   },
   {
     "ID": 4,
-    "title": "Title3",
-    "description": "Description3",
+    "title": "Arkansas Craft Guild",
+    "description":"Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content. It's also called placeholder (or filler) text. It's a convenient tool for mock-ups.",
     "image": "user.png",
     "values": {
       "openness": 25,
