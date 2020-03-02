@@ -59,6 +59,7 @@ $(document).ready(function(){
       card.find('.background-image, .item-image').attr({'src':'data/image/'+item.image, 'alt':item.title})
       card.find('.item-title').text(item.title)
       card.find('.item-description').text(item.description.split(' ').slice(0, 40).join(' '))
+      card.find('.item-longDescription').text(item.longDescription)
       card.find('.button-expand').append(item.title)
       $.each(item.values,function(k,val) {
         console.log(k)
