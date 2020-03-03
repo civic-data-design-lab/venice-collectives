@@ -76,27 +76,61 @@
                         <img class="background-image" />
                       </div>
                       <div class="flex-card-back">
-                        <div class="flex-card-collapse">
-                          <h1 class="item-title"></h1>
-                          <p class="item-description"></p>
-                          <div class="item-data"></div>
-                          <button class="button-expand" onclick="expand(event)">
-                            Read More About
-                          </button>
-                        </div>
-                        <div class="flex-card-expand">
-                          <h1 class="item-title"></h1>
-                          <p class="item-description"></p>
-                          <img class="item-image" />
-                        </div>
+                        <!-- <div class="flex-card-collapse"> -->
+                        <h1 class="item-title"></h1>
+                        <p class="item-description"></p>
+                        <div class="item-data"></div>
+                        <!-- Modal Solution-->
+                        <button class="button-expand">
+                          Read More About
+                        </button>
+                        <!-- </div> -->
+                        <!-- Old Solution-->
+                        <!-- <div class="flex-card-expand">
+                        <h1 class="item-title"></h1>
+                        <p class="item-description"></p>
+                        <img class="item-image">
+                      </div> -->
+                        <!--End of modal-->
                       </div>
+                      <!-- Flex Card Back-->
                     </div>
+                    <!-- Flex Card Inner-->
                   </li>
                 </ul>
+                <div class="modal" tabindex="-1" id="myModal" role="dialog">
+                  <div
+                    class="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="item-title"></h1>
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <!-- End of modal-header-->
+
+                      <div class="modal-body">
+                        <p class="item-longDescription"></p>
+                      </div>
+                      <!-- End of modal-body-->
+                    </div>
+                    <!-- End of modal content-->
+                  </div>
+                  <!-- End of modal dialog-->
+                </div>
               </div>
+              <!-- End Flex sort-->
             </section>
           </div>
-          <!-- End of content div-->
+          <!-- End content div-->
         </div>
       </div>
     </main>

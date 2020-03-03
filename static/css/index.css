@@ -23,10 +23,26 @@ h3 {
   text-align: right;
 }
 
-p {
-  color: black;
-  font-size: 10px;
+/* Modal styling */
+/* .modal {
+  text-align:center;
 }
+.modal-dialog {
+  display: inline-block;
+  width: auto;
+}
+.img-responsive {
+  max-height: calc(100vh - 225px);
+}
+
+.modal-title{
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.modal-description{
+  padding-top:10px;
+} */
 
 /* Icon Label styling */
 .iconLabel {
@@ -154,10 +170,11 @@ p {
 .flex-card:hover .flex-card-inner {
   transform: rotateY(180deg);
 }
+/* 
+.flex-card:active .flex-card-expand{
+  transform: scale(2); 
 
-.flex-card:active .flex-card-expand {
-  transform: scale(2);
-}
+}  */
 
 .flex-card-front,
 .flex-card-back {
@@ -183,7 +200,7 @@ p {
 .flex-card-expand {
   background-color: white;
   color: black;
-  transform: scale(2);
+  /* transform: scale(2); */
   padding: 30px 30px;
   display: none;
   z-index: 2;

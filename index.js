@@ -94,6 +94,7 @@ $(document).ready(function() {
     var template = $(".card-list .flex-card.template");
     $.each(data, function(key, item) {
       var card = template.clone();
+      card.attr("data-id", key);
       card
         .find(".background-image, .item-image")
         .attr({ src: "data/image/" + item.image, alt: item.title });
@@ -104,6 +105,7 @@ $(document).ready(function() {
           .slice(0, 40)
           .join(" ")
       );
+      card.find(".item-longDescription").text(item.longDescription);
       card.find(".button-expand").append(item.title);
       $.each(item.values, function(k, val) {
         var span = $("<span/>")
@@ -154,13 +156,6 @@ $(".sideBar").on("change", "input[type=range]", function() {
         .text();
 
       // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
-      console.log(
-        create_filter(open_filter, open_num) &&
-          create_filter(complete_filter, complete_num) &&
-          create_filter(sited_filter, sited_num) &&
-          create_filter(offline_filter, offline_num) &&
-          create_filter(decent_filter, decent_num)
-      );
       return (
         create_filter(open_filter, open_num) ||
         create_filter(complete_filter, complete_num) ||
@@ -187,6 +182,19 @@ $(document).click(function(e) {
       $(elem).popover("hide");
     }
   });
+});
+
+$(".card-list").on("click", ".button-expand", function() {
+  var modal = $("#myModal");
+  var item =
+    window.data[
+      $(this)
+        .parents(".flex-card")
+        .attr("data-id")
+    ];
+  modal.find(".item-title").text(item.title);
+  modal.find(".item-longDescription").text(item.longDescription);
+  modal.modal("show");
 });
 
 //Once button is clicked, change the card to expanded that you can x out of!
