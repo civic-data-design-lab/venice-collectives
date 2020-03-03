@@ -1,169 +1,120 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Angela Wang" />
+    <!-- Responsive meta tag for mobile first -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Collective Impressions</title>
+    <!-- Meta tags below to ensure no cache!-->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src *; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src *"> -->
+    <!-- Bootstrap and Templated CSS-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="static/css/index.css" />
+    <link rel="shortcut icon" href="" />
+    <!--Solves favicon 404 error-->
+  </head>
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset='utf-8'>
-  <meta name=author content="Angela Wang">
-  <!-- Responsive meta tag for mobile first -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Collective Impressions</title>
-  <!-- Meta tags below to ensure no cache!-->
-  <meta http-Equiv="Cache-Control" Content="no-cache">
-  <meta http-Equiv="Pragma" Content="no-cache">
-  <meta http-Equiv="Expires" Content="0">
-  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src *; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src *"> -->
-  <!-- Bootstrap and Templated CSS-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link type="text/css" rel="stylesheet" href="static/css/index.css">
-  <link rel="shortcut icon" href="">
-  <!--Solves favicon 404 error-->
-</head>
-
-<!-- Header -->
-<!-- <header id="header">
-    <h1>Collective Impressions</h1>
-</header> -->
-
-<body>
-  <!-- Beginning of the sideBar div-->
-  <div class="flex-container">
-    <div class="sideBar flex-item">
-      <h1 class="title"> Collective Impressions</h1>
-
-      <main>
-
-        <div class="slider">
-          <div class=iconLabel>
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-              data-placement="bottom"
-              data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-              openness
-              <img src="static/css/icon.png" width=25 />
-            </button>
-          </div>
-          <label for="closed" id="left">CLOSED</label>
-          <label for="open" id="right"> OPEN</label>
-          <input type="range" min="0" max="30" id="open-closed" />
-        </div>
-
-        <div class="slider">
-          <div class=iconLabel>
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-              data-placement="bottom"
-              data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-              completeness
-              <img src="static/css/icon.png" width=25 />
-            </button>
-          </div>
-          <label for="closed" id="left">MINIMAL</label>
-          <label for="open" id="right">HOLISTIC</label>
-          <input type="range" min="0" max="30" id="minimal-holistic" />
-        </div>
-
-        <div class="slider">
-          <div class=iconLabel>
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-              data-placement="bottom"
-              data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-              size
-              <img src="static/css/icon.png" width=25 />
-            </button>
-          </div>
-          <label for="closed" id="left">SITED</label>
-          <label for="open" id="right">GLOBAL</label>
-          <input type="range" min="0" max="30" id="sited-global" />
-        </div>
-
-        <div class="slider">
-          <div class=iconLabel>
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-              data-placement="bottom"
-              data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-              analog/digital
-              <img src="static/css/icon.png" width=25 />
-            </button>
-          </div>
-          <label for="closed" id="left">OFFLINE-ONLY</label>
-          <label for="open" id="right">ONLINE-ONLY</label>
-          <input type="range" min="0" max="30" id="offline-online" />
-        </div>
-
-        <div class="slider">
-          <div class=iconLabel>
-            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover"
-              data-placement="bottom"
-              data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-              centralization
-              <img src="static/css/icon.png" width=25 />
-            </button>
-          </div>
-          <label for="closed" id="left">DECENTRALIZED</label>
-          <label for="open" id="right">SINGLE-LEADER</label>
-          <input type="range" min="0" max="30" id="decentralized-singleLeader" />
-        </div>
-    </div> <!-- Closing the sideBar div-->
-    <hr width="10" size="100%">
-
-    <!-- Beginning of content div-->
-    <div class="flex-item content u-textCenter">
-      <header>
-        <a href="#">Add Card</a>
-        <nav>
-          <a href="#">About</a>
-          <a href="#">Reset Station</a>
-        </nav>
-      </header>
-
-      <div class="flex-sort" id="card-grid">
-        <ul class="card-list">
-          <li class="flex-card template">
-            <div class="flex-card-inner">
-              <div class="flex-card-front">
-                <img class="background-image">
-              </div>
-              <div class="flex-card-back">
-                <div class="flex-card-collapse">
-                  <h1 class="item-title"></h1>
-                  <p class="item-description"></p>
-                  <div class="item-data">
-                  </div>
-                  <button class="button-expand" onclick="expand(event)">
-                    Read More About
+  <body>
+    <main>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Beginning of the sideBar div-->
+          <aside class="col-4">
+            <section class="sideBar">
+              <header id="site-header">
+                <h1 class="title text-center mb-2">Collective Impressions</h1>
+              </header>
+              <!-- template for slider for dimensions -->
+              <div class="slider template">
+                <div class="iconLabel">
+                  <button
+                    class="btn btn-secondary"
+                    data-container="body"
+                    data-toggle="popover"
+                    data-placement="bottom"
+                  >
+                    <img src="static/css/icon.png" width="25" />
                   </button>
                 </div>
-                <div class="flex-card-expand">
-                  <h1 class="item-title"></h1>
-                  <p class="item-description"></p>
-                  <img class="item-image">
-                </div>
+                <label for="closed" id="left"></label>
+                <label for="open" id="right"></label>
+                <input type="range" min="0" max="30" />
               </div>
-            </div>
-          </li>
-        </ul>
+            </section>
+          </aside>
+          <!-- End of sideBar div-->
+
+          <!-- Beginning of content div-->
+          <div class="col-8">
+            <section class="content test-center">
+              <header class="navBar">
+                <a href="#">Add Card</a>
+                <nav>
+                  <a href="#">About</a>
+                  <a href="#">Reset Station</a>
+                </nav>
+              </header>
+
+              <div class="flex-sort" id="card-grid">
+                <ul class="card-list">
+                  <li class="flex-card template">
+                    <div class="flex-card-inner">
+                      <div class="flex-card-front">
+                        <img class="background-image" />
+                      </div>
+                      <div class="flex-card-back">
+                        <div class="flex-card-collapse">
+                          <h1 class="item-title"></h1>
+                          <p class="item-description"></p>
+                          <div class="item-data"></div>
+                          <button class="button-expand" onclick="expand(event)">
+                            Read More About
+                          </button>
+                        </div>
+                        <div class="flex-card-expand">
+                          <h1 class="item-title"></h1>
+                          <p class="item-description"></p>
+                          <img class="item-image" />
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <!-- End of content div-->
+        </div>
       </div>
-      <div>
-        <!-- Closing the content div-->
-        </main>
-      </div> <!-- Closing the u-flex div-->
-      <br>
-</body>
-
-<!-- Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-  integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> <!-- Link to isotope!-->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-  integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> -->
-<script src="index.js"></script> <!-- Links to JS file!-->
-
+    </main>
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+      integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- Link to isotope!-->
+    <script src="index.js"></script>
+    <!-- Links to JS file!-->
+  </body>
 </html>
