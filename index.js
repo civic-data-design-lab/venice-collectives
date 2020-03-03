@@ -88,7 +88,7 @@ $(document).ready(function() {
   // Initialize the Slider
   initSlider();
 
-  // Read data from the file and polulate
+  // Read data from the file and populate
   var addCards = $.getJSON("data/test.json", function(data) {
     window.data = data;
     var template = $(".card-list .flex-card.template");
@@ -96,16 +96,24 @@ $(document).ready(function() {
       var card = template.clone();
       card.attr("data-id", key);
       card
-        .find(".background-image, .item-image")
-        .attr({ src: "data/image/" + item.image, alt: item.title });
+        .find(".background-image")
+        .attr({ src: "data/image/" + item.backgroundImage, alt: item.title });
+      card
+        .find(".item-image")
+        .attr({ src: "data/image/" + item.itemImage, alt: item.title });
       card.find(".item-title").text(item.title);
+      // Only shows first 50 words
       card.find(".item-description").text(
         item.description
           .split(" ")
-          .slice(0, 40)
+          .slice(0, 50)
           .join(" ")
       );
-      card.find(".item-longDescription").text(item.longDescription);
+      // Only shows first 250 words
+      card.find(".item-longDescription").text(item.longDescription
+        .split(" ")
+        .slice(0, 250)
+        .join(" "));
       card.find(".button-expand").append(item.title);
       $.each(item.values, function(k, val) {
         var span = $("<span/>")
@@ -125,7 +133,7 @@ $(document).ready(function() {
 });
 
 function create_filter(filter, number) {
-  return parseInt(number, 10) < filter + 5 && parseInt(number, 10) > filter - 5;
+  return parseInt(number, 10) < filter + 2 && parseInt(number, 10) > filter - 2;
 }
 
 /* Create generic template filter */
@@ -184,6 +192,7 @@ $(document).click(function(e) {
   });
 });
 
+// On button click, expands modal to show title and description
 $(".card-list").on("click", ".button-expand", function() {
   var modal = $("#myModal");
   var item =
@@ -194,18 +203,7 @@ $(".card-list").on("click", ".button-expand", function() {
     ];
   modal.find(".item-title").text(item.title);
   modal.find(".item-longDescription").text(item.longDescription);
+  modal.find(".item-image").text(item.itemImage);
   modal.modal("show");
 });
 
-//Once button is clicked, change the card to expanded that you can x out of!
-function expand(e) {
-  var back = $(e.target).parents(".flex-card-back");
-  back.find(".flex-card-collapse").hide();
-  back.find(".flex-card-expand").show();
-}
-
-function collapse(e) {
-  var back = $(e.target).parents(".flex-card-back");
-  back.find(".flex-card-collapse").show();
-  back.find(".flex-card-expand").hide();
-}

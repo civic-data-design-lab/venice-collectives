@@ -1,3 +1,5 @@
+
+
 header.navBar {
   display: flex;
   justify-content: space-between;
@@ -23,12 +25,16 @@ h3 {
   text-align: right;
 }
 
-/* Modal styling */
-/* .modal {
+p{
+  font-size: 0.5vw;
+}
+
+/* Modal Styling */
+.modal {
   text-align:center;
+  transform:translate(-100,-100)
 }
 .modal-dialog {
-  display: inline-block;
   width: auto;
 }
 .img-responsive {
@@ -42,7 +48,7 @@ h3 {
 
 .modal-description{
   padding-top:10px;
-} */
+}
 
 /* Icon Label styling */
 .iconLabel {
@@ -66,9 +72,6 @@ h3 {
 }
 
 .dropdown-menu {
-  /* background-image: url("static/css/icon.png"); */
-  /* content: '\f05a';
-  font-family: "Font Awesome 5 Free"; */
   font-size: 10px;
   color: #fff;
   display: inline-block;
@@ -97,8 +100,8 @@ h3 {
 }
 
 .item-image {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   padding: 10px 10px;
 }
 
@@ -139,8 +142,8 @@ h3 {
 .flex-card {
   background: #d3d3d3;
   padding: 10px;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 450px;
   margin: 10px;
   color: white;
   text-align: center;
@@ -149,8 +152,8 @@ h3 {
 
 .flex-card {
   background-color: transparent;
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 450px;
   perspective: 1000px;
   padding: 10px;
 }
@@ -195,16 +198,6 @@ h3 {
   color: black;
   transform: rotateY(180deg);
   padding: 30px 30px;
-}
-
-.flex-card-expand {
-  background-color: white;
-  color: black;
-  /* transform: scale(2); */
-  padding: 30px 30px;
-  display: none;
-  z-index: 2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .template {

@@ -14,7 +14,6 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src *; media-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval'; connect-src *"> -->
     <!-- Bootstrap and Templated CSS-->
     <link
       rel="stylesheet"
@@ -51,7 +50,7 @@
                 </div>
                 <label for="closed" id="left"></label>
                 <label for="open" id="right"></label>
-                <input type="range" min="0" max="30" />
+                <input type="range" min="0" max="10" />
               </div>
             </section>
           </aside>
@@ -76,7 +75,6 @@
                         <img class="background-image" />
                       </div>
                       <div class="flex-card-back">
-                        <!-- <div class="flex-card-collapse"> -->
                         <h1 class="item-title"></h1>
                         <p class="item-description"></p>
                         <div class="item-data"></div>
@@ -84,13 +82,6 @@
                         <button class="button-expand">
                           Read More About
                         </button>
-                        <!-- </div> -->
-                        <!-- Old Solution-->
-                        <!-- <div class="flex-card-expand">
-                        <h1 class="item-title"></h1>
-                        <p class="item-description"></p>
-                        <img class="item-image">
-                      </div> -->
                         <!--End of modal-->
                       </div>
                       <!-- Flex Card Back-->
@@ -119,13 +110,15 @@
 
                       <div class="modal-body">
                         <p class="item-longDescription"></p>
+                        <img class="item-image" />
                       </div>
                       <!-- End of modal-body-->
                     </div>
                     <!-- End of modal content-->
                   </div>
                   <!-- End of modal dialog-->
-                </div>
+                </div> 
+                <!-- End of card list-->
               </div>
               <!-- End Flex sort-->
             </section>
