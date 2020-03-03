@@ -1,32 +1,26 @@
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+header.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 30px 10%;
 }
-  
-h2{
-    color: white; 
-    font-weight: bold;  
-    background-color: black;
-    text-align: center;
-    padding:10px;
-}
 
-h1{
+h2 {
+  color: white;
   font-weight: bold;
-  margin-bottom:5px;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
 }
 
-h3{
-  margin:2% 5%;
-  text-align:right;
+h1 {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-p{
-    color: black;
-    font-size: 10px;
-
+h3 {
+  margin: 2% 5%;
+  text-align: right;
 }
 
 /* Modal styling */
@@ -50,34 +44,28 @@ p{
   padding-top:10px;
 } */
 
-/* h1 Title styling*/
-.title{
-  margin-bottom: 5%;
-}
-
 /* Icon Label styling */
-.iconLabel { 
+.iconLabel {
   background-color: black;
   margin-bottom: 20px;
 }
-.iconLabel img { 
-  float:right;
+.iconLabel img {
+  float: right;
   vertical-align: middle; /* This doesn't do anything yet*/
 }
 
-.btn-secondary{
-  width:100%;
+.btn-secondary {
+  width: 100%;
   font-size: 35px;
   background-color: black;
-  font-weight:bold;
+  font-weight: bold;
 }
 
-.popover{
+.popover {
   max-width: 30%; /* Max Width of the popover (depending on the container!) */
 }
 
-
-.dropdown-menu{
+.dropdown-menu {
   /* background-image: url("static/css/icon.png"); */
   /* content: '\f05a';
   font-family: "Font Awesome 5 Free"; */
@@ -93,84 +81,73 @@ p{
 }
 
 /* Slider text styling */
-#right{
-  float:right;
+#right {
+  float: right;
 }
-#left{
-  float:left;
+#left {
+  float: left;
 }
 
 /* Card Styling */
-.sideBar{
-  width: 30%;
-  display:flex-start;
-}
 
-.content{
-  width: 70%;
-}
-
-.background-image{
-  width:90%;
-  height:80%;
+.background-image {
+  width: 90%;
+  height: 80%;
   padding: 20% 10%;
 }
 
-.item-image{
-  width:100px;
-  height:100px;
+.item-image {
+  width: 100px;
+  height: 100px;
   padding: 10px 10px;
 }
 
-.item-title{
+.item-title {
   font-size: 1.5em;
   font-weight: bold;
 }
 
-.item-description{
-  padding-top:10px;
+.item-description {
+  padding-top: 10px;
 }
 
-
-.flex-item{
+.flex-item {
   margin-left: 16px;
   flex-grow: 1;
   flex-basis: auto;
   flex-shrink: 1;
-  
 }
 
-.flex-container{
+.flex-container {
   display: flex;
 }
 
-.flex-sort{
+.flex-sort {
   padding: 0;
   margin: 0;
   list-style: none;
-  
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
+
   -webkit-flex-flow: row wrap;
 }
 
 .flex-card {
-  background:#D3D3D3;
+  background: #d3d3d3;
   padding: 10px;
   width: 300px;
   height: 400px;
-  margin:10px;
+  margin: 10px;
   color: white;
   text-align: center;
-  perspective:1000px;
+  perspective: 1000px;
 }
 
-
-.flex-card{
+.flex-card {
   background-color: transparent;
   width: 300px;
   height: 400px;
@@ -185,7 +162,7 @@ p{
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .flex-card:hover {
   z-index: 5;
@@ -199,7 +176,8 @@ p{
 
 }  */
 
-.flex-card-front, .flex-card-back {
+.flex-card-front,
+.flex-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -219,14 +197,14 @@ p{
   padding: 30px 30px;
 }
 
-.flex-card-expand{
+.flex-card-expand {
   background-color: white;
   color: black;
   /* transform: scale(2); */
   padding: 30px 30px;
   display: none;
   z-index: 2;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .template {
@@ -234,26 +212,25 @@ p{
 }
 
 /* If flex button is pushed */
-.button-expand{
+.button-expand {
   width: auto;
   height: auto;
   background-color: black;
   color: white;
 }
 
-
 /* Slider Styling */
 
-input[type=range] {
+input[type="range"] {
   height: 25px;
   -webkit-appearance: none;
   margin: 10px 0;
   width: 100%;
 }
-input[type=range]:focus {
+input[type="range"]:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -262,7 +239,7 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 1px;
   border: 0px solid #000000;
 }
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   box-shadow: 0px 0px 0px #000000;
   border: 1px solid #6b6b6b;
   height: 18px;
@@ -273,10 +250,10 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -7px;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type="range"]:focus::-webkit-slider-runnable-track {
   background: #6b6b6b;
 }
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -285,7 +262,7 @@ input[type=range]::-moz-range-track {
   border-radius: 1px;
   border: 0px solid #000000;
 }
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
   box-shadow: 0px 0px 0px #000000;
   border: 1px solid #6b6b6b;
   height: 18px;
@@ -294,7 +271,7 @@ input[type=range]::-moz-range-thumb {
   background: #000000;
   cursor: pointer;
 }
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -302,32 +279,31 @@ input[type=range]::-ms-track {
   border-color: transparent;
   color: transparent;
 }
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
   background: #6b6b6b;
   border: 0px solid #000000;
   border-radius: 2px;
   box-shadow: 0px 0px 0px #000000;
 }
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
   background: #6b6b6b;
   border: 0px solid #000000;
   border-radius: 2px;
   box-shadow: 0px 0px 0px #000000;
 }
-input[type=range]::-ms-thumb {
+input[type="range"]::-ms-thumb {
   margin-top: 1px;
   box-shadow: 0px 0px 0px #000000;
   border: 1px solid #6b6b6b;
   height: 18px;
   width: 18px;
   border-radius: 25px;
-  background: #A1D0FF;
+  background: #a1d0ff;
   cursor: pointer;
 }
-input[type=range]:focus::-ms-fill-lower {
+input[type="range"]:focus::-ms-fill-lower {
   background: #6b6b6b;
 }
-input[type=range]:focus::-ms-fill-upper {
+input[type="range"]:focus::-ms-fill-upper {
   background: #6b6b6b;
 }
-
