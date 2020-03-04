@@ -48,8 +48,8 @@
                     <img src="static/css/icon.png" width="25" />
                   </button>
                 </div>
-                <label for="closed" id="left"></label>
-                <label for="open" id="right"></label>
+                <label for="open" id="left"></label>
+                <label for="closed" id="right"></label>
                 <input type="range" min="0" max="10" />
               </div>
             </section>
@@ -62,9 +62,32 @@
               <header class="navBar">
                 <a href="#">Add Card</a>
                 <nav>
-                  <a href="#">About</a>
+                  <!-- <a href="#" class = >About</a> -->
+                  <a href="#aboutModal" data-toggle = "modal" data-target= "#aboutModal" class="nav-link">About</a>
                   <a href="#">Reset Station</a>
                 </nav>
+                <div class="modal fade" id="aboutModal">
+                  <div class="modal-dialog-about">
+                      <div class="modal-content"> 
+                          <div class="modal-header">
+                              <h5 class="modal-title">About Collective Impressions</h5> 
+                              <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body-about">
+                            <p>Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used </p>
+                          </div>
+                          <div class="modal-footer">
+                          </div>
+                      </div>
+                  </div>
+              </div>
               </header>
 
               <div class="flex-sort" id="card-grid">
@@ -78,11 +101,9 @@
                         <h1 class="item-title"></h1>
                         <p class="item-description"></p>
                         <div class="item-data"></div>
-                        <!-- Modal Solution-->
                         <button class="button-expand">
                           Read More About
                         </button>
-                        <!--End of modal-->
                       </div>
                       <!-- Flex Card Back-->
                     </div>

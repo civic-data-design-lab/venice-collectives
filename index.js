@@ -4,44 +4,44 @@
 var grid;
 
 var dimensions = {
-  Openness: {
+  "economics": {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     range: {
-      0: "Closed",
-      10: "Open"
+      0: "COMMON GOOD",
+      10: "PRIVATE GOOD"
     }
   },
-  Completeness: {
+  "size": {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     range: {
-      0: "Minimal",
-      10: "Holistic"
+      0: "SMALL",
+      10: "LARGE"
     }
   },
-  Size: {
+  "porosity": {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     range: {
-      0: "Sited",
-      10: "Global"
+      0: "OPEN",
+      10: "CLOSED"
     }
   },
-  "Analog/Digital": {
+  "platform": {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     range: {
-      0: "Offline-only",
-      10: "Online-Only"
+      0: "PHYSICAL",
+      10: "DIGITAL"
     }
   },
-  Centralization: {
+  "governance": {
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     range: {
-      0: "Decentralized",
-      10: "Single-leader"
+      0: "DECENTRALIZED",
+      10: "CENTRALIZED"
     }
   }
 };
@@ -55,11 +55,11 @@ var initGrid = function() {
     layoutMode: "fitRows",
     order: "random",
     getSortData: {
-      openness: ".openness parseInt",
-      completeness: ".completeness parseInt",
+      porosity: ".porosity parseInt",
+      economics: ".economics parseInt",
       size: ".size parseInt",
-      analogDigital: ".analogDigital parseInt",
-      centralization: ".centralization parseInt"
+      platform: ".platform parseInt",
+      governance: ".governance parseInt"
     }
   });
 };
@@ -139,37 +139,37 @@ function create_filter(filter, number) {
 /* Create generic template filter */
 
 $(".sideBar").on("change", "input[type=range]", function() {
-  let open_filter = parseInt($("#openness-slider").val());
-  let complete_filter = parseInt($("#completeness-slider").val());
-  let sited_filter = parseInt($("#size-slider").val());
-  let offline_filter = parseInt($("#analog_digital-slider").val());
-  let decent_filter = parseInt($("#centralization-slider").val());
+  let porosity_filter = parseInt($("#porosity-slider").val());
+  let economics_filter = parseInt($("#economics-slider").val());
+  let size_filter = parseInt($("#size-slider").val());
+  let platform_filter = parseInt($("#platform-slider").val());
+  let governance_filter = parseInt($("#governance-slider").val());
 
   grid.arrange({
     filter: function() {
-      var open_num = $(this)
-        .find(".openness")
+      var porosity_num = $(this)
+        .find(".porosity")
         .text();
-      var complete_num = $(this)
-        .find(".completeness")
+      var economics_num = $(this)
+        .find(".economics")
         .text();
-      var sited_num = $(this)
+      var size_num = $(this)
         .find(".size")
         .text();
-      var offline_num = $(this)
-        .find(".analogDigital")
+      var platform_num = $(this)
+        .find(".platform")
         .text();
-      var decent_num = $(this)
-        .find(".centralization")
+      var governance_num = $(this)
+        .find(".governance")
         .text();
 
       // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
       return (
-        create_filter(open_filter, open_num) ||
-        create_filter(complete_filter, complete_num) ||
-        create_filter(sited_filter, sited_num) ||
-        create_filter(offline_filter, offline_num) ||
-        create_filter(decent_filter, decent_num)
+        create_filter(porosity_filter, porosity_num) ||
+        create_filter(economics_filter, economics_num) ||
+        create_filter(size_filter, size_num) ||
+        create_filter(platform_filter, platform_num) ||
+        create_filter(governance_filter, governance_num)
       );
     }
   });
@@ -207,3 +207,4 @@ $(".card-list").on("click", ".button-expand", function() {
   modal.modal("show");
 });
 
+$(".nav-bar").on("click")

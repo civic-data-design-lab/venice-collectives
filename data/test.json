@@ -7,11 +7,11 @@
     "backgroundImage": "user.png",
     "itemImage": "vertical.png",
     "values": {
-      "openness": 2,
-      "completeness": 4,
+      "porosity": 2,
+      "economics": 4,
       "size": 5,
-      "analogDigital":8,
-      "centralization": 10
+      "platform":8,
+      "governance": 10
     }
   },
   {
@@ -22,11 +22,11 @@
     "backgroundImage": "user.png",
     "itemImage": "vertical.png",
     "values": {
-      "openness": 10,
-      "completeness": 5,
+      "porosity": 10,
+      "economics": 5,
       "size": 2,
-      "analogDigital": 8,
-      "centralization": 1
+      "platform": 8,
+      "governance": 1
     }
   },
   {
@@ -37,11 +37,11 @@
     "backgroundImage": "user.png",
     "itemImage": "vertical.png",
     "values": {
-      "openness": 2,
-      "completeness": 1,
+      "porosity": 2,
+      "economics": 1,
       "size": 3,
-      "analogDigital": 9,
-      "centralization": 4
+      "platform": 9,
+      "governance": 4
     }
   },
   {
@@ -52,11 +52,11 @@
     "backgroundImage": "user.png",
     "itemImage": "vertical.png",
     "values": {
-      "openness": 10,
-      "completeness": 2,
+      "porosity": 10,
+      "economics": 2,
       "size": 10,
-      "analogDigital": 3,
-      "centralization": 2
+      "platform": 3,
+      "governance": 2
     }
   }
 ]

@@ -34,6 +34,15 @@ p{
   text-align:center;
   transform:translate(-100,-100)
 }
+/* #aboutModal{
+  width: 50000px;
+  height: auto;
+} */
+
+.modal-dialog-about{
+  width: 700px;
+}
+
 .modal-dialog {
   width: auto;
 }
@@ -49,7 +58,11 @@ p{
 .modal-description{
   padding-top:10px;
 }
+.modal-body-about{
+  width: 500px;
+  height: 1000px;
 
+}
 /* Icon Label styling */
 .iconLabel {
   background-color: black;
