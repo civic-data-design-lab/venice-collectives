@@ -96,8 +96,8 @@ $(document).ready(function() {
       var card = template.clone();
       card.attr("data-id", key);
       card
-        .find(".background-image")
-        .attr({ src: "data/image/" + item.backgroundImage, alt: item.title });
+        .find(".flex-card-front")
+        .css("background-image", `url(./data/image/${item.backgroundImage})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
       card
         .find(".item-image")
         .attr({ src: "data/image/" + item.itemImage, alt: item.title });

@@ -1,12 +1,31 @@
-
-
 header.navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
 }
-
+nav {
+  position: fixed;
+  top:1rem;
+  right:1rem;
+}
+nav a, nav a.nav-link {
+  display:inline;
+  color:black;
+  text-decoration: none;
+  transition: 250ms all;
+  font-weight: bold;
+}
+nav a:hover, nav a.nav-link:hover {
+  text-decoration: none;
+  color: #F6A4B7;
+}
+.sideBar {
+  margin-top:10px;
+}
+.sideBar header h1 {
+  padding-bottom:20px;
+}
 h2 {
   color: white;
   font-weight: bold;
@@ -66,7 +85,7 @@ p{
 /* Icon Label styling */
 .iconLabel {
   background-color: black;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .iconLabel img {
   float: right;
@@ -75,13 +94,29 @@ p{
 
 .btn-secondary {
   width: 100%;
-  font-size: 35px;
+  font-size: 1.5rem;
   background-color: black;
   font-weight: bold;
 }
 
+.btn-secondary:hover {
+  background-color:black;
+}
+.btn-secondary.focus, .btn-secondary:focus {
+  box-shadow:none;
+}
+.btn-secondary .info-svg {
+  fill:white;
+  float:right;
+  transform: translateY(5px);
+  transition: 250ms all;;
+}
+.btn-secondary:hover .info-svg {
+  fill:#F6A4B7;
+}
+
 .popover {
-  max-width: 30%; /* Max Width of the popover (depending on the container!) */
+  max-width: 25%; /* Max Width of the popover (depending on the container!) */
 }
 
 .dropdown-menu {
@@ -125,6 +160,7 @@ p{
 
 .item-description {
   padding-top: 10px;
+  font-size:0.9rem;
 }
 
 .flex-item {
@@ -153,22 +189,13 @@ p{
 }
 
 .flex-card {
-  background: #d3d3d3;
-  padding: 10px;
-  width: 350px;
-  height: 450px;
-  margin: 10px;
+  /* padding: 10px; */
+  width: 16vw;
+  height: 21.5vw;
+  margin: 10px 2vw 10px 0;
   color: white;
   text-align: center;
   perspective: 1000px;
-}
-
-.flex-card {
-  background-color: transparent;
-  width: 350px;
-  height: 450px;
-  perspective: 1000px;
-  padding: 10px;
 }
 
 .flex-card-inner {
@@ -178,7 +205,7 @@ p{
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 .flex-card:hover {
   z-index: 5;
@@ -202,7 +229,9 @@ p{
 }
 
 .flex-card-front {
-  background-color: #bbb;
+  /* background-color: #bbb; */
+  background-size: cover;
+  background-position: center center;
   color: black;
 }
 
@@ -211,6 +240,7 @@ p{
   color: black;
   transform: rotateY(180deg);
   padding: 30px 30px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 
 .template {
@@ -223,6 +253,7 @@ p{
   height: auto;
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
 /* Slider Styling */
@@ -230,7 +261,7 @@ p{
 input[type="range"] {
   height: 25px;
   -webkit-appearance: none;
-  margin: 10px 0;
+  margin: 0;
   width: 100%;
 }
 input[type="range"]:focus {
