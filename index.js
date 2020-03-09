@@ -6,7 +6,7 @@ var grid;
 var dimensions = {
   "economics": {
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Economics refers to the entities who profit from the collective, the intent to profit or not, the degree to which the collective directly benefits from its members versus profiting from a private investor/ owner of a platform.",
     range: {
       0: "COMMON GOOD",
       10: "PRIVATE GOOD"
@@ -14,15 +14,15 @@ var dimensions = {
   },
   "size": {
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    range: {
+      "Size refers to the number of members in a collective; it is a way to evaluate quantity.",
+      range: {
       0: "SMALL",
       10: "LARGE"
     }
   },
   "porosity": {
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Porosity refers to the ability of members to join and leave the collective n terms of process, time cycle, qualifications, etc. The two main factors include the (a) ease in which to join and leave and (b) the collective’s anticipation to changes in membership.",
     range: {
       0: "OPEN",
       10: "CLOSED"
@@ -30,7 +30,7 @@ var dimensions = {
   },
   "platform": {
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Platform defines whether a collective exists on an exclusively digital or physical platform or somewhere in between.",
     range: {
       0: "PHYSICAL",
       10: "DIGITAL"
@@ -38,13 +38,14 @@ var dimensions = {
   },
   "governance": {
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Governance assesses how a collective is managed.",
     range: {
       0: "DECENTRALIZED",
       10: "CENTRALIZED"
     }
   }
 };
+
 
 // Initialize Isotope on the card-grid
 var initGrid = function() {
@@ -95,12 +96,15 @@ $(document).ready(function() {
     $.each(data, function(key, item) {
       var card = template.clone();
       card.attr("data-id", key);
-      card
+      card // Finding front photo of card first
         .find(".flex-card-front")
         .css("background-image", `url(./data/image/${item.backgroundImage})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
-      card
+      card // Finding back photo of card upon click
         .find(".item-image")
-        .attr({ src: "data/image/" + item.itemImage, alt: item.title });
+        .css("item-image", `url(./data/image/${item.backgroundImage})`);
+      // card // Finding back photo of card upon click
+      //   .find(".item-image")
+      //   .attr({ src: "data/image/" + item.itemImage, alt: item.title });
       card.find(".item-title").text(item.title);
       // Only shows first 50 words
       card.find(".item-description").text(
@@ -206,5 +210,3 @@ $(".card-list").on("click", ".button-expand", function() {
   modal.find(".item-image").text(item.itemImage);
   modal.modal("show");
 });
-
-$(".nav-bar").on("click")

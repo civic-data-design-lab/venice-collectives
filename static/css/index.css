@@ -48,23 +48,23 @@ p{
   font-size: 0.5vw;
 }
 
+.about:before{
+  font-size: 1vw;
+  content: "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used"
+                          
+}
+
 /* Modal Styling */
 .modal {
   text-align:center;
   transform:translate(-100,-100)
 }
-/* #aboutModal{
-  width: 50000px;
+
+/* .modal-dialog {
+  width: 80%;
   height: auto;
 } */
 
-.modal-dialog-about{
-  width: 700px;
-}
-
-.modal-dialog {
-  width: auto;
-}
 .img-responsive {
   max-height: calc(100vh - 225px);
 }
@@ -74,14 +74,12 @@ p{
   font-weight: bold;
 }
 
-.modal-description{
-  padding-top:10px;
+.modal-content{
+  width: 180%;
+  height: auto;
+  padding: 5%;
 }
-.modal-body-about{
-  width: 500px;
-  height: 1000px;
 
-}
 /* Icon Label styling */
 .iconLabel {
   background-color: black;
@@ -148,9 +146,9 @@ p{
 }
 
 .item-image {
-  width: 150px;
-  height: 150px;
-  padding: 10px 10px;
+  width: 40%;
+  height: 30%;
+  padding: 10%,5%;
 }
 
 .item-title {
