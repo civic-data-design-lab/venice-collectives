@@ -47,6 +47,9 @@ h3 {
 p{
   font-size: 0.5vw;
 }
+.col-9 {
+  margin-top: 15px;
+}
 
 /* Modal Styling */
 .modal {
@@ -96,7 +99,7 @@ p{
   padding:5vh;
 }
 #aboutModal .modal-header {
-  margin: 0 20px 0 0;
+  margin: 0 40px 0 0;
   padding: 0;
   border: none;
 }
@@ -104,8 +107,10 @@ p{
   text-align:left;
 }
 #aboutModal p {
+  margin-top:20px;
   column-count: 2;
   column-gap:40px;
+  font-size:1vw;
 }
 .modal-body p {
   font-size:1rem;
