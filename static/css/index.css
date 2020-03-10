@@ -51,7 +51,8 @@ p{
 /* Modal Styling */
 .modal {
   text-align:center;
-  transform:translate(-100,-100)
+  transform:translate(-100,-100);
+  background:rgba(0,0,0,0)
 }
 /* #aboutModal{
   width: 50000px;
@@ -63,8 +64,19 @@ p{
 }
 
 .modal-dialog {
-  width: auto;
+  width: 50vw;
+  max-width:50vw;
 }
+
+.modal-content {
+  border-radius:0;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  border: none;
+}
+.modal-backdrop {
+  background-color:rgba(255,255,255,0.9);
+}
+
 .img-responsive {
   max-height: calc(100vh - 225px);
 }
@@ -80,38 +92,110 @@ p{
 .modal-body-about{
   width: 500px;
   height: 1000px;
-
+}
+.modal-body p {
+  font-size:1rem;
+  text-align: left;
+  max-width:75%;
 }
 /* Icon Label styling */
-.iconLabel {
-  background-color: black;
+.slider .iconLabel {
+  background-color: white;
   margin-bottom: 10px;
+  width: 100%;
+  font-size: 1.5rem;
+  color:black;
+  border:1px solid black;
+  text-align: center;
+  font-weight: bold;
+  padding:10px;
+  transition:250ms all;
 }
+
+.slider.active .iconLabel {
+  background-color:black;
+  color:white;
+  border:1px solid white;
+}
+
+.slider input[type=range], .slider .range-label {
+  opacity:0.25;
+  transition:250ms all;
+  pointer-events: none;
+}
+
+.slider.active input[type=range], .slider.active .range-label {
+  opacity:1;
+  pointer-events: initial;
+}
+
 .iconLabel img {
   float: right;
   vertical-align: middle; /* This doesn't do anything yet*/
 }
+.iconLabel input, .iconLabel label {
+  float:left;
+}
+
+.iconLabel input[type=checkbox] {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height:1px; 
+  width:1px; 
+  margin:-1px; 
+  padding:0;
+  border:0;
+}
+
+
+.iconLabel input[type=checkbox] + label {
+  padding-left:20px;
+  height:15px; 
+  display:inline-block;
+  line-height:15px;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  font-size:15px;
+  vertical-align:middle;
+  cursor:pointer;
+  transform:translate(5px, 10px);
+}
+
+.iconLabel input[type=checkbox]:checked + label {
+  background-position: 0 -15px;
+}
+
+.iconLabel input[type=checkbox]:checked {
+  background-position: 0 -15px;
+}
+.iconLabel label {
+  background-image:url('../img/checkbox.jpg');
+}
 
 .btn-secondary {
-  width: 100%;
-  font-size: 1.5rem;
-  background-color: black;
-  font-weight: bold;
+  float:right;
+  background:none;
+  outline: none;
+  border: none;
 }
 
 .btn-secondary:hover {
-  background-color:black;
+  background:none;
 }
-.btn-secondary.focus, .btn-secondary:focus {
+.btn-secondary.focus, .btn-secondary:focus, .btn-secondary:active   {
   box-shadow:none;
+  background:none;
 }
-.btn-secondary .info-svg {
-  fill:white;
+.slider .btn-secondary .info-svg {
+  fill:black;
   float:right;
-  transform: translateY(5px);
-  transition: 250ms all;;
+  transition: 250ms all;
 }
-.btn-secondary:hover .info-svg {
+.slider.active .btn-secondary .info-svg {
+  fill:white;
+}
+.slider .btn-secondary:hover .info-svg {
   fill:#F6A4B7;
 }
 
@@ -148,9 +232,12 @@ p{
 }
 
 .item-image {
-  width: 150px;
-  height: 150px;
-  padding: 10px 10px;
+  width: calc(25% - 40px);
+  padding-bottom: 9999px; 
+  margin:0 0 -9999px 20px;
+  float:right;
+  background-size:contain;
+  background-repeat:no-repeat;
 }
 
 .item-title {

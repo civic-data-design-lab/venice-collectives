@@ -72,7 +72,9 @@ var initSlider = function() {
     slider
       .find(".btn")
       .attr("data-content", value.description)
-      .prepend(key);
+    slider.find(".iconLabel .title").prepend(key);
+    slider.find(".iconLabel input").attr('id',`${key}_chk`);
+    slider.find(".iconLabel label").attr('for',`${key}_chk`);
     slider.find("#left").text(value.range[0]);
     slider.find("#right").text(value.range[10]);
     slider
@@ -100,7 +102,7 @@ $(document).ready(function() {
         .css("background-image", `url(./data/image/${item.backgroundImage})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
       card
         .find(".item-image")
-        .attr({ src: "data/image/" + item.itemImage, alt: item.title });
+        .css("background-image", `url('data/image/${item.itemImage}')`)
       card.find(".item-title").text(item.title);
       // Only shows first 50 words
       card.find(".item-description").text(
@@ -130,10 +132,19 @@ $(document).ready(function() {
   addCards.done(() => {
     initGrid();
   });
+  // filters on / off
+  $('.on-off-label').on("click", function(){
+    $(this).closest('.slider').toggleClass('active')
+  })
 });
 
-function create_filter(filter, number) {
-  return parseInt(number, 10) < filter + 2 && parseInt(number, 10) > filter - 2;
+function create_filter(filter, number, filter_on) {
+  if (filter_on) {
+    return parseInt(number, 10) <= filter + 2 && parseInt(number, 10) >= filter - 2;
+  } else {
+    return parseInt(number, 10) <= filter + 10 && parseInt(number, 10) >= filter - 10;
+  }
+  
 }
 
 /* Create generic template filter */
@@ -144,6 +155,12 @@ $(".sideBar").on("change", "input[type=range]", function() {
   let size_filter = parseInt($("#size-slider").val());
   let platform_filter = parseInt($("#platform-slider").val());
   let governance_filter = parseInt($("#governance-slider").val());
+
+  let porosity_on = $("#porosity-slider").closest('.slider').hasClass('active');
+  let economics_on = $("#economics-slider").closest('.slider').hasClass('active');
+  let size_on = $("#size-slider").closest('.slider').hasClass('active');
+  let platform_on = $("#platform-slider").closest('.slider').hasClass('active');
+  let governance_on = $("#governance-slider").closest('.slider').hasClass('active');
 
   grid.arrange({
     filter: function() {
@@ -165,11 +182,11 @@ $(".sideBar").on("change", "input[type=range]", function() {
 
       // Only returns values 5 numbers greater or lower than chosen one (range 0-30)
       return (
-        create_filter(porosity_filter, porosity_num) ||
-        create_filter(economics_filter, economics_num) ||
-        create_filter(size_filter, size_num) ||
-        create_filter(platform_filter, platform_num) ||
-        create_filter(governance_filter, governance_num)
+        create_filter(porosity_filter, porosity_num, porosity_on) &&
+        create_filter(economics_filter, economics_num, economics_on) &&
+        create_filter(size_filter, size_num, size_on) &&
+        create_filter(platform_filter, platform_num, platform_on) &&
+        create_filter(governance_filter, governance_num, governance_on)
       );
     }
   });
@@ -180,6 +197,7 @@ $(document).click(function(e) {
   var clickedOn = $(e.target);
   $(".iconLabel .btn[aria-describedby]").each(function(key, elem) {
     let popover = $(elem).attr("aria-describedby");
+    console.log(popover)
     if (
       !(
         clickedOn.closest(".popover").length &&
@@ -203,8 +221,15 @@ $(".card-list").on("click", ".button-expand", function() {
     ];
   modal.find(".item-title").text(item.title);
   modal.find(".item-longDescription").text(item.longDescription);
-  modal.find(".item-image").text(item.itemImage);
+  modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
   modal.modal("show");
 });
 
 $(".nav-bar").on("click")
+
+$('#station-reset').on("click", function() {
+  $('.on-off').prop('checked', false);
+  $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").closest('.slider').removeClass('active');
+  $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").val(5);
+
+})
