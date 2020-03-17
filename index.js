@@ -140,6 +140,9 @@ $(document).ready(function() {
   $('.on-off-label').on("click", function(){
     $(this).closest('.slider').toggleClass('active')
   })
+  $("a.iconLabel").on("click", function() {
+    $(this).closest('.slider').toggleClass('active')
+  });
 });
 
 function create_filter(filter, number, filter_on) {
@@ -199,7 +202,7 @@ $(".sideBar").on("change", "input[type=range]", function() {
 // ----- Prevent cluttering of popovers -----
 $(document).click(function(e) {
   var clickedOn = $(e.target);
-  $(".iconLabel .btn[aria-describedby]").each(function(key, elem) {
+  $(".btn[aria-describedby]").each(function(key, elem) {
     let popover = $(elem).attr("aria-describedby");
     console.log(popover)
     if (
@@ -207,13 +210,13 @@ $(document).click(function(e) {
         clickedOn.closest(".popover").length &&
         clickedOn.closest(".popover").attr("id") === popover
       ) &&
-      clickedOn.closest(".iconLabel .btn[aria-describedby]")[0] !== elem
+      clickedOn.closest(".btn[aria-describedby]")[0] !== elem
     ) {
       $(elem).popover("hide");
     }
+    
   });
 });
-
 // On button click, expands modal to show title and description
 $(".card-list").on("click", ".button-expand", function() {
   var modal = $("#myModal");
@@ -228,8 +231,7 @@ $(".card-list").on("click", ".button-expand", function() {
   modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
   modal.modal("show");
 });
-
-$(".nav-bar").on("click")
+// $(".nav-bar").on("click")
 
 $('#station-reset').on("click", function() {
   $('.on-off').prop('checked', false);
@@ -237,3 +239,4 @@ $('#station-reset').on("click", function() {
   $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").val(5);
 
 })
+

@@ -47,8 +47,11 @@ h3 {
 p{
   font-size: 0.5vw;
 }
-.col-9 {
-  margin-top: 15px;
+
+.about:before{
+  font-size: 1vw;
+  content: "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used"
+                          
 }
 
 /* Modal Styling */
@@ -89,28 +92,15 @@ p{
   font-size: 1.5em;
   font-weight: bold;
 }
-#aboutModal .modal-dialog {
-  margin:0;
+
+.modal-content{
+  width: 180%;
+  height: auto;
+  padding: 5%;
 }
-#aboutModal .modal-content{
-  margin:10vh 10vw;
-  width: 80vw;
-  height: 80vh;
-  padding:5vh;
-}
-#aboutModal .modal-header {
-  margin: 0 40px 0 0;
-  padding: 0;
-  border: none;
-}
-#aboutModal p, #aboutModal h2{
-  text-align:left;
-}
-#aboutModal p {
-  margin-top:20px;
-  column-count: 2;
-  column-gap:40px;
-  font-size:1vw;
+.modal-body-about{
+  width: 500px;
+  height: 1000px;
 }
 .modal-body p {
   font-size:1rem;
@@ -129,6 +119,11 @@ p{
   font-weight: bold;
   padding:10px;
   transition:250ms all;
+  display:block;
+  cursor: pointer;
+}
+.slider.active .iconLabel:hover {
+  color:white !important;
 }
 
 .slider.active .iconLabel {
@@ -197,6 +192,8 @@ p{
   background:none;
   outline: none;
   border: none;
+  transform: translateY(-3.5rem);
+  margin-left: -100%;
 }
 
 .btn-secondary:hover {
@@ -449,4 +446,9 @@ input[type="range"]:focus::-ms-fill-lower {
 }
 input[type="range"]:focus::-ms-fill-upper {
   background: #6b6b6b;
+}
+.col-3 {
+  box-shadow: 2px 0px 5px rgba(0,0,0,0.25);
+  height:100vh;
+  z-index:5;
 }
