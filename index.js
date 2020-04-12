@@ -240,3 +240,22 @@ $('#station-reset').on("click", function() {
 
 })
 
+// ----- HAMBURGER WORKING -----
+$('.sidebar-control').click(function() {
+  const icon = $(this).find('#hamburger');
+  if (icon.hasClass('open')) {
+    $('#main-content').removeClass('sidebar-shown');
+    icon.removeClass('open');
+    $('body').css('overflow-y','auto');
+  } else {
+    $('#main-content').addClass('sidebar-shown');
+    icon.addClass('open');
+    $('body').css('overflow-y','hidden');
+  }
+});
+$('#primary > .overlay').click(function() {
+  const icon = $('#hamburger');
+  $('#main-content').removeClass('sidebar-shown');
+  icon.removeClass('open');
+  $('body').css('overflow-y','auto');
+})

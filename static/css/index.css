@@ -1,6 +1,11 @@
 html {
   --scrollbarBG: #eee;
   --thumbBG: #aaa;
+  overflow: hidden;
+}
+body {
+  overflow-x: hidden;
+  max-height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -46,6 +51,7 @@ nav a:hover, nav a.nav-link:hover {
   color: #F6A4B7;
 }
 .sideBar {
+  position: relative;
   margin-top:10px;
 }
 .sideBar header h1 {
@@ -320,7 +326,9 @@ p{
 
   -webkit-flex-flow: row wrap;
 }
-
+ul.card-list {
+  list-style: none;
+}
 .flex-card {
   height: 21.5vw;
   margin: 10px 0;
@@ -485,4 +493,127 @@ input[type="range"]:focus::-ms-fill-upper {
   background: #f5f5f5;
   overflow-y: auto;
   overflow-x: hidden;
+}
+#primary {
+  position: relative;
+}
+
+@media (max-width: 575.9px) {
+  #main-content {
+    position: relative;
+    right: calc(5 / 7 * 100% + 30px);
+    width: calc(12 / 7 * 100% + 60px);
+    transition: .5s ease-in-out;
+  }
+  #main-content #secondary {
+    position: relative;
+  }
+
+  #main-content.sidebar-shown {
+    right:0
+  }
+  #main-content #primary .overlay {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+    display: none;
+  }
+  #main-content.sidebar-shown #primary .overlay {
+    display: block;
+  }
+}
+/* ----- HAMBURGER ----- */
+.sidebar-control {
+  position: sticky;
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+  border-radius: 50%;
+  padding: 15px;
+  display: none;
+}
+.sidebar-shown .sidebar-control {
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  background: white;
+}
+@media (max-width: 575.9px) {
+  .sidebar-control {
+    display: inline-block;
+  }
+}
+/* ----- From https://codepen.io/designcouch/pen/Atyop ----- */
+#hamburger {
+  width: 25px;
+  height: 23px;
+  position: relative;
+  top: 2px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+#hamburger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: black;
+  border-radius: 4px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#hamburger span:nth-child(1) {
+  top: 0px;
+}
+
+#hamburger span:nth-child(2),#hamburger span:nth-child(3) {
+  top: 8px;
+}
+
+#hamburger span:nth-child(4) {
+  top: 16px;
+}
+
+#hamburger.open span:nth-child(1) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
+}
+
+#hamburger.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#hamburger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#hamburger.open span:nth-child(4) {
+  top: 8px;
+  width: 0%;
+  left: 50%;
 }
