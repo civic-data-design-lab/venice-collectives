@@ -1,3 +1,28 @@
+html {
+  --scrollbarBG: #eee;
+  --thumbBG: #aaa;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+  box-shadow: 0 0 5px rgba(0,0,0,0.15) inset;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 2px solid var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb:hover {
+  border-width: 1px;
+}
+
 header.navBar {
   display: flex;
   justify-content: space-between;
@@ -109,18 +134,19 @@ p{
 }
 /* Icon Label styling */
 .slider .iconLabel {
-  background-color: white;
+  background-color: #fbfbfb;
   margin-bottom: 10px;
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.25em;
   color:black;
-  border:1px solid black;
+  border: 1px solid #aaa;
   text-align: center;
-  font-weight: bold;
-  padding:10px;
+  font-weight: 600;
+  padding: 5px 10px;
   transition:250ms all;
   display:block;
   cursor: pointer;
+  border-radius: 50px;
 }
 .slider.active .iconLabel:hover {
   color:white !important;
@@ -131,7 +157,10 @@ p{
   color:white;
   border:1px solid white;
 }
-
+.slider .range-label {
+  margin: 0;
+  font-size: 0.9em;
+}
 .slider input[type=range], .slider .range-label {
   opacity:0.25;
   transition:250ms all;
@@ -141,6 +170,7 @@ p{
 .slider.active input[type=range], .slider.active .range-label {
   opacity:1;
   pointer-events: initial;
+  background: none;
 }
 
 .iconLabel img {
@@ -192,7 +222,7 @@ p{
   background:none;
   outline: none;
   border: none;
-  transform: translateY(-3.5rem);
+  transform: translateY(-3.1rem);
   margin-left: -100%;
 }
 
@@ -228,7 +258,7 @@ p{
 
 /* Slider styling */
 .slider {
-  margin-bottom: 10%;
+  margin-bottom: 15px;
 }
 
 /* Slider text styling */
@@ -292,10 +322,8 @@ p{
 }
 
 .flex-card {
-  /* padding: 10px; */
-  width: 16vw;
   height: 21.5vw;
-  margin: 10px 2vw 10px 0;
+  margin: 10px 0;
   color: white;
   text-align: center;
   perspective: 1000px;
@@ -447,12 +475,14 @@ input[type="range"]:focus::-ms-fill-lower {
 input[type="range"]:focus::-ms-fill-upper {
   background: #6b6b6b;
 }
-.col-3 {
-  box-shadow: 2px 0px 5px rgba(0,0,0,0.25);
+#secondary {
+  box-shadow: 2px 0px 10px rgba(0,0,0,0.15);
   height:100vh;
   z-index:5;
-  position:fixed;
-}
-.col-9 {
-  margin-left:25%;
+  position:sticky;
+  top: 0;
+  left: 0;
+  background: #f5f5f5;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
