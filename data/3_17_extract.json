@@ -1,6 +1,7 @@
 [{
 	"id": 1,
 	"title": "Green Taxi Cooperative",
+	"link": "",
 	"description": "Green Taxi Co-Op was formed in 2015 by 150 (and 650 other members not driving yet) drivers hailing from 37 countries as a response to the increasing impact Uber was having on the livelihood of taxi drivers. In the Green Taxi Co-Op, all drivers are member-owners of the company and the cars.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -14,7 +15,8 @@
 	}
 }, {
 	"id": 2,
-	"title": "rCredits (rCredits.org)",
+	"title": "rCredits",
+	"link": "rCredits.org",
 	"description": "rCredit is a local payment card system that allows communities to move away from large banks and corporations while funding local projects using their collective money pool. This financial structure is called a u201cCommon Good Systemu201d because it allows community members to pursue their personal dreams knowing that their community will support them.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -28,7 +30,8 @@
 	}
 }, {
 	"id": 3,
-	"title": "CoAbode (http://www.coabode.org/) - coliving for single mothers",
+	"title": "CoAbode - coliving for single mothers",
+	"link": "http://www.coabode.org/",
 	"description": "Promoting affinity and stability, CoAbode matches single mothers for a co-living enviornment. Under the value that two together can overcome more than one person alone, the company brings women together in the hope that they will face less financial challenges.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -43,6 +46,7 @@
 }, {
 	"id": 4,
 	"title": "Sensorica (scientific instruments)",
+	"link":"",
 	"description": "Sensorica follows the complicated model of partially market economy and partially gift economy. It is defined as opne value network aiming to develop and deploy sensors, sensing sytems and automation systems.n",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -57,6 +61,7 @@
 }, {
 	"id": 5,
 	"title": "LVN (healthcare)",
+	"link": "",
 	"description": "Licensed Vocational Nurses, also called Licensed Practitional Nurses, are bedside care takers who work most often in home settings. LVNs are certified to perform a variety of tasks, including feeding, bathing, injections, collecting samples, cleaning wounds, and monitoring medical equipment.n",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -71,6 +76,7 @@
 }, {
 	"id": 6,
 	"title": "Timesfree",
+	"link": "",
 	"description": "TimesFree is a mobile-based platform for time and task sharing groups.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -85,6 +91,7 @@
 }, {
 	"id": 7,
 	"title": "Stocksy United",
+	"link": "",
 	"description": "nStocksy United is a photography platform co-op launched in 2013 by Brianna Wettlaufer and, Bruce Livingstone, with the primary aim of bridging the opportunity gap in the stick photo industry. The platform provides stock photos focusing on empowering their shareholders through fair pay. n",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -99,6 +106,7 @@
 }, {
 	"id": 8,
 	"title": "Rochdale, England",
+	"link": "",
 	"description": "Rochdale, is a town and metropolitan borough in northeastern England. It became important in the 18th and 19th centuries as a center of cotton textile manufacturing, with an emphasis on heavy textiles for industrial uses. With the founding of the Rochdale Equitable Pioneers Society in 1844, the town became the birthplace of the cooperative movement.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -113,6 +121,7 @@
 }, {
 	"id": 9,
 	"title": "Catalan Integral Cooperative",
+	"link": "",
 	"description": "Catalan Integral Cooperative (CIC) is an open cooperative that aims to create collaborative economy structures in Catalan. It was founded by an assembly of activists in 2010 in Catalonia, Spain and is still present today. Their mission is to create an innovative alternative to capitalism, authoritarianism, and patriarchy.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -127,6 +136,7 @@
 }, {
 	"id": 10,
 	"title": "REI",
+	"link": "",
 	"description": "REI is a consumersu2019 cooperative that sells sporting goods and outdoor gear. It was founded in 1938 by Seattle residents Lloyd and Mary Anderson, who wanted to help other outdoor enthusiasts get high quality gear for lower prices. Today, it is a nationwide retailer owned by its members.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -141,6 +151,7 @@
 }, {
 	"id": 11,
 	"title": "Land O'Lakes",
+	"link": "",
 	"description": "Land O'Lakes is an agricultural cooperative that started in 1921 focused on dairy and butter products. The company is run by a corporate office nominated by members of the dairy and ag co-ops.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -155,6 +166,7 @@
 }, {
 	"id": 12,
 	"title": "The Underground Railroad (America's first black co-op, says Jessica Nembhard)",
+	"link": "",
 	"description": "The Underground Railroad was a secret network of roads and houses in the US that African-American slaves used to escape to free states and Canada. It was created in the late 1700s and was used until the Civil War (1861-65). It is considered by some to be Americau2019s first black co-op because of the way that resources and knowledge were shared to help people find their way to freedom.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -169,6 +181,7 @@
 }, {
 	"id": 13,
 	"title": "Other examples of African-American/Black coops (Jessica has examples from the South): Freedom Quilting Bee",
+	"link": "",
 	"description": "The Freedom Quilting Bee is a quilting cooperative established in 1966 by a African American women in the Black Belt of Alabama. It was started during the civil rights movement as a way for poor black women to raise money for their families. The Freedom Bee staged auctions in New York that enabled the group to gain momentum and capture the attention of famed artists, museums, and high-end stores. While causing a countrywide quilting revival, the women earned money to help with their childrenu2019s education costs and raise the economic standards in their community.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -183,6 +196,7 @@
 }, {
 	"id": 14,
 	"title": "Sunkist (formerly California Fruit Exchange)",
+	"link": "",
 	"description": "Sunkist Growers is a cooperative of more than 6000 citrus growers in California and Arizona. It is the largest fresh produce producer in the US, selling around $1 billion of produce annually.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -211,6 +225,7 @@
 }, {
 	"id": 16,
 	"title": "Findhorn Ecovillage",
+	"link": "",
 	"description": "Findhorn Ecovillage has changed through the years, but it's mission remains the same: promote sustainability by both educating about sustainable practices and living the vocation.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -225,6 +240,7 @@
 }, {
 	"id": 17,
 	"title": "Lange Eng, Albertslund",
+	"link": "",
 	"description": "Lange Eng is a cohousing community in greater Copenhagen, Denmark. It houses 100 adults and 100 children in 54 houses and apartments.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -239,6 +255,7 @@
 }, {
 	"id": 18,
 	"title": "Christiania (semi-autonomous neighborhood in Denmark)",
+	"link": "",
 	"description": "Christiania's objective is to create a self-governing society, wherey each and every individual can thrive under the responsibility for hte entire community. This soceity must economically rest in itself, and the joint efforts must continue to be about showing that psychological and physical destitution can be diverted.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -253,6 +270,7 @@
 }, {
 	"id": 19,
 	"title": "Kibbutz (Hatzor, Degania, Ein Harod)",
+	"link": "",
 	"description": "Kibbutzim are voluntary democratic communities where people work and live for the greater good of the society. The emergence of kibbutzim was driven by Jewish communityu2019s desire to re-establish a national spirituality and identity which emphasized an ideal model of social equality, self-sacrifice, and connections to the land.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -267,6 +285,7 @@
 }, {
 	"id": 20,
 	"title": "Twin Oaks, Virginia (economic commune)",
+	"link": "",
 	"description": "Twin Oaks is an u201cintentional communityu201d (part of a group of communities under the Foundation for Intentional Communities) based in rural Virginia made up of 90 adults and 15 children. As a lifestyle community values of cooperation, sharing, nonviolence, equality, and ecology are central to the community.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -280,7 +299,8 @@
 	}
 }, {
 	"id": 21,
-	"title": "The Collective (London) https://www.thecollective.com/",
+	"title": "The Collective (London)",
+	"link": "https://www.thecollective.com/",
 	"description": "The Collective is a company that provides serviced living, co-living, co-working, and private hire services in London and New York. They strive to offer a flexible platform for connectivity and community engagement. They offer a critique of the existing housing stock, and through their model of collective living, offer new ways of living and working.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -295,6 +315,7 @@
 }, {
 	"id": 22,
 	"title": "Bruderhof Intentional Community",
+	"link": "",
 	"description": "Bruderhof Intentional Community is a Christian community founded in 1920 Germany and is still present today. The community is comprised of more than 2,900 people living in 23 settlements on four continents. The members renounce individual property to practice radical discipline in the spirit of the first church in Jerusalem.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -309,6 +330,7 @@
 }, {
 	"id": 23,
 	"title": "Lilac, United Kingdom",
+	"link": "",
 	"description": "LILAC is a co-housing community of 20 eco-build households in the northern United Kingdom. It was founded in 2006 by five residents of the city of Leeds, who wanted a sustainable, independent way of living, as well as a new and different way of raising their children.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -323,6 +345,7 @@
 }, {
 	"id": 24,
 	"title": "Mount Lebanon Shaker Society, New York",
+	"link": "",
 	"description": "Mount Lebanon is the official community of the Shaker Society. The Shakers lived in shared communities, supported financially by sales of the communities manufactured goods and seeds.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -337,6 +360,7 @@
 }, {
 	"id": 25,
 	"title": "Nikiszowiec",
+	"link": "",
 	"description": "Nikiszowiec is a former district in Poland that was the home to coal miners working under George von Giesches Erben, a mining company founded in the 1700s. Nikiszowiec itself was designed and built in two distinct stages from 1908-15 and 1920-24, created to be a self-sufficient community for the 1,000+ workers and families living there.",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -351,6 +375,7 @@
 }, {
 	"id": 26,
 	"title": "Auroville (City of Dawn)",
+	"link": "",
 	"description": "u201cAuroville wants to be a universal town where men and women of all countries are able to live in peace and progressive harmony, above all creeds, all politics and all nationalities. The purpose of Auroville is to realize human unity.u201dnu2014u2009Mirra AlfassanLocated in southern India, Auroville, the u201cCity of Dawn,u201d was founded by Mirra Alfassa (The Mother) in 1968. It was initially conceptualized as a self-governing town without money, private property, or a hierarchy and was focused on the spiritual evolution of its residents, many of whom have migrated from outside India. It aims to become a model of the u2018city of the futureu2019. n",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -365,6 +390,7 @@
 }, {
 	"id": 27,
 	"title": "Arcosanti",
+	"link": "",
 	"description": "An experimental town that aims to explore densely populated but ecologically low-impact human habitats",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",
@@ -379,6 +405,7 @@
 }, {
 	"id": 28,
 	"title": "East Wind Community",
+	"link": "",
 	"description": "Intentional community in the Missouri Ozards, secular and democratic where all members hold community assets in common",
 	"backgroundImage": "user.png",
 	"itemImage": "user.png",

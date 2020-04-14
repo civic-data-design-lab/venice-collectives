@@ -108,6 +108,10 @@ $(document).ready(function() {
       //   .find(".item-image")
       //   .attr({ src: "data/image/" + item.itemImage, alt: item.title });
       card.find(".item-title").text(item.title);
+      // card.find(".item-link").text();
+      var link = card.find(".item-link").text(item.link);
+      console.log(link);
+      document.getElementById("title-link").setAttribute("href", link);
       // Only shows first 50 words
       card.find(".item-description").text(
         item.description
@@ -227,6 +231,7 @@ $(".card-list").on("click", ".button-expand", function() {
         .attr("data-id")
     ];
   modal.find(".item-title").text(item.title);
+  modal.find(".item-link").text(item.link);
   modal.find(".item-longDescription").text(item.longDescription);
   modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
   modal.modal("show");

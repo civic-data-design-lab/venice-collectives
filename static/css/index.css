@@ -86,24 +86,17 @@ p{
 }
 
 /* Modal Styling */
+
 .modal {
   text-align:center;
   transform:translate(-100,-100);
-  background:rgba(0,0,0,0)
-}
-
-/* .modal-dialog {
-  width: 80%;
-  height: auto;
-} */
-
-.modal-dialog-about{
-  width: 700px;
+  background:rgba(0,0,0,0);
 }
 
 .modal-dialog {
   width: 50vw;
   max-width:50vw;
+  /* overflow: initial !important; */
 }
 
 .modal-content {
@@ -126,13 +119,14 @@ p{
 
 .modal-content{
   width: 180%;
-  height: auto;
   padding: 5%;
+
 }
-.modal-body-about{
-  width: 500px;
-  height: 1000px;
+.modal-body{
+  max-height: calc(100vh - 200px);
+  overflow-y:auto;
 }
+
 .modal-body p {
   font-size:1rem;
   text-align: left;
@@ -295,6 +289,10 @@ p{
 .item-title {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+.item-link {
+  font-size: 0.8em;
 }
 
 .item-description {
