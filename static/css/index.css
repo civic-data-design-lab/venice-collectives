@@ -88,7 +88,7 @@ p{
 /* Modal Styling */
 
 .modal {
-  text-align:center;
+  text-align:center; 
   transform:translate(-100,-100);
   background:rgba(0,0,0,0);
 }
@@ -96,7 +96,6 @@ p{
 .modal-dialog {
   width: 50vw;
   max-width:50vw;
-  /* overflow: initial !important; */
 }
 
 .modal-content {
@@ -123,8 +122,12 @@ p{
 
 }
 .modal-body{
-  max-height: calc(100vh - 200px);
-  overflow-y:auto;
+  overflow-y: auto;
+  padding-bottom: 0px;
+  max-height: 75vh;
+  display: flex;
+  align-items: flex-start; /* default is stretch */
+  justify-content: space-between; 
 }
 
 .modal-body p {
@@ -286,8 +289,15 @@ p{
   background-repeat:no-repeat;
 }
 
+.modal-image{
+  max-width: 40%;
+  /* margin-left: auto; */
+  float: right; 
+  
+}
+
 .item-title {
-  font-size: 1.5em;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
@@ -297,7 +307,12 @@ p{
 
 .item-description {
   padding-top: 10px;
-  font-size:0.9rem;
+  font-size: 1vw;
+
+}
+
+.item-longDescription {
+  font-size: 1vw;
 }
 
 .flex-item {
@@ -350,11 +365,6 @@ ul.card-list {
 .flex-card:hover .flex-card-inner {
   transform: rotateY(180deg);
 }
-/* 
-.flex-card:active .flex-card-expand{
-  transform: scale(2); 
-
-}  */
 
 .flex-card-front,
 .flex-card-back {
@@ -366,7 +376,6 @@ ul.card-list {
 }
 
 .flex-card-front {
-  /* background-color: #bbb; */
   background-size: cover;
   background-position: center center;
   color: black;
@@ -391,6 +400,7 @@ ul.card-list {
   background-color: black;
   color: white;
   cursor: pointer;
+  font-size: 1vw;
 }
 
 /* Slider Styling */

@@ -101,29 +101,29 @@ $(document).ready(function() {
       card // Finding front photo of card first
         .find(".flex-card-front")
         .css("background-image", `url(./data/image/${item.backgroundImage})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
+      
       card // Finding back photo of card upon click
         .find(".item-image")
         .css("item-image", `url(./data/image/${item.backgroundImage})`);
-      // card // Finding back photo of card upon click
-      //   .find(".item-image")
-      //   .attr({ src: "data/image/" + item.itemImage, alt: item.title });
+
       card.find(".item-title").text(item.title);
-      // card.find(".item-link").text();
-      var link = card.find(".item-link").text(item.link);
-      console.log(link);
-      document.getElementById("title-link").setAttribute("href", link);
-      // Only shows first 50 words
-      card.find(".item-description").text(
+      card.find(".item-link").text(item.link);
+      // var link = card.find(".item-link").text( // Makes variable link for card link(if any)
+      // item.link).html();
+
+      console.log(item.link); // Expected return is link as string, sometimes works
+      document.getElementById("title-link").setAttribute("href", item.link);
+
+      card.find(".item-description").text( //Only finds first 50 words for flex card back
         item.description
           .split(" ")
           .slice(0, 50)
           .join(" ")
-      );
-      // Only shows first 250 words
-      card.find(".item-longDescription").text(item.longDescription
-        .split(" ")
-        .slice(0, 250)
-        .join(" "));
+      ); 
+      card.find(".item-longDescription").text(// Finds all words for modal
+        item.longDescription);
+
+      //Appends all card info found 
       card.find(".button-expand").append(item.title);
       $.each(item.values, function(k, val) {
         var span = $("<span/>")
@@ -233,11 +233,13 @@ $(".card-list").on("click", ".button-expand", function() {
   modal.find(".item-title").text(item.title);
   modal.find(".item-link").text(item.link);
   modal.find(".item-longDescription").text(item.longDescription);
-  modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
+  // modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
+  modal.find(".modal-image").attr("src", `data/image/${item.itemImage}`);
   modal.modal("show");
 });
 // $(".nav-bar").on("click")
 
+// ----- Resetting station sliders to normal-----
 $('#station-reset').on("click", function() {
   $('.on-off').prop('checked', false);
   $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").closest('.slider').removeClass('active');
