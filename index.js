@@ -106,13 +106,13 @@ $(document).ready(function() {
         .find(".item-image")
         .css("item-image", `url(./data/image/${item.backgroundImage})`);
 
-      card.find(".item-title").text(item.title);
-      card.find(".item-link").text(item.link);
+      card.find(".item-title .title-text").text(item.title);
+      // card.find(".item-link").text(item.link);
       // var link = card.find(".item-link").text( // Makes variable link for card link(if any)
       // item.link).html();
 
       console.log(item.link); // Expected return is link as string, sometimes works
-      document.getElementById("title-link").setAttribute("href", item.link);
+      card.find("#title-link").attr("href", item.link).text(item.link);
 
       card.find(".item-description").text( //Only finds first 50 words for flex card back
         item.description
@@ -253,16 +253,18 @@ $('.sidebar-control').click(function() {
   if (icon.hasClass('open')) {
     $('#main-content').removeClass('sidebar-shown');
     icon.removeClass('open');
-    $('body').css('overflow-y','auto');
+    // $('body').css('overflow-y','auto');
+    $('body').removeClass('hide-overflow');
   } else {
     $('#main-content').addClass('sidebar-shown');
     icon.addClass('open');
-    $('body').css('overflow-y','hidden');
+    $('body').addClass('hide-overflow');
   }
 });
 $('#primary > .overlay').click(function() {
   const icon = $('#hamburger');
   $('#main-content').removeClass('sidebar-shown');
   icon.removeClass('open');
-  $('body').css('overflow-y','auto');
+  // $('body').css('overflow-y','auto');
+  $('body').removeClass('hide-overflow');
 })

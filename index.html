@@ -25,7 +25,7 @@
 <body>
   <main>
     <div class="container-fluid">
-      <div class="row" id="main-content">
+      <div class="row sidebar-shown" id="main-content">
         <!-- Beginning of the sideBar div-->
         <aside class="col-5 col-lg-4 col-xl-3" id="secondary">
           <section class="sideBar">
@@ -69,7 +69,7 @@
         <div class="col-7 col-lg-8 col-xl-9" id="primary">
           <div class="overlay"></div>
           <div class="sidebar-control">
-            <div id="hamburger">
+            <div id="hamburger" class="open">
               <span></span>
               <span></span>
               <span></span>
@@ -110,10 +110,14 @@
                     <div class="flex-card-front">
                       <!-- <img class="background-image" /> -->
                     </div>
-                    <div class="flex-card-back">
-                      <h1 class="item-title text-left"></h1>
-                      <a href="" id="title-link" target="_blank"><h1 class="item-link text-left"></h1></a>
-                      <p class="item-description text-left"></p>
+                    <div class="flex-card-back d-flex flex-column">
+                      <h1 class="item-title text-left">
+                        <span class="title-text"></span>
+                        <a id="title-link" target="_blank">
+
+                        </a>
+                      </h1>
+                      <p class="item-description text-left col"></p>
                       <div class="item-data"></div>
                       <button class="button-expand">
                         Read More About
@@ -129,7 +133,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="item-title"></h1>
-                      <h1 class = "item-link text-right"></h1>
+                      <h1 class="item-link text-right"></h1>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -139,7 +143,7 @@
                     <div class="modal-body">
                       <!-- <div class="item-image"></div> -->
                       <p class="item-longDescription"></p>
-                      <img class="modal-image"/>
+                      <img class="modal-image" />
                       <!-- <img class="item-image" /> -->
                     </div>
                     <!-- End of modal-body-->
