@@ -50,6 +50,7 @@ nav a:hover, nav a.nav-link:hover {
   text-decoration: none;
   color: #F6A4B7;
 }
+
 .sideBar {
   position: relative;
   margin-top:10px;
@@ -89,12 +90,11 @@ p{
 
 .modal {
   text-align:center; 
-  transform:translate(-100,-100);
+  /* transform:translate(-1000,-1000); */
   background:rgba(0,0,0,0);
 }
 
 .modal-dialog {
-  width: 50vw;
   max-width:50vw;
 }
 
@@ -111,16 +111,6 @@ p{
   max-height: calc(100vh - 225px);
 }
 
-.modal-title{
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.modal-content{
-  width: 180%;
-  padding: 5%;
-
-}
 .modal-body{
   overflow-y: auto;
   padding-bottom: 0px;
@@ -131,7 +121,6 @@ p{
 }
 
 .modal-body p {
-  font-size:1rem;
   text-align: left;
   max-width:75%;
 }
@@ -291,28 +280,37 @@ p{
 
 .modal-image{
   max-width: 40%;
-  /* margin-left: auto; */
+  padding: 0% 5% 5% 5%;
   float: right; 
   
 }
 
 .item-title {
-  font-size: 1.5vw;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: bold; 
 }
 
 .item-link {
   font-size: 0.8em;
+  color:black;
+  text-decoration: none;
+  transition: 250ms all;
+  font-weight: bold; 
+}
+
+.item-link:hover {
+  color: #F6A4B7;
+  text-decoration: none;
 }
 
 .item-description {
   padding-top: 10px;
-  font-size: 1vw;
+  font-size: 15px;
 
 }
 
 .item-longDescription {
-  font-size: 1vw;
+  font-size: 13px;
 }
 
 .flex-item {
@@ -373,6 +371,7 @@ ul.card-list {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  overflow: overlay; /* Adds vertical scroll within card */
 }
 
 .flex-card-front {
@@ -395,12 +394,12 @@ ul.card-list {
 
 /* If flex button is pushed */
 .button-expand {
+  font-size: 1em;
   width: auto;
   height: auto;
   background-color: black;
   color: white;
   cursor: pointer;
-  font-size: 1vw;
 }
 
 /* Slider Styling */
@@ -506,7 +505,54 @@ input[type="range"]:focus::-ms-fill-upper {
   position: relative;
 }
 
+/*Medium devices (tablets, less than 992px)*/
+/* @media (max-width: 575.9px) {
+  .item-title{
+    font-size: 15px;
+  }
+  .item-description{
+    font-size: 7px;
+  }
+  .button-expand{
+    font-size: 0.6em;
+  }
+  .item-longDescription{
+    font-size: 10px;
+  }
+  .item-link {
+    font-size: 10px;
+  }
+  .modal-image{
+    max-width: 35%;
+  }
+} */
+
+/*Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.9px) {
+  .modal-dialog {
+    max-width: 100%;
+  }
+
+  .item-title{
+    font-size: 10px;
+  }
+  .item-description{
+    font-size: 7px;
+  }
+  .button-expand{
+    font-size: 0.3em;
+  }
+  .item-longDescription{
+    font-size: 7px;
+  }
+  .item-link {
+    font-size: 5px;
+    padding-right: 1px;
+  }
+  .modal-image{
+    max-width: 30%;
+  }
+
   #main-content {
     position: relative;
     right: calc(5 / 7 * 100% + 30px);
