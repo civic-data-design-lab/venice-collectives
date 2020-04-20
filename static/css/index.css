@@ -5,7 +5,11 @@ html {
 }
 body {
   overflow-x: hidden;
+  overflow-y: auto;
   max-height: 100vh;
+}
+body.hide-overflow {
+  overflow-y: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -290,7 +294,7 @@ p{
   font-weight: bold; 
 }
 
-.item-link {
+a {
   font-size: 0.8em;
   color:black;
   text-decoration: none;
@@ -298,16 +302,26 @@ p{
   font-weight: bold; 
 }
 
-.item-link:hover {
+a:hover{
   color: #F6A4B7;
   text-decoration: none;
 }
 
 .item-description {
-  padding-top: 10px;
+  padding: 10px 0 0;
   font-size: 15px;
-
+  overflow: hidden;
+  position: relative;;
 }
+/* .item-description:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3em;
+  content: '';
+  background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
+} */
 
 .item-longDescription {
   font-size: 13px;
@@ -384,8 +398,9 @@ ul.card-list {
   background-color: #ffff;
   color: black;
   transform: rotateY(180deg);
-  padding: 30px 30px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  padding: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 5px;
 }
 
 .template {
@@ -519,7 +534,7 @@ input[type="range"]:focus::-ms-fill-upper {
   .item-longDescription{
     font-size: 10px;
   }
-  .item-link {
+  .title-link {
     font-size: 10px;
   }
   .modal-image{
@@ -545,13 +560,17 @@ input[type="range"]:focus::-ms-fill-upper {
   .item-longDescription{
     font-size: 7px;
   }
-  .item-link {
+  .title-link {
     font-size: 5px;
     padding-right: 1px;
   }
   .modal-image{
     max-width: 30%;
   }
+
+  /* .item-description:after {
+    height: 0.1em;
+  } */
 
   #main-content {
     position: relative;
