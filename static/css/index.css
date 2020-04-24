@@ -703,3 +703,58 @@ input[type="range"]:focus::-ms-fill-upper {
   width: 0%;
   left: 50%;
 }
+#AddCollective {
+
+}
+#AddCollective input[type='range'] {
+  background-image:url('../img/circleBg.png'),
+    url('../img/circleBg.png'),
+    url('../img/circleBg.png'),
+    url('../img/circleBg.png'),
+    url('../img/circleBg.png');
+  background-repeat: no-repeat, 
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position: 0 4px, 
+    25% 4px,
+    50% 4px,
+    75% 4px,
+    100% 4px;
+  background-size: 17px;
+  margin-bottom:2rem;
+}
+
+#AddCollective label {
+  font-weight:bold;
+}
+#AddCollective div {
+  width: 49%;
+  margin:0;
+  padding:0;
+  display: inline-table;
+}
+#FormName {
+  width:80%;
+  margin-bottom:2rem;
+}
+#AddCollective textarea {
+  width:80%;
+  height:8rem;
+  margin-bottom:2rem;
+}
+
+#AddCollective input[type="submit"] {
+  margin:2rem auto;
+  display:block;
+  background-color:#F6A4B7;
+  padding:0.75rem 1.5rem;
+  font-weight: bold;
+  font-size:1.5rem;
+}
+
+#AddCollective input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background:black;
+}

@@ -81,7 +81,8 @@
               <nav>
                 <!-- <a href="#">Add Card</a> -->
                 <a href="#aboutModal" data-toggle="modal" data-target="#aboutModal" class="nav-link">About</a>
-                <a href="" id="station-reset">Reset Station</a>
+                <a href="" id="station-reset">Reset Station</a>                
+                <a href="#formModal" data-toggle="modal" data-target="#formModal" class="nav-link">Add a Collective</a>
               </nav>
 
 
@@ -116,6 +117,51 @@
                         printing in place of English to emphasise design elements over content.Lorem ipsum is
                         great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum
                         is a pseudo-Latin text used</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="formModal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add a collective</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <form action="" id="AddCollective">
+                      <div>
+                        <label for="FormName">Name of collective</label><br>
+                        <input type="text" id="FormName" name="FormName" value=""><br>
+                        
+                        <label for="FormDescription">Describe the collective in 250 words or less</label><br>
+                        <textarea rows="4" cols="50" name="comment" form="FormName"></textarea><br>
+
+                        <label for="FormPic">Add an image that represents the collective</label><br>
+                        <input type="file" id="FormPic" name="FormPic">
+                      </div>
+                      <div>
+                        <h5>Tell us about a collective's dimensions</h5>
+
+                        <label for="FormEcon">What is the economic motive of your collective?</label>
+                        <input type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1">
+                        
+                        <label for="FormSize">How many people are part of your collective?</label>
+                        <input type="range" id="FormSize" name="FormSize" min="1" max="5" step="1">
+                        
+                        <label for="FormPorous">How open and porous is your collective?</label>
+                        <input type="range" id="FormPorous" name="FormPorous" min="1" max="5" step="1">
+                        
+                        <label for="FormPlatform">Where does your collective operate?</label>
+                        <input type="range" id="FormPlatform" name="FormPlatform" min="1" max="5" step="1">
+                        
+                        <label for="FormGovern">How is your collective governed?</label>
+                        <input type="range" id="FormGovern" name="FormGovern" min="1" max="5" step="1">
+                      </div>
+                      <input type="submit" value="Add Collective">
+                    </form> 
                     </div>
                     <div class="modal-footer">
                     </div>
