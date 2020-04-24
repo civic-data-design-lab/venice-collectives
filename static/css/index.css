@@ -81,21 +81,21 @@ h3 {
 }
 
 p{
-  font-size: 0.5vw;
+  font-size: 0.85em;
 }
 
-.about:before{
+/* .about:before{
   font-size: 1vw;
   content: "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used"
                           
-}
+} */
 
 /* Modal Styling */
 
 .modal {
-  text-align:center; 
+  /* text-align:center;  */
   /* transform:translate(-1000,-1000); */
-  background:rgba(0,0,0,0);
+  background:rgba(0,0,0,0.25);
 }
 
 .modal-dialog {
@@ -107,9 +107,9 @@ p{
   box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
   border: none;
 }
-.modal-backdrop {
+/* .modal-backdrop {
   background-color:rgba(255,255,255,0.9);
-}
+} */
 
 .img-responsive {
   max-height: calc(100vh - 225px);
@@ -122,12 +122,13 @@ p{
   display: flex;
   align-items: flex-start; /* default is stretch */
   justify-content: space-between; 
+  position: relative;;
 }
 
-.modal-body p {
+/* .modal-body p {
   text-align: left;
   max-width:75%;
-}
+} */
 /* Icon Label styling */
 .slider .iconLabel {
   background-color: #fbfbfb;
@@ -284,9 +285,10 @@ p{
 
 .modal-image{
   max-width: 40%;
-  padding: 0% 5% 5% 5%;
-  float: right; 
-  
+  padding: 15px 10px 15px 15px; 
+  position: sticky;
+  top: -10px;
+  right: 0;
 }
 
 .item-title {
@@ -300,6 +302,7 @@ a {
   text-decoration: none;
   transition: 250ms all;
   font-weight: bold; 
+  text-decoration: underline;
 }
 
 a:hover{
@@ -313,7 +316,7 @@ a:hover{
   overflow: hidden;
   position: relative;;
 }
-/* .item-description:after {
+.item-description:after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -321,7 +324,7 @@ a:hover{
   height: 3em;
   content: '';
   background: linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1));
-} */
+}
 
 .item-longDescription {
   font-size: 13px;
@@ -571,13 +574,23 @@ input[type="range"]:focus::-ms-fill-upper {
   /* .item-description:after {
     height: 0.1em;
   } */
+}
 
+/* @media (max-width: 575.9px) { */
   #main-content {
     position: relative;
     right: calc(5 / 7 * 100% + 30px);
     width: calc(12 / 7 * 100% + 60px);
     transition: .5s ease-in-out;
   }
+@media (min-width: 992px) {
+#main-content {
+    position: relative;
+    right: calc(1 / 3 * 100% + 30px);
+    width: calc(4 / 3 * 100% + 60px);
+    transition: .5s ease-in-out;
+  }
+}
   #main-content #secondary {
     position: relative;
   }
@@ -598,7 +611,7 @@ input[type="range"]:focus::-ms-fill-upper {
   #main-content.sidebar-shown #primary .overlay {
     display: block;
   }
-}
+/* } */
 /* ----- HAMBURGER ----- */
 .sidebar-control {
   position: sticky;
@@ -613,11 +626,11 @@ input[type="range"]:focus::-ms-fill-upper {
   box-shadow: 0 0 20px rgba(0,0,0,0.25);
   background: white;
 }
-@media (max-width: 575.9px) {
+/* @media (max-width: 575.9px) { */
   .sidebar-control {
     display: inline-block;
   }
-}
+/* } */
 /* ----- From https://codepen.io/designcouch/pen/Atyop ----- */
 #hamburger {
   width: 25px;
