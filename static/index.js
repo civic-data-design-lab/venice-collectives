@@ -101,11 +101,11 @@ $(document).ready(function() {
       card.attr("data-id", key);
       card // Finding front photo of card first
         .find(".flex-card-front")
-        .css("background-image", `url(./static/image/${item.backgroundImage})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
+        .css("background-image", `url(./static/image/${item.image})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
       
       card // Finding back photo of card upon click
         .find(".item-image")
-        .css("item-image", `url(./static/image/${item.backgroundImage})`);
+        .css("item-image", `url(./static/image/${item.image})`);
 
       card.find(".item-title .title-text").text(item.title);
       // card.find(".item-link").text(item.link);
@@ -235,7 +235,7 @@ $(".card-list").on("click", ".button-expand", function() {
   modal.find(".item-link").text(item.link);
   modal.find(".item-longDescription").text(item.longDescription);
   // modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
-  modal.find(".modal-image").attr("src", `static/image/${item.itemImage}`);
+  modal.find(".modal-image").attr("src", `static/image/${item.image}`);
   modal.modal("show");
 });
 // $(".nav-bar").on("click")
