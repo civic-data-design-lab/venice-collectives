@@ -704,8 +704,9 @@ input[type="range"]:focus::-ms-fill-upper {
   left: 50%;
 }
 #AddCollective {
-
+  overflow: visible;
 }
+
 #AddCollective input[type='range'] {
   background-image:url('../img/circleBg.png'),
     url('../img/circleBg.png'),
@@ -723,26 +724,74 @@ input[type="range"]:focus::-ms-fill-upper {
     75% 4px,
     100% 4px;
   background-size: 17px;
-  margin-bottom:2rem;
+  margin-bottom:0;
 }
 
 #AddCollective label {
   font-weight:bold;
 }
 #AddCollective div {
-  width: 49%;
+  width: 48%;
   margin:0;
   padding:0;
   display: inline-table;
 }
-#FormName {
+
+#AddCollective div.range-wrap {
+  width:100%;
+}
+#AddCollective div.range-wrap div.range-value {
+  width:auto;
+  position:relative;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top:0;
+  margin-bottom:2rem;
+}
+#FormName, #FormPicUrl {
   width:80%;
   margin-bottom:2rem;
+  border:1px solid black;
 }
 #AddCollective textarea {
   width:80%;
   height:8rem;
   margin-bottom:2rem;
+  border:1px solid black;
+}
+#AddCollective .g-recaptcha {
+  margin: 0 auto;
+  width: 304px;
+  display: block;
+}
+#AddCollective .tab {
+  width:100%;
+}
+#AddCollective .tabcontent {
+  display:none;
+  margin-top:20px;
+  width:100%;
+}
+
+#AddCollective .tablinks {
+  color:black;
+  background:white;
+  margin:0 20px 20px 0;
+  padding:10px;
+  display:inline;
+  transition:250ms all;
+  font-size:1rem;
+  border:1px solid black;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+#AddCollective .tablinks.active {
+  background:black;
+  color:white;
+}
+#AddCollective .tabcontent.active {
+  display:block;
 }
 
 #AddCollective input[type="submit"] {
@@ -756,5 +805,27 @@ input[type="range"]:focus::-ms-fill-upper {
 
 #AddCollective input[type="range"]::-webkit-slider-runnable-track {
   height: 2px;
+  transform:translateY(-1px);
   background:black;
+}
+
+@media (max-width:1378px) {
+  #FormName, #AddCollective div, #AddCollective textarea, #FormPicUrl {
+    width:100%;
+  }
+  #AddCollective h5 {
+    margin-top:4rem;
+    margin-bottom:2rem;
+  }
+  #AddCollective div.range-wrap div.range-value {
+    position:initial;
+    transform:none;
+    text-align:center;
+    margin-top:0;
+    width:100%;
+  }
+  #AddCollective .tablinks {
+    margin:0;
+    padding:5px;
+  }
 }
