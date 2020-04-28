@@ -1,7 +1,10 @@
 import json
 import settings
 import app
+import os
 
+CURRENT_FILE = os.path.abspath(__file__)
+CURRENT_DIR = os.path.dirname(CURRENT_FILE)
 db = app.db
 
 
@@ -22,18 +25,8 @@ class Collective(db.Model):
         return '<Collective %r>' % self.title
 
 
-def init_database():
-    print(db)
-    db.create_all()
-    guest = User(username='yeet a', email='newwew@example.com')
-    db.session.add(guest)
-    db.session.commit()
-    return 'initialized'
-
-
 def make_api_from_data():
-    print(User.query.all())
-    f = open("data/4_14_extract.json", encoding="utf8")
+    f = open(CURRENT_DIR+"/data/4_14_extract.json", encoding="utf8")
     data = json.load(f)
     f.close()
     return {"data": data}
@@ -59,7 +52,7 @@ def make_api_from_db():
 
 
 def upload_json_to_db():
-    f = open("data/4_14_extract.json", encoding="utf8")
+    f = open(CURRENT_DIR+"/data/4_14_extract.json", encoding="utf8")
     data = json.load(f)
     db.create_all()
     # Since sql tables cannot store nested objects, we are converting all the value inside values to the first level of the object

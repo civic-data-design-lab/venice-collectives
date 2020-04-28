@@ -92,7 +92,7 @@ $(document).ready(function() {
   initSlider();
 
   // Read data from the file and populate
-  var addCards = $.getJSON("/data", function(data,error) {
+  var addCards = $.getJSON("/?q=api", function(data,error) {
     console.log(error)
     window.data = data.data;
     var template = $(".card-list .flex-card.template");

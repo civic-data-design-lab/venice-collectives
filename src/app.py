@@ -1,5 +1,5 @@
-import database
-from flask import Flask, render_template
+
+from flask import Flask, render_template, request
 import app
 from flask_sqlalchemy import SQLAlchemy
 import settings as ss
@@ -15,14 +15,18 @@ db = SQLAlchemy(app)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    what = request.args.get('q', default='home')
+    if what=='api':
+        return database.make_api_from_db()
+    else:
+        return render_template("index.html")
 
-
+import database
 @app.route("/data")
 def data():
-    # database.upload_json_to_db()  # Only call this once to upload the data to database
+    database.upload_json_to_db()  # Only call this once to upload the data to database
     # return database.make_api_from_data()
-    return database.make_api_from_db()
+    return database.make_api_from_data()
 
 
 if __name__ == "__main__":
