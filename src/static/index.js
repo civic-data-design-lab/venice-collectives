@@ -86,6 +86,13 @@ var initSlider = function() {
   $('[data-toggle="popover"]').popover();
 };
 
+// For the radar chart
+RadarChart.defaultConfig.color = function() {};
+RadarChart.defaultConfig.radius = 3;
+RadarChart.defaultConfig.w = 200;
+RadarChart.defaultConfig.h = 200;
+
+
 // As soon as the webpage is loaded
 $(document).ready(function() {
   // Initialize the Slider
@@ -94,8 +101,12 @@ $(document).ready(function() {
   // Read data from the file and populate
   var addCards = $.getJSON("/?q=api", function(data,error) {
     console.log(error)
-    window.data = data.data;
+    window.data = data;
     var template = $(".card-list .flex-card.template");
+    var total_values = {}
+    $.each(dimensions, function(key, item){
+      total_values[key]=0
+    });
     $.each(data.data, function(key, item) {
       var card = template.clone();
       card.attr("data-id", key);
@@ -127,6 +138,7 @@ $(document).ready(function() {
       //Appends all card info found 
       card.find(".button-expand").append(item.title);
       $.each(item.values, function(k, val) {
+        total_values[k]+=val
         var span = $("<span/>")
           .addClass(k)
           .text(val);
@@ -136,6 +148,11 @@ $(document).ready(function() {
       card.removeClass("template");
       $(".card-list").append(card);
     });
+    var avg_values = {};
+    $.each(dimensions, function(key, item){
+      avg_values[key]=total_values[key]/data.data.length
+    });
+    window.data['average']=avg_values
   });
   // When populated, initialize Isotope grid
   addCards.done(() => {
@@ -157,6 +174,14 @@ function create_filter(filter, number, filter_on) {
     return parseInt(number, 10) <= filter + 10 && parseInt(number, 10) >= filter - 10;
   }
   
+}
+
+function data_for_radar_chart(values) {
+  axes = []
+  $.each(values, function(key,value) {
+    axes.push({axis:key, value:value})
+  })
+  return axes;
 }
 
 /* Create generic template filter */
@@ -226,14 +251,30 @@ $(document).click(function(e) {
 $(".card-list").on("click", ".button-expand", function() {
   var modal = $("#myModal");
   var item =
-    window.data[
+    window.data.data[
       $(this)
         .parents(".flex-card")
         .attr("data-id")
     ];
+  
+  var data = [{
+    className: 'element',
+    axes: data_for_radar_chart(item.values)
+  },
+{
+  className: 'average',
+  axes: data_for_radar_chart(window.data.average)
+}];
   modal.find(".item-title").text(item.title);
   modal.find(".item-link").text(item.link);
   modal.find(".item-longDescription").text(item.longDescription);
+  var chart = RadarChart.chart();
+  var cfg = chart.config(); // retrieve default config
+  modal.find('.radar-chart').html('');
+  var svg = d3.select('.radar-chart').append('svg')
+    .attr('width', cfg.w + 50)
+    .attr('height', cfg.h + 50);
+  svg.append('g').classed('single', 1).datum(data).call(chart);
   // modal.find(".item-image").css("background-image", `url('data/image/${item.itemImage}')`);
   modal.find(".modal-image").attr("src", `static/image/${item.image}`);
   modal.modal("show");

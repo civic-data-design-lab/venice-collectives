@@ -99,7 +99,8 @@ p{
 }
 
 .modal-dialog {
-  max-width:50vw;
+  width:600px;
+  max-width:85%;
 }
 
 .modal-content {
@@ -283,12 +284,17 @@ p{
   background-repeat:no-repeat;
 }
 
-.modal-image{
+
+
+.modal-right {
   max-width: 40%;
   padding: 15px 10px 15px 15px; 
   position: sticky;
   top: -10px;
   right: 0;
+}
+.modal-right .modal-image {
+  max-width: 100%;
 }
 
 .item-title {
@@ -702,4 +708,41 @@ input[type="range"]:focus::-ms-fill-upper {
   top: 8px;
   width: 0%;
   left: 50%;
+}
+
+/* Radar chart css */
+.radar-chart .area {
+  fill-opacity: 0.7;
+}
+
+.radar-chart.focus .area {
+  fill-opacity: 0.3;
+}
+
+.radar-chart.focus .area.focused {
+  fill-opacity: 0.9;
+}
+
+.area.element,
+.element .circle {
+  fill: #000;
+  stroke: none;
+}
+
+.area.average,
+.average .circle {
+  fill: rgba(100,100,100,0.8);
+  stroke: none;
+}
+.radar-chart .axis .legend {
+  font-size: 0.7em;
+}
+.radar-chart line.level,
+.radar-chart .axis line {
+  stroke: #aaa;
+  opacity: 0.5
+}
+.radar-chart:hover line.level,
+.radar-chart:hover .axis line {
+  opacity: 1;
 }
