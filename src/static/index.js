@@ -46,6 +46,44 @@ var dimensions = {
   }
 };
 
+var FormText = {
+  "FormEcon": {
+    1:"Common goods<br><br>",
+    2:"Mostly common goods<br><br>",
+    3:"Mix of common and private goods<br><br>",
+    4:"Mostly private goods<br><br>",
+    5:"Private<br>goods"
+  },
+  "FormSize": {
+    1:"<50<br><br>",
+    2:"50 to 100<br><br>",
+    3:"100 to 1,000<br><br>",
+    4:"1,000 to 5,000<br><br>",
+    5:">5,000<br><br>"
+  },
+  "FormPorous": {
+    1:"Open to anyone<br><br>",
+    2:"Mostly open<br><br>",
+    3:"Invitation required<br><br>",
+    4:"Mostly closed<br><br>",
+    5:"Closed<br><br>"
+  },
+  "FormPlatform": {
+    1:"Physical only<br><br>",
+    2:"Mostly physical<br><br>",
+    3:"Mix of physical and digital<br><br>",
+    4:"Mostly digital<br><br>",
+    5:"Digital<br><br>"
+  },
+  "FormGovern": {
+    1:"Decentralized<br><br>",
+    2:"Mostly decentralized<br><br>",
+    3:"Mixed or federated<br><br>",
+    4:"Mostly centralized<br><br>",
+    5:"Centralized<br><br>"
+  }
+}
+
 
 // Initialize Isotope on the card-grid
 var initGrid = function() {
@@ -295,7 +333,6 @@ $('.sidebar-control').click(function() {
   if (icon.hasClass('open')) {
     $('#main-content').removeClass('sidebar-shown');
     icon.removeClass('open');
-    // $('body').css('overflow-y','auto');
     $('body').removeClass('hide-overflow');
   } else {
     $('#main-content').addClass('sidebar-shown');
@@ -303,10 +340,40 @@ $('.sidebar-control').click(function() {
     $('body').addClass('hide-overflow');
   }
 });
+
 $('#primary > .overlay').click(function() {
   const icon = $('#hamburger');
   $('#main-content').removeClass('sidebar-shown');
   icon.removeClass('open');
-  // $('body').css('overflow-y','auto');
   $('body').removeClass('hide-overflow');
+});
+
+const allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(wrap => {
+  const range = wrap.querySelector(".range");
+  const bubble = wrap.querySelector(".range-value");
+
+  range.addEventListener("input", () => {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 0;
+  const max = range.max ? range.max : 100;
+  const newVal = Number(((val - min) * 100) / (max - min));
+  bubble.innerHTML = FormText[range.id][val];
+
+  // Sorta magic numbers based on size of the native UI thumb
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+
+$('.tablinks').click(function(){
+  $('.tabcontent').removeClass('active')
+  $('.tablinks').removeClass('active')
+  let activeTab = $(this).attr('id').slice(0,-3)
+  $(`#${activeTab}Content`).addClass('active')
+  $(this).addClass('active')
 })

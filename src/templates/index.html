@@ -15,8 +15,7 @@
   <!-- Bootstrap and Templated CSS-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" /> -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link type="text/css" rel="stylesheet" href="../static/index.css" />
   <link rel="shortcut icon" href="#" />
   <!--Solves favicon 404 error-->
@@ -82,6 +81,7 @@
                 <!-- <a href="#">Add Card</a> -->
                 <a href="#aboutModal" data-toggle="modal" data-target="#aboutModal" class="nav-link">About</a>
                 <a href="" id="station-reset">Reset Station</a>
+                <a href="#formModal" data-toggle="modal" data-target="#formModal" class="nav-link">Add a Collective</a>
               </nav>
 
 
@@ -116,6 +116,77 @@
                         printing in place of English to emphasise design elements over content.Lorem ipsum is
                         great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum
                         is a pseudo-Latin text used</p>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="formModal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Add a collective</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" id="AddCollective" method="POST">
+                        <div>
+                          <label for="FormName">Name of collective</label><br>
+                          <input type="text" id="FormName" name="FormName" value=""><br>
+
+                          <label for="FormDescription">Describe the collective in 250 words or less</label><br>
+                          <textarea rows="4" cols="50" name="comment" form="FormName"></textarea><br>
+
+                          <div class="tab">
+                            <a class="tablinks active" id="FormPicTab">Upload an Image</a>
+                            <a class="tablinks" id="FormPicUrlTab">Paste Image URL</a>
+                          </div>
+
+                          <div class="tabcontent active" id="FormPicContent">
+                            <label for="FormPic">Add an image that represents the collective</label><br>
+                            <input type="file" id="FormPic" name="FormPic">
+                          </div>
+
+                          <div class="tabcontent" id="FormPicUrlContent">
+                            <label for="FormPicUrl">Link to image URL</label><br>
+                            <input type="text" id="FormPicUrl" name="FormPicUrl" value=""><br>
+                          </div>
+                        </div>
+                        <div>
+                          <h5>Tell us about a collective's dimensions</h5>
+                          <div class="range-wrap">
+                            <label for="FormEcon">What is the economic motive of your collective?</label>
+                            <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1">
+                            <div class="range-value" id="FormEconV"></div>
+                          </div>
+                          <div class="range-wrap">
+                            <label for="FormSize">How many people are part of your collective?</label>
+                            <input class="range" type="range" id="FormSize" name="FormSize" min="1" max="5" step="1">
+                            <div class="range-value" id="FormSizeV"></div>
+                          </div>
+                          <div class="range-wrap">
+                            <label for="FormPorous">How open and porous is your collective?</label>
+                            <input class="range" type="range" id="FormPorous" name="FormPorous" min="1" max="5"
+                              step="1">
+                            <div class="range-value" id="FormPorousV"></div>
+                          </div>
+                          <div class="range-wrap">
+                            <label for="FormPlatform">Where does your collective operate?</label>
+                            <input class="range" type="range" id="FormPlatform" name="FormPlatform" min="1" max="5"
+                              step="1">
+                            <div class="range-value" id="FormPlatformV"></div>
+                          </div>
+                          <div class="range-wrap">
+                            <label for="FormGovern">How is your collective governed?</label>
+                            <input class="range" type="range" id="FormGovern" name="FormGovern" min="1" max="5"
+                              step="1">
+                            <div class="range-value" id="FormGovernV"></div>
+                          </div>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6Lf0mO8UAAAAAC7KI4TP0DNxjs3z7wBrNxYqFG5d"></div>
+                        <input type="submit" value="Add Collective">
+                      </form>
                     </div>
                     <div class="modal-footer">
                     </div>
