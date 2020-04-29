@@ -40,6 +40,21 @@ body.hide-overflow {
   left:0;
   background:white;
   z-index:15;
+  padding:10vh 0;
+}
+#splashScreen h1 {
+  margin-bottom:2rem;
+}
+#splashScreen p {
+  font-size:1.2rem;
+  margin-bottom:2rem;
+}
+#splashScreen a {
+  padding:0.75rem;
+  background:black;
+  color:white;
+  text-decoration:none;
+  font-size:1.2rem;
 }
 header.navBar {
   display: flex;
