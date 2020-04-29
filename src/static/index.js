@@ -133,6 +133,15 @@ RadarChart.defaultConfig.h = 200;
 
 // As soon as the webpage is loaded
 $(document).ready(function() {
+  // check cookies
+  if (document.cookie.includes("visited=true")) {
+    $('#splashScreen').hide()
+  } else {
+    var d = new Date();
+    d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = "visited=true;" + expires + "path=/";
+  }
   // Initialize the Slider
   initSlider();
 
@@ -368,7 +377,7 @@ function setBubble(range, bubble) {
 
   // Sorta magic numbers based on size of the native UI thumb
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
-}
+};
 
 $('.tablinks').click(function(){
   $('.tabcontent').removeClass('active')
@@ -376,4 +385,8 @@ $('.tablinks').click(function(){
   let activeTab = $(this).attr('id').slice(0,-3)
   $(`#${activeTab}Content`).addClass('active')
   $(this).addClass('active')
-})
+});
+
+$('#splashScreen a').click(function(){
+  $('#splashScreen').fadeOut()
+});
