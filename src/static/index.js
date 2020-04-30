@@ -309,12 +309,11 @@ $(".card-list").on("click", ".button-expand", function() {
     ];
   
   var data = [{
-    className: 'element',
-    axes: data_for_radar_chart(item.values)
-  },
-  {
     className: 'average',
     axes: data_for_radar_chart(window.data.average)
+  },{
+    className: item.title,
+    axes: data_for_radar_chart(item.values)
   }];
   modal.find(".item-title").text(item.title);
   modal.find(".item-link").text(item.link);

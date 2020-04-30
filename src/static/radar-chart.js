@@ -172,7 +172,12 @@ var RadarChart = {
                 return [p.x, p.y].join(',');
               }).join(' ');
             })
-            .each('start', function() {
+            .each('start', function(d, i) {
+              $(this).tooltip({
+              'data-toggle':"tooltip",
+              'data-placement':"top",
+              'title':d.className
+              })
               d3.select(this).classed('d3-enter', 0); // trigger css transition
             });
 

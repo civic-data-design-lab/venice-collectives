@@ -552,6 +552,8 @@ input[type="range"]:focus::-ms-fill-upper {
   background: #f5f5f5;
   overflow-y: auto;
   overflow-x: hidden;
+  transform: translateX(-100%);
+  transition: 0.5s ease-in-out;
 }
 #primary {
   position: relative;
@@ -625,8 +627,8 @@ input[type="range"]:focus::-ms-fill-upper {
     transition: .5s ease-in-out;
   }
 }
-  #main-content #secondary {
-    position: relative;
+  #main-content.sidebar-shown #secondary {
+    transform: translateX(0);
   }
 
   #main-content.sidebar-shown {
@@ -751,8 +753,8 @@ input[type="range"]:focus::-ms-fill-upper {
   fill-opacity: 0.9;
 }
 
-.area.element,
-.element .circle {
+.area,
+.area .circle {
   fill: #ff0000;
   stroke: none;
 }
