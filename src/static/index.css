@@ -125,6 +125,7 @@ p{
 .modal-dialog {
   width:700px;
   max-width:85%;
+  min-width: 50%;
 }
 #formModal .modal-dialog {
   width: 800px;
@@ -752,7 +753,7 @@ input[type="range"]:focus::-ms-fill-upper {
 
 .area.element,
 .element .circle {
-  fill: #000;
+  fill: #ff0000;
   stroke: none;
 }
 

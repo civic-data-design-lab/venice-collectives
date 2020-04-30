@@ -209,6 +209,10 @@ $(document).ready(function() {
   })
   $("a.iconLabel").on("click", function() {
     $(this).closest('.slider').toggleClass('active')
+    if (!$(this).closest('.slider').hasClass('active')) {
+      $(this).closest('.slider').find('input[type=range]').val(null)
+      filter_cards();
+    }
   });
 });
 
@@ -229,9 +233,7 @@ function data_for_radar_chart(values) {
   return axes;
 }
 
-/* Create generic template filter */
-
-$(".sideBar").on("change", "input[type=range]", function() {
+function filter_cards() {
   let porosity_filter = parseInt($("#porosity-slider").val());
   let economics_filter = parseInt($("#economics-slider").val());
   let size_filter = parseInt($("#size-slider").val());
@@ -272,7 +274,11 @@ $(".sideBar").on("change", "input[type=range]", function() {
       );
     }
   });
-});
+}
+
+/* Create generic template filter */
+
+$(".sideBar").on("change", "input[type=range]", ()=>filter_cards());
 
 // ----- Prevent cluttering of popovers -----
 $(document).click(function(e) {
@@ -306,10 +312,10 @@ $(".card-list").on("click", ".button-expand", function() {
     className: 'element',
     axes: data_for_radar_chart(item.values)
   },
-{
-  className: 'average',
-  axes: data_for_radar_chart(window.data.average)
-}];
+  {
+    className: 'average',
+    axes: data_for_radar_chart(window.data.average)
+  }];
   modal.find(".item-title").text(item.title);
   modal.find(".item-link").text(item.link);
   modal.find(".item-longDescription").text(item.longDescription);
