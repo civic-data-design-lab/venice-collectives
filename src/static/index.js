@@ -147,7 +147,6 @@ $(document).ready(function() {
 
   // Read data from the file and populate
   var addCards = $.getJSON("/?q=api", function(data,error) {
-    console.log(error)
     window.data = data;
     var template = $(".card-list .flex-card.template");
     var total_values = {}
@@ -170,7 +169,6 @@ $(document).ready(function() {
       // var link = card.find(".item-link").text( // Makes variable link for card link(if any)
       // item.link).html();
 
-      console.log(item.link); // Expected return is link as string, sometimes works
       card.find("#title-link").attr("href", item.link).text(item.link);
 
       card.find(".item-description").text( //Only finds first 50 words for flex card back
