@@ -741,6 +741,9 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 /* Radar chart css */
+.single.radar-chart {
+  transform: translate(1.2rem, 1.2rem) scale(0.9);
+}
 .radar-chart .area {
   fill-opacity: 0.7;
 }

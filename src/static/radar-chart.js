@@ -119,7 +119,11 @@ var RadarChart = {
               })
               .attr('dy', function(d, i) {
                 var p = getVerticalPosition(i, 0.5);
-                return ((p < 0.1) ? '1em' : ((p > 0.9) ? '0' : '0.5em'));
+                return ((p < 0.1) ? '0' : '0.5em');
+              })
+              .attr('dx', function(d, i) {
+                var p = getHorizontalPosition(i, 0.5);
+                return ((p < 0.5) ? '-1.2rem' : '0');
               })
               .text(function(d) { return d; })
               .attr('x', function(d, i){ return getHorizontalPosition(i, cfg.w / 2, cfg.factorLegend); })
