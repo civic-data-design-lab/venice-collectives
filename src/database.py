@@ -13,7 +13,7 @@ class Collective(db.Model):
     title = db.Column(db.String(80), unique=True, nullable=False)
     description = db.Column(db.String(), nullable=True)
     longDescription = db.Column(db.String(), nullable=True)
-    link = db.Column(db.String(), nullable=True)
+    # link = db.Column(db.String(), nullable=True)
     image = db.Column(db.String(), nullable=False, unique=True)
     value_porosity = db.Column(db.Integer, nullable=False)
     value_economics = db.Column(db.Integer, nullable=False)

@@ -169,7 +169,7 @@ $(document).ready(function() {
       // var link = card.find(".item-link").text( // Makes variable link for card link(if any)
       // item.link).html();
 
-      card.find("#title-link").attr("href", item.link).text(item.link);
+      // card.find("#title-link").attr("href", item.link).text(item.link);
 
       card.find(".item-description").text( //Only finds first 50 words for flex card back
         item.description
@@ -316,7 +316,7 @@ $(".card-list").on("click", ".button-expand", function() {
     axes: data_for_radar_chart(item.values)
   }];
   modal.find(".item-title").text(item.title);
-  modal.find(".item-link").text(item.link);
+  // modal.find(".item-link").text(item.link);
   modal.find(".item-longDescription").text(item.longDescription);
   var chart = RadarChart.chart();
   var cfg = chart.config(); // retrieve default config
