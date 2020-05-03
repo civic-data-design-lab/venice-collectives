@@ -38,9 +38,10 @@ body.hide-overflow {
   height:100%;
   top:0;
   left:0;
-  background:white;
-  z-index:15;
-  padding:10vh 0;
+  background:rgba(255,255,255,0.9);
+  z-index:15;    
+  padding: 10vh 20px;
+  overflow-y: scroll;
 }
 #splashScreen h1 {
   margin-bottom:2rem;
@@ -49,7 +50,7 @@ body.hide-overflow {
   font-size:1.2rem;
   margin-bottom:2rem;
 }
-#splashScreen a {
+#splashScreen a, #formIntroModal a {
   padding:0.75rem;
   background:black;
   color:white;

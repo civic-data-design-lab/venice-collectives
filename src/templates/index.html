@@ -24,12 +24,12 @@
 <body>
   <div id="splashScreen">
     <div class="row justify-content-center">
-      <div class="col-4">
+      <div class="col-lg-6 col-md-8 col-sm-12">
         <h1>Open Collectives</h1>
         <p>An open collective is a voluntary and dynamic group of people sharing common goals and values, combining the scale and instantaneous connectivity of digital platforms with the kinship of physical space and face-to-face interaction. As permeable hybrid physical/digital networks, open collectives are designed to expand and contract in both members and functions — economic, environmental, and/or social — and encourage new forms of sharing.</p>
         <p>Collective dimensions seek to quantify the qualities of open collectives: the economic motivation, membership/size, porosity and openness to new members, the platform on which the collective exists, and the manner in which the collective is governed.</p>
         <a href="#" id="splashArchive">Explore the Archive</a>
-        <a href="#formModal" data-toggle="modal" data-target="#formModal" id="splashUnkown">Add to Unknown Collectives</a>
+        <a href="#formIntroModal" data-toggle="modal" data-target="#formIntroModal" id="splashUnkown">Add to Unknown Collectives</a>
       </div>
     </div>
   
@@ -93,7 +93,7 @@
                 <!-- <a href="#">Add Card</a> -->
                 <a href="#aboutModal" data-toggle="modal" data-target="#aboutModal" class="nav-link">About</a>
                 <a href="" id="station-reset">Reset Station</a>
-                <a href="#formModal" data-toggle="modal" data-target="#formModal" class="nav-link">Add a Collective</a>
+                <a href="#formIntroModal" data-toggle="modal" data-target="#formIntroModal" class="nav-link">Unknown Collectives</a>
               </nav>
 
 
@@ -134,6 +134,22 @@
                   </div>
                 </div>
               </div>
+              <div class="modal fade" id="formIntroModal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Unkown Collectives</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Unknown Collectives is an opportunity for the community to add collectives they know about or participate in. Using the form on the next page, you can add information about a collective including the name, description, image, and its characteristics on the dimensions used in the archive. <br><br>Your submission will be included on the site, and visitors will have the chance to learn more about a collective you know.</h5>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#formModal" data-dismiss="modal" data-toggle="modal" data-target="#formModal" class="nav-link">Add a Collective</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="modal fade" id="formModal" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
@@ -168,36 +184,36 @@
                         <div>
                           <h5>Tell us about a collective's dimensions</h5>
                           <div class="range-wrap">
-                            <label for="FormEcon">What is the economic motive of your collective?</label>
+                            <label for="FormEcon">What is the economic motive of the collective?</label>
                             <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1">
                             <div class="range-value" id="FormEconV"></div>
                           </div>
                           <div class="range-wrap">
-                            <label for="FormSize">How many people are part of your collective?</label>
+                            <label for="FormSize">How many people are part of the collective?</label>
                             <input class="range" type="range" id="FormSize" name="FormSize" min="1" max="5" step="1">
                             <div class="range-value" id="FormSizeV"></div>
                           </div>
                           <div class="range-wrap">
-                            <label for="FormPorous">How open and porous is your collective?</label>
+                            <label for="FormPorous">How open and porous is the collective?</label>
                             <input class="range" type="range" id="FormPorous" name="FormPorous" min="1" max="5"
                               step="1">
                             <div class="range-value" id="FormPorousV"></div>
                           </div>
                           <div class="range-wrap">
-                            <label for="FormPlatform">Where does your collective operate?</label>
+                            <label for="FormPlatform">Where does the collective operate?</label>
                             <input class="range" type="range" id="FormPlatform" name="FormPlatform" min="1" max="5"
                               step="1">
                             <div class="range-value" id="FormPlatformV"></div>
                           </div>
                           <div class="range-wrap">
-                            <label for="FormGovern">How is your collective governed?</label>
+                            <label for="FormGovern">How is the collective governed?</label>
                             <input class="range" type="range" id="FormGovern" name="FormGovern" min="1" max="5"
                               step="1">
                             <div class="range-value" id="FormGovernV"></div>
                           </div>
                         </div>
                         <div class="g-recaptcha" data-sitekey="6Lf0mO8UAAAAAC7KI4TP0DNxjs3z7wBrNxYqFG5d"></div>
-                        <input type="submit" value="Add Collective">
+                        <input type="submit" value="Submit Collective">
                       </form>
                     </div>
                     <div class="modal-footer">
