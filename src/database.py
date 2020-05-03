@@ -1,3 +1,4 @@
+from flask import request, flash
 import json
 import settings
 import app
@@ -9,11 +10,12 @@ db = app.db
 
 
 class Collective(db.Model):
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), unique=True, nullable=False)
-    description = db.Column(db.String(), nullable=True)
-    longDescription = db.Column(db.String(), nullable=True)
-    link = db.Column(db.String(), nullable=True)
+    description = db.Column(db.String(250), nullable=True)
+    # longDescription = db.Column(db.String(), nullable=True)
+    #link = db.Column(db.String(), nullable=True)
     image = db.Column(db.String(), nullable=False, unique=True)
     value_porosity = db.Column(db.Integer, nullable=False)
     value_economics = db.Column(db.Integer, nullable=False)
@@ -21,8 +23,19 @@ class Collective(db.Model):
     value_platform = db.Column(db.Integer, nullable=False)
     value_governance = db.Column(db.Integer, nullable=False)
 
+    def __init__(self, title, description, image, value_porosity, value_economics, value_size, value_platform, value_governance):
+        self.title = title 
+        self.description = description 
+        self.image = image
+        self.value_porosity = value_porosity 
+        self.value_economics = value_economics
+        self.value_size = value_size
+        self.value_platform = value_platform
+        self.value_governance = value_governance
+
     def __repr__(self):
         return '<Collective %r>' % self.title
+
 
 
 def make_api_from_data():
@@ -68,3 +81,16 @@ def upload_json_to_db():
     db.session.commit()
     f.close()
     return data
+
+#Have to add new collective to the database
+def post_collective():
+	#Make sure both are not null (required to upload a pic in some way)
+    if (request.form['FormPicUrl'] != ''): 
+        collective = Collective(request.form['FormName'],request.form['FormDescription'],request.form['FormPicUrl'],request.form['FormPorous'],request.form['FormEcon'],request.form['FormSize'],request.form['FormPlatform'],request.form['FormGovern'])
+    elif (request.form['FormPic'] != ''): 
+        collective = Collective(request.form['FormName'],request.form['FormDescription'],request.form['FormPic'],request.form['FormPorous'],request.form['FormEcon'],request.form['FormSize'],request.form['FormPlatform'],request.form['FormGovern'])
+    #Add object to the database
+    db.session.add(collective)
+    #Save the object
+    db.session.commit()
+

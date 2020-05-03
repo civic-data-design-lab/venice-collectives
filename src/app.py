@@ -1,5 +1,6 @@
 
-from flask import Flask, render_template, request
+# from database import make_api_from_db, post_collective
+from flask import Flask, render_template, request, redirect, flash, url_for
 import app
 from flask_sqlalchemy import SQLAlchemy
 import settings as ss
@@ -13,13 +14,24 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-@app.route("/")
+@app.route("/", methods =['GET','POST'])
 def home():
     what = request.args.get('q', default='home')
     if what=='api':
         return database.make_api_from_db()
-    else:
-        return render_template("index.html")
+    # if request.method == 'POST': 
+    #     flash ("Collective to be added!")
+    #     return database.post_collective()
+        # Create an alert later, but hopefully this will load it?
+        # Do we need to call "Upload_json_to_db?"
+    return render_template("index.html")
+
+@app.route("/post_collective", methods =['POST'])
+#Function to post form input to the postgres database
+def post_collective():
+    database.post_collective()
+    #Redirects back to the home page (Have it redirect to a confirmation popup in future)
+    return redirect(url_for('home'))
 
 import database
 @app.route("/data")

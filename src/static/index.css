@@ -362,7 +362,7 @@ a:hover{
 }
 
 .item-longDescription {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .flex-item {
@@ -560,7 +560,7 @@ input[type="range"]:focus::-ms-fill-upper {
   position: relative;
 }
 
-/*Medium devices (tablets, less than 992px)*/
+/* Medium devices (tablets, less than 992px)*/
 /* @media (max-width: 575.9px) {
   .item-title{
     font-size: 15px;
@@ -598,7 +598,7 @@ input[type="range"]:focus::-ms-fill-upper {
     font-size: 0.3em;
   }
   .item-longDescription{
-    font-size: 7px;
+    font-size: 10px;
   }
   .title-link {
     font-size: 5px;
