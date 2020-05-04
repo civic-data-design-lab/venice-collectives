@@ -157,15 +157,21 @@
                       <h5 class="modal-title">Add a collective</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
+
                     <div class="modal-body">
-                      <form action="" id="AddCollective" method="POST">
-                        <div>
+                      <!-- Start of the "Add Collective form"-->
+                      <form action="/post_collective" id="AddCollective" name = "collectiveForm" method="POST">
+                        
+                        <!-- Start of form left column-->
+                        <div> 
+                          <!-- Input collective name and description-->
                           <label for="FormName">Name of collective</label><br>
                           <input type="text" id="FormName" name="FormName" value=""><br>
 
                           <label for="FormDescription">Describe the collective in 250 words or less</label><br>
-                          <textarea rows="4" cols="50" name="comment" form="FormName"></textarea><br>
-
+                          <textarea id = "FormDescription" name="FormDescription" rows="4" cols="50"></textarea><br>
+                          
+                          <!-- Input collective picture in two ways-->
                           <div class="tab">
                             <a class="tablinks active" id="FormPicTab">Upload an Image</a>
                             <a class="tablinks" id="FormPicUrlTab">Paste Image URL</a>
@@ -180,9 +186,10 @@
                             <label for="FormPicUrl">Link to image URL</label><br>
                             <input type="text" id="FormPicUrl" name="FormPicUrl" value=""><br>
                           </div>
-                        </div>
-                        <div>
-                          <h5>Tell us about a collective's dimensions</h5>
+                        </div> <!-- End of left column of form-->
+
+                        <div> <!-- Start of form right column-->
+                          <h5>Tell us about the collective's dimensions</h5>
                           <div class="range-wrap">
                             <label for="FormEcon">What is the economic motive of the collective?</label>
                             <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1">
@@ -212,9 +219,11 @@
                             <div class="range-value" id="FormGovernV"></div>
                           </div>
                         </div>
+                        <!-- The recaptcha form validation-->
                         <div class="g-recaptcha" data-sitekey="6Lf0mO8UAAAAAC7KI4TP0DNxjs3z7wBrNxYqFG5d"></div>
                         <input type="submit" value="Submit Collective">
                       </form>
+
                     </div>
                     <div class="modal-footer">
                     </div>
@@ -228,7 +237,6 @@
                 <li class="flex-card template col-12 col-sm-6 col-lg-4 col-xl-3">
                   <div class="flex-card-inner">
                     <div class="flex-card-front">
-                      <!-- <img class="background-image" /> -->
                     </div>
                     <div class="flex-card-back d-flex flex-column">
                       <h1 class="item-title text-left">

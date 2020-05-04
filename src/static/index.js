@@ -171,14 +171,14 @@ $(document).ready(function() {
 
       // card.find("#title-link").attr("href", item.link).text(item.link);
 
-      card.find(".item-description").text( //Only finds first 50 words for flex card back
+      card.find(".item-description").text( //Only finds first 150 words for flex card back
         item.description
           .split(" ")
-          .slice(0, 50)
+          .slice(0, 150)
           .join(" ")
       ); 
       card.find(".item-longDescription").text(// Finds all words for modal
-        item.longDescription);
+        item.description);
 
       //Appends all card info found 
       card.find(".button-expand").append(item.title);
@@ -316,8 +316,8 @@ $(".card-list").on("click", ".button-expand", function() {
     axes: data_for_radar_chart(item.values)
   }];
   modal.find(".item-title").text(item.title);
+  modal.find(".item-longDescription").text(item.description);
   // modal.find(".item-link").text(item.link);
-  modal.find(".item-longDescription").text(item.longDescription);
   var chart = RadarChart.chart();
   var cfg = chart.config(); // retrieve default config
   modal.find('.radar-chart').html('');
