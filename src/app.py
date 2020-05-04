@@ -4,7 +4,11 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 import app
 from flask_sqlalchemy import SQLAlchemy
 import settings as ss
+import os
 
+CURRENT_FILE = os.path.abspath(__file__)
+CURRENT_DIR = os.path.dirname(CURRENT_FILE)
+UPLOAD_FOLDER = CURRENT_DIR + '/static/image/'
 DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}:{port}/{db}'.format(
     user=ss.DATABASE_ADMIN, pw=ss.DATABASE_PWD, url=ss.DATABASE_ADDRESS, port=ss.DATABASE_PORT, db=ss.DATABASE_NAME)
 app = Flask(__name__)
@@ -12,6 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
 # silence the deprecation warning
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route("/", methods =['GET','POST'])
@@ -32,6 +37,7 @@ def post_collective():
     database.post_collective()
     #Redirects back to the home page (Have it redirect to a confirmation popup in future)
     return redirect(url_for('home'))
+    # return a
 
 import database
 @app.route("/data")

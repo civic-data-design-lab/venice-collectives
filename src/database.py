@@ -3,6 +3,9 @@ import json
 import settings
 import app
 import os
+from werkzeug.utils import secure_filename
+import requests
+
 
 CURRENT_FILE = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_FILE)
@@ -85,12 +88,23 @@ def upload_json_to_db():
 #Have to add new collective to the database
 def post_collective():
 	#Make sure both are not null (required to upload a pic in some way)
-    if (request.form['FormPicUrl'] != ''): 
-        collective = Collective(request.form['FormName'],request.form['FormDescription'],request.form['FormPicUrl'],request.form['FormPorous'],request.form['FormEcon'],request.form['FormSize'],request.form['FormPlatform'],request.form['FormGovern'])
-    elif (request.form['FormPic'] != ''): 
-        collective = Collective(request.form['FormName'],request.form['FormDescription'],request.form['FormPic'],request.form['FormPorous'],request.form['FormEcon'],request.form['FormSize'],request.form['FormPlatform'],request.form['FormGovern'])
+    print(request.files)
+    if (request.form['FormPicUrl'] != ''):
+        url = request.form['FormPicUrl']
+        filename = secure_filename(url.split('/')[-1].split('?')[0])
+        while os.path.exists(os.path.join(app.app.config['UPLOAD_FOLDER'], filename)):
+            filename='new_'+filename
+        file = requests.get(url)
+        open(os.path.join(app.app.config['UPLOAD_FOLDER'], filename), 'wb').write(file.content)
+    elif (request.files['FormPic'] != ''):
+        file = request.files['FormPic']
+        print('--------------------------',request.files['FormPic'])
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.app.config['UPLOAD_FOLDER'], filename))
+        print(filename)
+    collective = Collective(request.form['FormName'],request.form['FormDescription'],filename,request.form['FormPorous'],request.form['FormEcon'],request.form['FormSize'],request.form['FormPlatform'],request.form['FormGovern'])
     #Add object to the database
     db.session.add(collective)
     #Save the object
     db.session.commit()
-
+    # return request.form

@@ -26,13 +26,20 @@
     <div class="row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-12">
         <h1>Open Collectives</h1>
-        <p>An open collective is a voluntary and dynamic group of people sharing common goals and values, combining the scale and instantaneous connectivity of digital platforms with the kinship of physical space and face-to-face interaction. As permeable hybrid physical/digital networks, open collectives are designed to expand and contract in both members and functions — economic, environmental, and/or social — and encourage new forms of sharing.</p>
-        <p>Collective dimensions seek to quantify the qualities of open collectives: the economic motivation, membership/size, porosity and openness to new members, the platform on which the collective exists, and the manner in which the collective is governed.</p>
+        <p>An open collective is a voluntary and dynamic group of people sharing common goals and values, combining the
+          scale and instantaneous connectivity of digital platforms with the kinship of physical space and face-to-face
+          interaction. As permeable hybrid physical/digital networks, open collectives are designed to expand and
+          contract in both members and functions — economic, environmental, and/or social — and encourage new forms of
+          sharing.</p>
+        <p>Collective dimensions seek to quantify the qualities of open collectives: the economic motivation,
+          membership/size, porosity and openness to new members, the platform on which the collective exists, and the
+          manner in which the collective is governed.</p>
         <a href="#" id="splashArchive">Explore the Archive</a>
-        <a href="#formIntroModal" data-toggle="modal" data-target="#formIntroModal" id="splashUnkown">Add to Unknown Collectives</a>
+        <a href="#formIntroModal" data-toggle="modal" data-target="#formIntroModal" id="splashUnkown">Add to Unknown
+          Collectives</a>
       </div>
     </div>
-  
+
   </div>
   <main>
     <div class="container-fluid">
@@ -93,7 +100,8 @@
                 <!-- <a href="#">Add Card</a> -->
                 <a href="#aboutModal" data-toggle="modal" data-target="#aboutModal" class="nav-link">About</a>
                 <a href="" id="station-reset">Reset Station</a>
-                <a href="#formIntroModal" data-toggle="modal" data-target="#formIntroModal" class="nav-link">Unknown Collectives</a>
+                <a href="#formIntroModal" data-toggle="modal" data-target="#formIntroModal" class="nav-link">Unknown
+                  Collectives</a>
               </nav>
 
 
@@ -142,10 +150,15 @@
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                      <h5>Unknown Collectives is an opportunity for the community to add collectives they know about or participate in. Using the form on the next page, you can add information about a collective including the name, description, image, and its characteristics on the dimensions used in the archive. <br><br>Your submission will be included on the site, and visitors will have the chance to learn more about a collective you know.</h5>
+                      <h5>Unknown Collectives is an opportunity for the community to add collectives they know about or
+                        participate in. Using the form on the next page, you can add information about a collective
+                        including the name, description, image, and its characteristics on the dimensions used in the
+                        archive. <br><br>Your submission will be included on the site, and visitors will have the chance
+                        to learn more about a collective you know.</h5>
                     </div>
                     <div class="modal-footer">
-                      <a href="#formModal" data-dismiss="modal" data-toggle="modal" data-target="#formModal" class="nav-link">Add a Collective</a>
+                      <a href="#formModal" data-dismiss="modal" data-toggle="modal" data-target="#formModal"
+                        class="nav-link">Add a Collective</a>
                     </div>
                   </div>
                 </div>
@@ -160,17 +173,18 @@
 
                     <div class="modal-body">
                       <!-- Start of the "Add Collective form"-->
-                      <form action="/post_collective" id="AddCollective" name = "collectiveForm" method="POST">
-                        
+                      <form action="/post_collective" id="AddCollective" name="collectiveForm" method="POST"
+                        enctype="multipart/form-data">
+
                         <!-- Start of form left column-->
-                        <div> 
+                        <div>
                           <!-- Input collective name and description-->
                           <label for="FormName">Name of collective</label><br>
                           <input type="text" id="FormName" name="FormName" value=""><br>
 
                           <label for="FormDescription">Describe the collective in 250 words or less</label><br>
-                          <textarea id = "FormDescription" name="FormDescription" rows="4" cols="50"></textarea><br>
-                          
+                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50"></textarea><br>
+
                           <!-- Input collective picture in two ways-->
                           <div class="tab">
                             <a class="tablinks active" id="FormPicTab">Upload an Image</a>
@@ -188,7 +202,8 @@
                           </div>
                         </div> <!-- End of left column of form-->
 
-                        <div> <!-- Start of form right column-->
+                        <div>
+                          <!-- Start of form right column-->
                           <h5>Tell us about the collective's dimensions</h5>
                           <div class="range-wrap">
                             <label for="FormEcon">What is the economic motive of the collective?</label>
