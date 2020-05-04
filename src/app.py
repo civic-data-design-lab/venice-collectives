@@ -24,7 +24,7 @@ def home():
 import database
 @app.route("/data")
 def data():
-    database.upload_json_to_db()  # Only call this once to upload the data to database
+    # database.upload_json_to_db()  # Only call this once to upload the data to database
     # return database.make_api_from_data()
     return database.make_api_from_data()
 
