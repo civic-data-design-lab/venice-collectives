@@ -142,11 +142,12 @@
                   </div>
                 </div>
               </div>
+              <!-- Start of Unknown collectives modal-->
               <div class="modal fade" id="formIntroModal" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Unkown Collectives</h5>
+                      <h5 class="modal-title">Unknown Collectives</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -173,17 +174,17 @@
 
                     <div class="modal-body">
                       <!-- Start of the "Add Collective form"-->
-                      <form action="/post_collective" id="AddCollective" name="collectiveForm" method="POST"
+                      <form action="/post_collective" id="AddCollective" name="AddCollective" method="POST"
                         enctype="multipart/form-data">
 
                         <!-- Start of form left column-->
                         <div>
                           <!-- Input collective name and description-->
                           <label for="FormName">Name of collective</label><br>
-                          <input type="text" id="FormName" name="FormName" value=""><br>
+                          <input type="text" id="FormName" name="FormName" value="" required><br>
 
                           <label for="FormDescription">Describe the collective in 250 words or less</label><br>
-                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50"></textarea><br>
+                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50" required></textarea><br>
 
                           <!-- Input collective picture in two ways-->
                           <div class="tab">
@@ -207,36 +208,34 @@
                           <h5>Tell us about the collective's dimensions</h5>
                           <div class="range-wrap">
                             <label for="FormEcon">What is the economic motive of the collective?</label>
-                            <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1">
+                            <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1" required>
                             <div class="range-value" id="FormEconV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormSize">How many people are part of the collective?</label>
-                            <input class="range" type="range" id="FormSize" name="FormSize" min="1" max="5" step="1">
+                            <input class="range" type="range" id="FormSize" name="FormSize" min="1" max="5" step="1" required>
                             <div class="range-value" id="FormSizeV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormPorous">How open and porous is the collective?</label>
-                            <input class="range" type="range" id="FormPorous" name="FormPorous" min="1" max="5"
-                              step="1">
+                            <input class="range" type="range" id="FormPorous" name="FormPorous" min="1" max="5" step="1" required>
                             <div class="range-value" id="FormPorousV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormPlatform">Where does the collective operate?</label>
-                            <input class="range" type="range" id="FormPlatform" name="FormPlatform" min="1" max="5"
-                              step="1">
+                            <input class="range" type="range" id="FormPlatform" name="FormPlatform" min="1" max="5" step="1" required>
                             <div class="range-value" id="FormPlatformV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormGovern">How is the collective governed?</label>
-                            <input class="range" type="range" id="FormGovern" name="FormGovern" min="1" max="5"
-                              step="1">
+                            <input class="range" type="range" id="FormGovern" name="FormGovern" min="1" max="5" step="1" required>
                             <div class="range-value" id="FormGovernV"></div>
                           </div>
                         </div>
                         <!-- The recaptcha form validation-->
                         <div class="g-recaptcha" data-sitekey="6Lf0mO8UAAAAAC7KI4TP0DNxjs3z7wBrNxYqFG5d"></div>
                         <input type="submit" value="Submit Collective">
+                        <span id = "success_message" class = "text-success"></span>
                       </form>
 
                     </div>
@@ -245,7 +244,28 @@
                   </div>
                 </div>
               </div>
-            </header>
+
+              {% if submission_successful %}
+              <!-- Collective Added Confirmation Modal-->
+              <!-- <div class="modal fade" id="confirmationModal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Thanks for Contributing!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <h5>Your submission has been included on the site, and visitors will have the chance
+                        to learn more about the collective you added.<br></br>We appreciate your contribution to Collective Dimensions!</h5>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            {% endif %}
+
+            </header><!-- End of nav bar header-->
 
             <div class="flex-sort" id="card-grid">
               <ul class="card-list">

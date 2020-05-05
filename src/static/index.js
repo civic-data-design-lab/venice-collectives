@@ -331,6 +331,14 @@ $(".card-list").on("click", ".button-expand", function() {
 });
 // $(".nav-bar").on("click")
 
+
+// ------Added an alert for submitting a collective -----------
+$("#AddCollective").on("submit", function(e){
+  // $('#confirmationModal').show();
+  alert('You successfully added a collective!');
+})
+
+
 // ----- Resetting station sliders to normal-----
 $('#station-reset').on("click", function() {
   $('.on-off').prop('checked', false);

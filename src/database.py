@@ -106,5 +106,9 @@ def post_collective():
     #Add object to the database
     db.session.add(collective)
     #Save the object
-    db.session.commit()
-    # return request.form
+    try:
+        db.session.commit()
+    except: 
+        db.session.rollback()
+    finally: 
+        db.session.close()
