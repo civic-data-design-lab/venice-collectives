@@ -3,3 +3,8 @@
 /index.py
 /httpd.conf
 /.vscode/
+/virtualenv/
+/src/__pycache__/
+/lib/
+/htdocs/
+/apache2/

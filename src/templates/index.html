@@ -115,14 +115,26 @@
                     </div>
                     <div class="modal-body" style="display:block;">
                       <p class="about">
-                        An open collective is a voluntary and dynamic group of people sharing common goals and values, combining the scale and instantaneous connectivity of digital platforms with the kinship of physical space and face-to-face interaction. As permeable hybrid physical/digital networks, open collectives are designed to expand and contract in both members and functions — economic, environmental, and/or social — and encourage new forms of sharing.<br><br>
-                        Collective dimensions seek to quantify the qualities of open collectives, across five dimensions:
+                        An open collective is a voluntary and dynamic group of people sharing common goals and values,
+                        combining the scale and instantaneous connectivity of digital platforms with the kinship of
+                        physical space and face-to-face interaction. As permeable hybrid physical/digital networks, open
+                        collectives are designed to expand and contract in both members and functions — economic,
+                        environmental, and/or social — and encourage new forms of sharing.<br><br>
+                        Collective dimensions seek to quantify the qualities of open collectives, across five
+                        dimensions:
                         <ul>
-                          <li><b>Economics</b> refers to the entities who profit from the collective, the intent to profit or not, the degree to which the collective directly benefits from its members versus profiting from a private investor/ owner of a platform.</li>
-                          <li><b>Size</b> refers to the number of members in a collective; it is a way to evaluate quantity.</li>
-                          <li><b>Porosity</b> refers to the ability of members to join and leave the collective n terms of process, time cycle, qualifications, etc. The two main factors include the (a) ease in which to join and leave and (b) the collective’s anticipation to changes in membership.</li>
-                          <li><b>Platform</b> defines whether a collective exists on an exclusively digital or physical platform or somewhere in between.</li>
-                          <li><b>Governance</b> assesses how a collective is managed, from fully decentralized to a single governing individual or group.</li>
+                          <li><b>Economics</b> refers to the entities who profit from the collective, the intent to
+                            profit or not, the degree to which the collective directly benefits from its members versus
+                            profiting from a private investor/ owner of a platform.</li>
+                          <li><b>Size</b> refers to the number of members in a collective; it is a way to evaluate
+                            quantity.</li>
+                          <li><b>Porosity</b> refers to the ability of members to join and leave the collective n terms
+                            of process, time cycle, qualifications, etc. The two main factors include the (a) ease in
+                            which to join and leave and (b) the collective’s anticipation to changes in membership.</li>
+                          <li><b>Platform</b> defines whether a collective exists on an exclusively digital or physical
+                            platform or somewhere in between.</li>
+                          <li><b>Governance</b> assesses how a collective is managed, from fully decentralized to a
+                            single governing individual or group.</li>
                         </ul>
                         <br><br>
                         <b>Project Team</b><br><br>
@@ -178,7 +190,8 @@
                           <input type="text" id="FormName" name="FormName" value="" required><br>
 
                           <label for="FormDescription">Describe the collective in 250 words or less</label><br>
-                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50" required></textarea><br>
+                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50"
+                            required></textarea><br>
 
                           <!-- Input collective picture in two ways-->
                           <div class="tab">
@@ -188,7 +201,7 @@
 
                           <div class="tabcontent active" id="FormPicContent">
                             <label for="FormPic">Add an image that represents the collective</label><br>
-                            <input type="file" id="FormPic" name="FormPic">
+                            <input type="file" id="FormPic" name="FormPic" accept="image/*">
                           </div>
 
                           <div class="tabcontent" id="FormPicUrlContent">
@@ -202,34 +215,39 @@
                           <h5>Tell us about the collective's dimensions</h5>
                           <div class="range-wrap">
                             <label for="FormEcon">What is the economic motive of the collective?</label>
-                            <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1" required>
+                            <input class="range" type="range" id="FormEcon" name="FormEcon" min="1" max="5" step="1"
+                              required>
                             <div class="range-value" id="FormEconV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormSize">How many people are part of the collective?</label>
-                            <input class="range" type="range" id="FormSize" name="FormSize" min="1" max="5" step="1" required>
+                            <input class="range" type="range" id="FormSize" name="FormSize" min="1" max="5" step="1"
+                              required>
                             <div class="range-value" id="FormSizeV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormPorous">How open and porous is the collective?</label>
-                            <input class="range" type="range" id="FormPorous" name="FormPorous" min="1" max="5" step="1" required>
+                            <input class="range" type="range" id="FormPorous" name="FormPorous" min="1" max="5" step="1"
+                              required>
                             <div class="range-value" id="FormPorousV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormPlatform">Where does the collective operate?</label>
-                            <input class="range" type="range" id="FormPlatform" name="FormPlatform" min="1" max="5" step="1" required>
+                            <input class="range" type="range" id="FormPlatform" name="FormPlatform" min="1" max="5"
+                              step="1" required>
                             <div class="range-value" id="FormPlatformV"></div>
                           </div>
                           <div class="range-wrap">
                             <label for="FormGovern">How is the collective governed?</label>
-                            <input class="range" type="range" id="FormGovern" name="FormGovern" min="1" max="5" step="1" required>
+                            <input class="range" type="range" id="FormGovern" name="FormGovern" min="1" max="5" step="1"
+                              required>
                             <div class="range-value" id="FormGovernV"></div>
                           </div>
                         </div>
                         <!-- The recaptcha form validation-->
                         <div class="g-recaptcha" data-sitekey="6Lf0mO8UAAAAAC7KI4TP0DNxjs3z7wBrNxYqFG5d"></div>
                         <input type="submit" value="Submit Collective">
-                        <span id = "success_message" class = "text-success"></span>
+                        <span id="success_message" class="text-success"></span>
                       </form>
 
                     </div>
@@ -257,7 +275,7 @@
                   </div>
                 </div>
               </div> -->
-            {% endif %}
+              {% endif %}
 
             </header><!-- End of nav bar header-->
 
