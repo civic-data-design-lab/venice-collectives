@@ -285,7 +285,6 @@ $(document).click(function(e) {
   var clickedOn = $(e.target);
   $(".btn[aria-describedby]").each(function(key, elem) {
     let popover = $(elem).attr("aria-describedby");
-    console.log(popover)
     if (
       !(
         clickedOn.closest(".popover").length &&
@@ -334,11 +333,8 @@ $(".card-list").on("click", ".button-expand", function() {
 
 // ------Added an alert for submitting a collective -----------
 $("#AddCollective").on("submit", function(e){
-  // $('#confirmationModal').show();
   e.preventDefault()
-  var formData = new FormData(this);    
-  console.log(formData);
-  var verify = grecaptcha.getResponse();
+  var formData = new FormData(this);
   $.ajax({
     url : $(this).attr('action'),
     type: 'POST',
