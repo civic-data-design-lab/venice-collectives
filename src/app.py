@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 import settings as ss
 import os
 import json
+import subprocess
 
 CURRENT_FILE = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_FILE)
@@ -41,6 +42,16 @@ import database
 def data():
     # database.upload_json_to_db()  # Only call this once to upload the data to database
     return database.make_api_from_db()
+
+@app.route("/pull")
+def pull():
+    os.chdir('/home/mitcivicdata/webapps/collective_dimensions')
+    subprocess.run(['git', 'reset', '--hard', 'HEAD'])
+    response = subprocess.check_output(['git','pull'])
+    print('-----------------------------------------------------git pull-------------------')
+    print(response)
+    print('-----------------------------------------------------git pull-------------------')
+    return response
 
 
 if __name__ == "__main__":

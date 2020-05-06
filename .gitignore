@@ -10,3 +10,4 @@ htdocs/
 apache2/
 httpd.pid
 src/apiKey.py
+src/static/image
