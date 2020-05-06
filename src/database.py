@@ -5,6 +5,7 @@ import app
 import os
 from werkzeug.utils import secure_filename
 import requests
+from apiKey import reCaptcha
 
 
 CURRENT_FILE = os.path.abspath(__file__)
@@ -88,7 +89,7 @@ def upload_json_to_db():
 #Have to add new collective to the database
 def post_collective():
 	#Make sure both are not null (required to upload a pic in some way)
-    captcha = requests.post('https://www.google.com/recaptcha/api/siteverify', data = {'secret':'6LefGfMUAAAAAKI9_a-Kvm87kp8LfzW9Z899Feek', 'response':request.form['FormCaptcha']})
+    captcha = requests.post('https://www.google.com/recaptcha/api/siteverify', data = {'secret':reCaptcha, 'response':request.form['FormCaptcha']})
     response = json.loads(captcha.content)
     if not response['success'] or response['hostname'] not in request.url_root:
         return False
