@@ -130,6 +130,54 @@ RadarChart.defaultConfig.radius = 3;
 RadarChart.defaultConfig.w = 200;
 RadarChart.defaultConfig.h = 200;
 
+var renderCards = function() {
+  var template = $(".card-list .flex-card.template");
+  var total_values = {}
+  $.each(dimensions, function(key, item){
+    total_values[key]=0
+  });
+  $('.card-list').html(template[0]);
+  $.each(window.data.data, function(key, item) {
+    var card = template.clone();
+    card.attr("data-id", key);
+    card // Finding front photo of card first
+      .find(".flex-card-front")
+      .css("background-image", `url(./static/image/${item.image})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
+    
+    card // Finding back photo of card upon click
+      .find(".item-image")
+      .css("item-image", `url(./static/image/${item.image})`);
+
+    card.find(".item-title .title-text").text(item.title);
+
+    card.find(".item-description").text( //Only finds first 150 words for flex card back
+      item.description
+        .split(" ")
+        .slice(0, 150)
+        .join(" ")
+    ); 
+    card.find(".item-longDescription").text(// Finds all words for modal
+      item.description);
+
+    //Appends all card info found 
+    card.find(".button-expand").append(item.title);
+    $.each(item.values, function(k, val) {
+      total_values[k]+=val
+      var span = $("<span/>")
+        .addClass(k)
+        .text(val);
+      card.find(".item-data").append(span);
+    });
+    $(".item-data").hide();
+    card.removeClass("template");
+    $(".card-list").append(card);
+  });
+  var avg_values = {};
+  $.each(dimensions, function(key, item){
+    avg_values[key]=total_values[key]/data.data.length
+  });
+  window.data['average']=avg_values
+}
 
 // As soon as the webpage is loaded
 $(document).ready(function() {
@@ -146,63 +194,15 @@ $(document).ready(function() {
   initSlider();
 
   // Read data from the file and populate
-  var addCards = $.getJSON("/?q=api", function(data,error) {
+  var addCards = $.getJSON("/data", function(data,error) {
     window.data = data;
-    var template = $(".card-list .flex-card.template");
-    var total_values = {}
-    $.each(dimensions, function(key, item){
-      total_values[key]=0
-    });
-    $.each(data.data, function(key, item) {
-      var card = template.clone();
-      card.attr("data-id", key);
-      card // Finding front photo of card first
-        .find(".flex-card-front")
-        .css("background-image", `url(./static/image/${item.image})`); // `"background-image:url(data/image/"${item.backgroundImage})`);
-      
-      card // Finding back photo of card upon click
-        .find(".item-image")
-        .css("item-image", `url(./static/image/${item.image})`);
-
-      card.find(".item-title .title-text").text(item.title);
-      // card.find(".item-link").text(item.link);
-      // var link = card.find(".item-link").text( // Makes variable link for card link(if any)
-      // item.link).html();
-
-      // card.find("#title-link").attr("href", item.link).text(item.link);
-
-      card.find(".item-description").text( //Only finds first 150 words for flex card back
-        item.description
-          .split(" ")
-          .slice(0, 150)
-          .join(" ")
-      ); 
-      card.find(".item-longDescription").text(// Finds all words for modal
-        item.description);
-
-      //Appends all card info found 
-      card.find(".button-expand").append(item.title);
-      $.each(item.values, function(k, val) {
-        total_values[k]+=val
-        var span = $("<span/>")
-          .addClass(k)
-          .text(val);
-        card.find(".item-data").append(span);
-      });
-      $(".item-data").hide();
-      card.removeClass("template");
-      $(".card-list").append(card);
-    });
-    var avg_values = {};
-    $.each(dimensions, function(key, item){
-      avg_values[key]=total_values[key]/data.data.length
-    });
-    window.data['average']=avg_values
+    renderCards();
   });
   // When populated, initialize Isotope grid
   addCards.done(() => {
     initGrid();
   });
+  $('#submitWrapper').tooltip();
   // filters on / off
   $('.on-off-label').on("click", function(){
     $(this).closest('.slider').toggleClass('active')
@@ -335,9 +335,43 @@ $(".card-list").on("click", ".button-expand", function() {
 // ------Added an alert for submitting a collective -----------
 $("#AddCollective").on("submit", function(e){
   // $('#confirmationModal').show();
-  alert('You successfully added a collective!');
+  e.preventDefault()
+  var formData = new FormData(this);    
+  console.log(formData);
+  var verify = grecaptcha.getResponse();
+  $.ajax({
+    url : $(this).attr('action'),
+    type: 'POST',
+    data: formData,
+    cache : false,
+    processData: false,
+    contentType: false,
+  }).done(function(response) {
+    response = JSON.parse(response)
+    if (response['success']===true) {
+      alert('Your successfully added a collective!');
+    } else {
+      alert('There was some error');
+      return;
+    }
+    window.data = response['data'];
+    $("#AddCollective")[0].reset();
+    $('#formModal').modal('hide');
+    renderCards();
+    initGrid();
+    filter_cards();
+  });
 })
-
+captcha = function() {
+  $('#submitCollective').attr('disabled',false)
+  $('#submitWrapper').tooltip('disable');
+  $('#FormCaptcha').val(grecaptcha.getResponse())
+}
+expireCaptcha = function() {
+  $('#submitCollective').attr('disabled',true)
+  $('#submitWrapper').tooltip('enable');
+  $('#FormCaptcha').val('')
+}
 
 // ----- Resetting station sliders to normal-----
 $('#station-reset').on("click", function() {

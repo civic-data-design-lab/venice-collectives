@@ -5,6 +5,7 @@ import app
 from flask_sqlalchemy import SQLAlchemy
 import settings as ss
 import os
+import json
 
 CURRENT_FILE = os.path.abspath(__file__)
 CURRENT_DIR = os.path.dirname(CURRENT_FILE)
@@ -19,29 +20,27 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route("/", methods =['GET','POST'])
+@app.route("/")
 def home():
-    what = request.args.get('q', default='home')
-    if what=='api':
-        return database.make_api_from_db()
-    # elif request.method == "POST":
-    #     # database.post_collective()
-    #     flash("Collective added!")
     return render_template("index.html")
 
 @app.route("/post_collective", methods =['POST'])
 #Function to post form input to the postgres database
 def post_collective():
-    database.post_collective()
+    success = database.post_collective()
     # submission_successful = True
     # Redirects back to the home page for flashed message
-    return redirect(url_for('home'))
+    response = {'success': success, 'data': database.make_api_from_db()}
+    print('------------------------------dumps-----------------')
+    print(json.dumps(response))
+    return json.dumps(response)
+    # return redirect(url_for('home'))
 
 import database
 @app.route("/data")
 def data():
     # database.upload_json_to_db()  # Only call this once to upload the data to database
-    return database.make_api_from_data()
+    return database.make_api_from_db()
 
 
 if __name__ == "__main__":

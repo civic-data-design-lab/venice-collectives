@@ -88,7 +88,10 @@ def upload_json_to_db():
 #Have to add new collective to the database
 def post_collective():
 	#Make sure both are not null (required to upload a pic in some way)
-    print(request.files)
+    captcha = requests.post('https://www.google.com/recaptcha/api/siteverify', data = {'secret':'6LefGfMUAAAAAKI9_a-Kvm87kp8LfzW9Z899Feek', 'response':request.form['FormCaptcha']})
+    response = json.loads(captcha.content)
+    if not response['success'] or response['hostname'] not in request.url_root:
+        return False
     if (request.form['FormPicUrl'] != ''):
         url = request.form['FormPicUrl']
         filename = secure_filename(url.split('/')[-1].split('?')[0])
@@ -98,17 +101,18 @@ def post_collective():
         open(os.path.join(app.app.config['UPLOAD_FOLDER'], filename), 'wb').write(file.content)
     elif (request.files['FormPic'] != ''):
         file = request.files['FormPic']
-        print('--------------------------',request.files['FormPic'])
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.app.config['UPLOAD_FOLDER'], filename))
-        print(filename)
     collective = Collective(request.form['FormName'],request.form['FormDescription'],filename,request.form['FormPorous'],request.form['FormEcon'],request.form['FormSize'],request.form['FormPlatform'],request.form['FormGovern'])
     #Add object to the database
     db.session.add(collective)
     #Save the object
     try:
         db.session.commit()
+        success = True
     except: 
         db.session.rollback()
+        success = False
     finally: 
         db.session.close()
+    return success

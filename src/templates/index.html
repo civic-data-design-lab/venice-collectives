@@ -245,8 +245,13 @@
                           </div>
                         </div>
                         <!-- The recaptcha form validation-->
-                        <div class="g-recaptcha" data-sitekey="6Lf0mO8UAAAAAC7KI4TP0DNxjs3z7wBrNxYqFG5d"></div>
-                        <input type="submit" value="Submit Collective">
+                        <div class="g-recaptcha" data-sitekey="6LefGfMUAAAAAAXJVF_eqXNX64uSlcmCzM9MWriC"
+                          data-callback="captcha" data-expired-callback="expireCaptcha"></div>
+                        <input type='text' hidden id="FormCaptcha" name="FormCaptcha" />
+                        <span id="submitWrapper" data-toggle="tooltip"
+                          data-title="Please verify the captcha to add the collective.">
+                          <input type="submit" id="submitCollective" class="btn" value="Submit Collective" disabled>
+                        </span>
                         <span id="success_message" class="text-success"></span>
                       </form>
 
