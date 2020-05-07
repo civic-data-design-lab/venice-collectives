@@ -248,6 +248,22 @@ p{
   background-image:url('../img/checkbox.jpg');
 }
 
+.sliderFunctions{
+  margin-top: 100px;
+  display: flex; 
+  justify-content: center;
+}
+
+.reset-button{
+  margin-right: 10px;
+  background-image:url('../img/reset.jpg');
+}
+
+.add-button{
+  margin-left: 10px;
+  background-image:url('../img/add.jpg');
+}
+
 .btn-secondary {
   float:right;
   background:none;

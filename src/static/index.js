@@ -374,12 +374,16 @@ expireCaptcha = function() {
   $('#FormCaptcha').val('')
 }
 
+/* Add Collective Button */
+$('#addCollective').click(function() {
+  $('#formIntroModal').modal('show');
+});
+
 // ----- Resetting station sliders to normal-----
-$('#station-reset').on("click", function() {
+$('#station-reset').click (function() {
   $('.on-off').prop('checked', false);
   $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").closest('.slider').removeClass('active');
-  $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").val(5);
-
+  $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").val(null);
 })
 
 // ----- HAMBURGER WORKING -----
