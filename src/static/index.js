@@ -335,6 +335,8 @@ $(".card-list").on("click", ".button-expand", function() {
 $("#AddCollective").on("submit", function(e){
   e.preventDefault()
   var formData = new FormData(this);
+  $(this).addClass('submitting-form');
+  $(this).find('#submitCollective').attr('disabled', true);
   $.ajax({
     url : $(this).attr('action'),
     type: 'POST',
@@ -346,17 +348,20 @@ $("#AddCollective").on("submit", function(e){
     response = JSON.parse(response)
     if (response['success']===true) {
       alert('Your successfully added a collective!');
+      window.data = response['data'];
+      renderCards();
+      initGrid();
+      filter_cards();
+      $('#formModal').modal('hide');
     } else {
       alert('There was some error');
-      return;
     }
-    window.data = response['data'];
+  }).always(function() {
+    grecaptcha.reset();
     $("#AddCollective")[0].reset();
-    $('#formModal').modal('hide');
-    renderCards();
-    initGrid();
-    filter_cards();
-  });
+    $("#AddCollective").removeClass('submitting-form');
+    $("#AddCollective").find('#submitCollective').attr('disabled', false);
+  })
 })
 captcha = function() {
   $('#submitCollective').attr('disabled',false)

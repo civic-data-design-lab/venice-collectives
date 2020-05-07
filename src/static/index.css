@@ -184,6 +184,10 @@ p{
   color:white;
   border:1px solid white;
 }
+.slider:not(.active) .iconLabel:hover {
+  background: #888;
+  color:  white;
+}
 .slider .range-label {
   margin: 0;
   font-size: 0.9em;
@@ -809,7 +813,7 @@ input[type="range"]:focus::-ms-fill-upper {
 #AddCollective label {
   font-weight:bold;
 }
-#AddCollective div {
+#AddCollective>div {
   width: 48%;
   margin:0;
   padding:0;
@@ -873,7 +877,7 @@ input[type="range"]:focus::-ms-fill-upper {
   display:block;
 }
 
-#AddCollective input[type="submit"] {
+#AddCollective #submitCollective {
   margin:2rem auto;
   display:block;
   background-color:#F6A4B7;
@@ -889,7 +893,7 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 @media (max-width:1378px) {
-  #FormName, #AddCollective div, #AddCollective textarea, #FormPicUrl {
+  #FormName, #AddCollective>div, #AddCollective textarea, #FormPicUrl {
     width:100%;
   }
   #AddCollective h5 {
@@ -906,5 +910,48 @@ input[type="range"]:focus::-ms-fill-upper {
   #AddCollective .tablinks {
     margin:0;
     padding:5px;
+  }
+}
+
+/* ----- Loading css ----- */
+.lds-ring {
+  display: none !important;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.submitting-form .lds-ring {
+  display: block !important;
+}
+.submitting-form #submitCollective span {
+  display: none;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: 2px;
+  border: 4px solid black;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

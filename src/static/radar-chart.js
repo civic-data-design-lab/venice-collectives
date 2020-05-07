@@ -177,10 +177,11 @@ var RadarChart = {
               }).join(' ');
             })
             .each('start', function(d, i) {
-              $(this).tooltip({
-              'data-toggle':"tooltip",
-              'data-placement':"top",
-              'title':d.className
+              $(this).popover({
+              'data-toggle':"popover",
+              'placement':"top",
+              'content':d.className,
+              'trigger': 'hover'
               })
               d3.select(this).classed('d3-enter', 0); // trigger css transition
             });

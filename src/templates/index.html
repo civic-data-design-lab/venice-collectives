@@ -187,11 +187,11 @@
                         <div>
                           <!-- Input collective name and description-->
                           <label for="FormName">Name of collective</label><br>
-                          <input type="text" id="FormName" name="FormName" value="" required><br>
+                          <input type="text" id="FormName" name="FormName" value="" required class="form-control"><br>
 
                           <label for="FormDescription">Describe the collective in 250 words or less</label><br>
-                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50"
-                            required></textarea><br>
+                          <textarea id="FormDescription" name="FormDescription" rows="4" cols="50" required
+                            class="form-control"></textarea><br>
 
                           <!-- Input collective picture in two ways-->
                           <div class="tab">
@@ -206,7 +206,7 @@
 
                           <div class="tabcontent" id="FormPicUrlContent">
                             <label for="FormPicUrl">Link to image URL</label><br>
-                            <input type="text" id="FormPicUrl" name="FormPicUrl" value=""><br>
+                            <input type="url" id="FormPicUrl" name="FormPicUrl" value="" class="form-control"><br>
                           </div>
                         </div> <!-- End of left column of form-->
 
@@ -250,7 +250,16 @@
                         <input type='text' hidden id="FormCaptcha" name="FormCaptcha" />
                         <span id="submitWrapper" data-toggle="tooltip"
                           data-title="Please verify the captcha to add the collective.">
-                          <input type="submit" id="submitCollective" class="btn" value="Submit Collective" disabled>
+                          <!-- <input type="submit" id="submitCollective" class="btn" value="Submit Collective" disabled> -->
+                          <button type="submit" id="submitCollective" class="btn" disabled>
+                            <span>Submit Collective</span>
+                            <div class="lds-ring">
+                              <div></div>
+                              <div></div>
+                              <div></div>
+                              <div></div>
+                            </div>
+                          </button>
                         </span>
                         <span id="success_message" class="text-success"></span>
                       </form>

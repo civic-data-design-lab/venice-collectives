@@ -32,8 +32,6 @@ def post_collective():
     # submission_successful = True
     # Redirects back to the home page for flashed message
     response = {'success': success, 'data': database.make_api_from_db()}
-    print('------------------------------dumps-----------------')
-    print(json.dumps(response))
     return json.dumps(response)
     # return redirect(url_for('home'))
 
@@ -48,9 +46,6 @@ def pull():
     os.chdir('/home/mitcivicdata/webapps/collective_dimensions')
     subprocess.run(['git', 'reset', '--hard', 'HEAD'])
     response = subprocess.check_output(['git','pull'])
-    print('-----------------------------------------------------git pull-------------------')
-    print(response)
-    print('-----------------------------------------------------git pull-------------------')
     return response
 
 
