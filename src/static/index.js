@@ -431,10 +431,10 @@ function setBubble(range, bubble) {
 
 $('.tablinks').click(function(){
   $('.tabcontent').removeClass('active')
-  $('.tablinks').removeClass('active')
+  $('.tablinks').removeClass('active btn-dark')
   let activeTab = $(this).attr('id').slice(0,-3)
   $(`#${activeTab}Content`).addClass('active')
-  $(this).addClass('active')
+  $(this).addClass('active btn-dark')
 });
 
 $('#splashScreen a').click(function(){

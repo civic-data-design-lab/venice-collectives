@@ -51,11 +51,11 @@ body.hide-overflow {
   margin-bottom:2rem;
 }
 #splashScreen a, #formIntroModal a {
-  padding:0.75rem;
-  background:black;
-  color:white;
   text-decoration:none;
-  font-size:1.2rem;
+  font-size:1.1em;
+}
+.modal-title {
+  font-weight: 700;
 }
 header.navBar {
   display: flex;
@@ -109,17 +109,10 @@ p{
   font-size: 1rem;
 }
 
-/* .about:before{
-  font-size: 1vw;
-  content: "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.Lorem ipsum is great.Truly truly great. Like wow. English to emphasise design elements over content.Lorem ipsum is a pseudo-Latin text used"
-                          
-} */
 
 /* Modal Styling */
 
 .modal {
-  /* text-align:center;  */
-  /* transform:translate(-1000,-1000); */
   background:rgba(0,0,0,0.25);
 }
 
@@ -127,6 +120,7 @@ p{
   width:700px;
   max-width:85%;
   min-width: 50%;
+  padding: 5px;
 }
 #formModal .modal-dialog {
   width: 1000px;
@@ -252,17 +246,14 @@ p{
   margin-top: 100px;
   display: flex; 
   justify-content: center;
+  position: sticky;
+  bottom: 0;
+  background: #f5f5f5;
+  padding: 5px 15px;
+  margin: 0 -15px;
+  border-top: 2px solid #ccc;
 }
 
-.reset-button{
-  margin-right: 10px;
-  background-image:url('../img/reset.jpg');
-}
-
-.add-button{
-  margin-left: 10px;
-  background-image:url('../img/add.jpg');
-}
 
 .btn-secondary {
   float:right;
@@ -336,8 +327,8 @@ p{
 
 
 .modal-right {
-  max-width: 40%;
-  padding: 15px 10px 15px 15px; 
+  /* max-width: 40%;
+  padding: 15px 10px 15px 15px;  */
   position: sticky;
   top: -10px;
   right: 0;
@@ -352,7 +343,7 @@ p{
 }
 
 a {
-  font-size: 0.8em;
+  /* font-size: 0.8em; */
   color:black;
   text-decoration: none;
   transition: 250ms all;
@@ -413,17 +404,26 @@ ul.card-list {
   list-style: none;
 }
 .flex-card {
-  height: 21.5vw;
+  /* height: 21.5vw; */
   margin: 10px 0;
   color: white;
   text-align: center;
   perspective: 1000px;
 }
+.card-container {
+  width: 100%;
+  padding-top: 100%;
+}
 
 .flex-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  /* position: relative; */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  right: 15px;
+  /* width: 100%;
+  height: 100%; */
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -468,11 +468,12 @@ ul.card-list {
 /* If flex button is pushed */
 .button-expand {
   font-size: 1em;
-  width: auto;
+  white-space: normal;
+  /* width: auto;
   height: auto;
   background-color: black;
   color: white;
-  cursor: pointer;
+  cursor: pointer; */
 }
 
 /* Slider Styling */
@@ -609,17 +610,17 @@ input[type="range"]:focus::-ms-fill-upper {
   }
 
   .item-title{
-    font-size: 10px;
+    font-size: 14px;
   }
-  .item-description{
+  /* .item-description{
     font-size: 7px;
-  }
-  .button-expand{
+  } */
+  /* .button-expand{
     font-size: 0.3em;
-  }
-  .item-longDescription{
-    font-size: 10px;
-  }
+  } */
+  /* .item-longDescription{
+    font-size: 13px;
+  } */
   .title-link {
     font-size: 5px;
     padding-right: 1px;
@@ -829,13 +830,17 @@ input[type="range"]:focus::-ms-fill-upper {
 #AddCollective label {
   font-weight:bold;
 }
-#AddCollective>div {
+/* #AddCollective>div {
   width: 48%;
   margin:0;
   padding:0;
   display: inline-table;
-}
+} */
 
+#AddCollective #form-left {
+  position: sticky;
+  top:0;
+}
 #AddCollective div.range-wrap {
   width:100%;
 }
@@ -843,17 +848,17 @@ input[type="range"]:focus::-ms-fill-upper {
   width:auto;
   position:relative;
   transform: translateX(-50%);
-  font-weight: bold;
+  font-weight: 600;
   margin-top:0;
-  margin-bottom:2rem;
+  margin-bottom:1rem;
+  display: inline-block;
 }
 #FormName, #FormPicUrl {
-  width:80%;
-  margin-bottom:2rem;
+  width:100%;
   border:1px solid black;
 }
 #AddCollective textarea {
-  width:80%;
+  width:100%;
   height:8rem;
   margin-bottom:2rem;
   border:1px solid black;
@@ -873,8 +878,6 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 #AddCollective .tablinks {
-  color:black;
-  background:white;
   margin:0 20px 20px 0;
   padding:10px;
   display:inline;
@@ -885,10 +888,6 @@ input[type="range"]:focus::-ms-fill-upper {
   text-decoration:none;
 }
 
-#AddCollective .tablinks.active {
-  background:black;
-  color:white;
-}
 #AddCollective .tabcontent.active {
   display:block;
 }
@@ -908,14 +907,7 @@ input[type="range"]:focus::-ms-fill-upper {
   background:black;
 }
 
-@media (max-width:1378px) {
-  #FormName, #AddCollective>div, #AddCollective textarea, #FormPicUrl {
-    width:100%;
-  }
-  #AddCollective h5 {
-    margin-top:4rem;
-    margin-bottom:2rem;
-  }
+@media (max-width:991.9px) {
   #AddCollective div.range-wrap div.range-value {
     position:initial;
     transform:none;
@@ -926,6 +918,9 @@ input[type="range"]:focus::-ms-fill-upper {
   #AddCollective .tablinks {
     margin:0;
     padding:5px;
+  }
+  #AddCollective #form-left {
+    position: relative;
   }
 }
 
