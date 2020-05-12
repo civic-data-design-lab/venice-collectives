@@ -120,6 +120,9 @@ var initSlider = function() {
       .find("input[type=range]")
       .attr("id", key.toLowerCase().replace("/", "_") + "-slider");
     slider.removeClass("template").appendTo(template.parent());
+    if (key==="economics") {
+      slider.addClass('active')
+    }
   });
   $('[data-toggle="popover"]').popover();
 };
