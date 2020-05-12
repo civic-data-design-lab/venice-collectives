@@ -54,6 +54,9 @@ body.hide-overflow {
   text-decoration:none;
   font-size:1.1em;
 }
+#splashScreenModal .modal-content {
+  padding-bottom: 2rem;
+}
 .modal-title {
   font-weight: 700;
 }

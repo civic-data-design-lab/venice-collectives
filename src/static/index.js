@@ -185,11 +185,10 @@ var renderCards = function() {
 // As soon as the webpage is loaded
 $(document).ready(function() {
   // check cookies
-  if (document.cookie.includes("visited=true")) {
-    $('#splashScreen').hide()
-  } else {
+  if (!document.cookie.includes("visited=true")) {
+    $('#splashScreenModal').modal('show')
     var d = new Date();
-    d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = "visited=true;" + expires + "path=/";
   }
