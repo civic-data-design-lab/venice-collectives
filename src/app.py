@@ -46,6 +46,7 @@ def pull():
     os.chdir('/home/mitcivicdata/webapps/collective_dimensions')
     subprocess.run(['git', 'reset', '--hard', 'HEAD'])
     response = subprocess.check_output(['git','pull'])
+    subprocess.run(['touch', 'index.py'])
     return response
 
 
