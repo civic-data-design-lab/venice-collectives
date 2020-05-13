@@ -261,6 +261,11 @@ p{
   margin: 0 -15px;
   border-top: 2px solid #ccc;
 }
+@media (height:800px) {
+  .sliderFunctions {
+    border-color:#f5f5f5;
+  }
+}
 
 
 .btn-secondary {
