@@ -812,6 +812,11 @@ input[type="range"]:focus::-ms-fill-upper {
   fill-opacity: 0.9;
 }
 
+.radar-chart svg {
+  display: block;
+  margin: 0 auto;
+}
+
 .area,
 .area .circle {
   fill: #ff0000;
