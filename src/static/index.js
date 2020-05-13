@@ -439,6 +439,6 @@ $('.tablinks').click(function(){
   $(this).addClass('active btn-dark')
 });
 
-$('#splashScreen a').click(function(){
-  $('#splashScreen').fadeOut()
+$('#splashScreenModal a').click(function(){
+  $('#splashScreenModal').modal('hide')
 });

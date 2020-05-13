@@ -57,6 +57,11 @@ body.hide-overflow {
 #splashScreenModal .modal-content {
   padding-bottom: 2rem;
 }
+#splashScreenModal .btn {
+  width: calc(50% - 20px);
+  display: inline-block;
+  margin: 5px;
+}
 .modal-title {
   font-weight: 700;
 }
@@ -273,6 +278,16 @@ p{
 .btn-secondary.focus, .btn-secondary:focus, .btn-secondary:active   {
   box-shadow:none;
   background:none;
+}
+.btn-dark {
+  color: black;
+  background-color: white;
+  border: 1px solid #aaa;
+  width: 100%;
+  border-radius: 21px;
+  text-transform: lowercase;
+  text-decoration:none;
+  font-weight: bold;
 }
 .slider .btn-secondary .info-svg {
   fill:black;
