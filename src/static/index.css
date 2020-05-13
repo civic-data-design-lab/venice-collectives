@@ -62,6 +62,11 @@ body.hide-overflow {
   display: inline-block;
   margin: 5px;
 }
+@media (max-width:700px) {
+  #splashScreenModal .btn {
+    width:100%;
+  }
+}
 .modal-title {
   font-weight: 700;
 }
@@ -75,6 +80,7 @@ nav {
   position: fixed;
   top:1rem;
   right:1rem;
+  z-index:9;
 }
 nav a, nav a.nav-link {
   display:inline;
@@ -155,6 +161,11 @@ p{
   align-items: flex-start; /* default is stretch */
   justify-content: space-between; 
   position: relative;;
+}
+@media (max-width:575px){
+  .modal-dialog-centered {
+    margin:0;
+  }
 }
 
 /* .modal-body p {
@@ -905,10 +916,13 @@ input[type="range"]:focus::-ms-fill-upper {
   padding:10px;
   display:inline;
   transition:250ms all;
-  font-size:1rem;
+  /* font-size:1rem; */
   border:1px solid black;
   cursor:pointer;
   text-decoration:none;
+  text-transform: lowercase;
+  font-weight: bold;
+  border-radius:21px;
 }
 
 #AddCollective .tabcontent.active {
@@ -930,21 +944,15 @@ input[type="range"]:focus::-ms-fill-upper {
   background:black;
 }
 
-@media (max-width:991.9px) {
-  #AddCollective div.range-wrap div.range-value {
-    position:initial;
-    transform:none;
-    text-align:center;
-    margin-top:0;
-    width:100%;
-  }
-  #AddCollective .tablinks {
-    margin:0;
-    padding:5px;
-  }
-  #AddCollective #form-left {
-    position: relative;
-  }
+#AddCollective div.range-wrap div.range-value {
+  position:initial;
+  transform:none;
+  text-align:center;
+  margin-top:0;
+  width:100%;
+}
+#AddCollective #form-left {
+  position: relative;
 }
 
 /* ----- Loading css ----- */
@@ -987,5 +995,20 @@ input[type="range"]:focus::-ms-fill-upper {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+/** responsive fixes **/
+@media (max-width:350px){
+  aside {
+    font-size:80%;
+  }
+  .sliderFunctions .btn {
+    font-size:0.8rem;
+  }
+  .slider .btn-secondary .info-svg {
+    transform: scale(0.7) translateY(25%);
+  }
+  .popover {
+    max-width: 90vw;
   }
 }

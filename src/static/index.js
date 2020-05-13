@@ -48,39 +48,39 @@ var dimensions = {
 
 var FormText = {
   "FormEcon": {
-    1:"Common goods<br><br>",
-    2:"Mostly common goods<br><br>",
-    3:"Mix of common and private goods<br><br>",
-    4:"Mostly private goods<br><br>",
-    5:"Private<br>goods"
+    1:"Common goods",
+    2:"Mostly common goods",
+    3:"Mix of common and private goods",
+    4:"Mostly private goods",
+    5:"Private goods"
   },
   "FormSize": {
-    1:"<50<br><br>",
-    2:"50 to 100<br><br>",
-    3:"100 to 1,000<br><br>",
-    4:"1,000 to 5,000<br><br>",
-    5:">5,000<br><br>"
+    1:"<50",
+    2:"50 to 100",
+    3:"100 to 1,000",
+    4:"1,000 to 5,000",
+    5:">5,000"
   },
   "FormPorous": {
-    1:"Open to anyone<br><br>",
-    2:"Mostly open<br><br>",
-    3:"Invitation required<br><br>",
-    4:"Mostly closed<br><br>",
-    5:"Closed<br><br>"
+    1:"Open to anyone",
+    2:"Mostly open",
+    3:"Invitation required",
+    4:"Mostly closed",
+    5:"Closed"
   },
   "FormPlatform": {
-    1:"Physical only<br><br>",
-    2:"Mostly physical<br><br>",
-    3:"Mix of physical and digital<br><br>",
-    4:"Mostly digital<br><br>",
-    5:"Digital<br><br>"
+    1:"Physical only",
+    2:"Mostly physical",
+    3:"Mix of physical and digital",
+    4:"Mostly digital",
+    5:"Digital"
   },
   "FormGovern": {
-    1:"Decentralized<br><br>",
-    2:"Mostly decentralized<br><br>",
-    3:"Mixed or federated<br><br>",
-    4:"Mostly centralized<br><br>",
-    5:"Centralized<br><br>"
+    1:"Decentralized",
+    2:"Mostly decentralized",
+    3:"Mixed or federated",
+    4:"Mostly centralized",
+    5:"Centralized"
   }
 }
 
