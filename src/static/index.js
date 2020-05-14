@@ -130,6 +130,7 @@ var initSlider = function() {
 // For the radar chart
 RadarChart.defaultConfig.color = function() {};
 RadarChart.defaultConfig.radius = 3;
+RadarChart.defaultConfig.levels = 5;
 RadarChart.defaultConfig.w = 200;
 RadarChart.defaultConfig.h = 200;
 

@@ -833,14 +833,27 @@ input[type="range"]:focus::-ms-fill-upper {
 .radar-chart .axis .legend {
   font-size: 0.7em;
 }
-.radar-chart line.level,
+.radar-chart line.level {
+  stroke: #aaa;
+}
 .radar-chart .axis line {
   stroke: #aaa;
-  opacity: 0.5
+  opacity: 0.8;
 }
-.radar-chart:hover line.level,
 .radar-chart:hover .axis line {
   opacity: 1;
+}
+.popover-custom {
+  top:10px !important;
+  border:none;
+  background: rgba(255,255,255,0.75);
+}
+.popover-custom .popover-body {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: .25em .5em;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
 /* ----- FORM CSS -----*/
