@@ -369,6 +369,7 @@ p{
 }
 .modal-right .modal-image {
   max-width: 100%;
+  filter: grayscale(1);
 }
 
 .item-title {
@@ -484,6 +485,7 @@ ul.card-list {
   background-size: cover;
   background-position: center center;
   color: black;
+  filter: grayscale(1);
 }
 
 .flex-card-back {
