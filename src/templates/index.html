@@ -221,12 +221,12 @@
 
                               <div class="tabcontent active" id="FormPicContent">
                                 <label for="FormPic">Add an image that represents the collective</label><br>
-                                <input type="file" id="FormPic" name="FormPic" accept="image/*">
+                                <input type="file" id="FormPic" name="FormPic" accept="image/*" onchange = "validate_image()" required>
                               </div>
 
                               <div class="tabcontent" id="FormPicUrlContent">
                                 <label for="FormPicUrl">Link to image URL</label><br>
-                                <input type="url" id="FormPicUrl" name="FormPicUrl" value="" class="form-control"><br>
+                                <input type="url" id="FormPicUrl" name="FormPicUrl" class="form-control" onchange = "validate_image()" ><br>
                               </div>
                             </div> <!-- End of left column of form-->
 

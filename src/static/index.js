@@ -333,10 +333,13 @@ $(".card-list").on("click", ".button-expand", function() {
 });
 // $(".nav-bar").on("click")
 
-
 // ------Added an alert for submitting a collective -----------
 $("#AddCollective").on("submit", function(e){
   e.preventDefault()
+  var uploadedImage = $("#FormPic")
+  var imageURL = $("#FormPicUrl")
+  uploadedImage.removeAttr('disabled')
+  imageURL.removeAttr('disabled')
   var formData = new FormData(this);
   $(this).addClass('submitting-form');
   $(this).find('#submitCollective').attr('disabled', true);
@@ -363,7 +366,7 @@ $("#AddCollective").on("submit", function(e){
     grecaptcha.reset();
     $("#AddCollective")[0].reset();
     $("#AddCollective").removeClass('submitting-form');
-    $("#AddCollective").find('#submitCollective').attr('disabled', false);
+    $("#AddCollective").find('#submitCollective').attr('disabled', true);
   })
 })
 captcha = function() {
@@ -432,6 +435,7 @@ function setBubble(range, bubble) {
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
 };
 
+// ---- Tab links for image upload or image URL ----
 $('.tablinks').click(function(){
   $('.tabcontent').removeClass('active')
   $('.tablinks').removeClass('active btn-dark')
@@ -439,6 +443,31 @@ $('.tablinks').click(function(){
   $(`#${activeTab}Content`).addClass('active')
   $(this).addClass('active btn-dark')
 });
+
+function validate_image(){
+  var uploadedImage = $("#FormPic")
+  var imageURL = $("#FormPicUrl")
+  uploadedImage.removeAttr('disabled')
+  imageURL.removeAttr('disabled')
+  if (uploadedImage.val() != "" && imageURL.val() == ""){
+    imageURL.removeAttr('required')
+    imageURL.prop('disabled', 'true')
+    uploadedImage.removeAttr('disabled')
+    uploadedImage.attr('required', 'required')
+  } // If image is uploaded
+  else if (imageURL.val() !="" && uploadedImage.val() == ""){
+    uploadedImage.removeAttr('required')
+    uploadedImage.prop('disabled', 'true')
+    imageURL.removeAttr('disabled')
+    imageURL.attr('required', 'required')
+  } // If image URL inputted
+  // TESTING 
+  // $("#FormPic").is(':required')
+  // $("#FormPicUrl").is(':required')
+  // $("#FormPic").is(':disabled')
+  // $("#FormPicUrl").is(':disabled')
+}
+
 
 $('#splashScreenModal a').click(function(){
   $('#splashScreenModal').modal('hide')

@@ -16,11 +16,9 @@ db = app.db
 class Collective(db.Model):
     __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(80), unique=True, nullable=False)
-    description = db.Column(db.String(250), nullable=True)
-    # longDescription = db.Column(db.String(), nullable=True)
-    #link = db.Column(db.String(), nullable=True)
-    image = db.Column(db.String(), nullable=False, unique=True)
+    title = db.Column(db.String(80), nullable=False)
+    description = db.Column(db.String(), nullable=True)
+    image = db.Column(db.String(), nullable=False)
     value_porosity = db.Column(db.Integer, nullable=False)
     value_economics = db.Column(db.Integer, nullable=False)
     value_size = db.Column(db.Integer, nullable=False)
@@ -92,6 +90,7 @@ def post_collective():
     captcha = requests.post('https://www.google.com/recaptcha/api/siteverify', data = {'secret':reCaptcha, 'response':request.form['FormCaptcha']})
     response = json.loads(captcha.content)
     if not response['success'] or response['hostname'] not in request.url_root:
+        print ("Something")
         return False
     if (request.form['FormPicUrl'] != ''):
         url = request.form['FormPicUrl']
@@ -111,8 +110,10 @@ def post_collective():
     try:
         db.session.commit()
         success = True
-    except: 
+    except Exception as e:
+        print (e)
         db.session.rollback()
+        print ("other thing")
         success = False
     finally: 
         db.session.close()
