@@ -833,9 +833,9 @@ input[type="range"]:focus::-ms-fill-upper {
 .radar-chart .axis .legend {
   font-size: 0.7em;
 }
-.radar-chart line.level {
+/* .radar-chart line.level {
   stroke: #aaa;
-}
+} */
 .radar-chart .axis line {
   stroke: #aaa;
   opacity: 0.8;
