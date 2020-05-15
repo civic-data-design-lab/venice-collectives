@@ -185,7 +185,6 @@ var renderCards = function() {
 
 // As soon as the webpage is loaded
 $(document).ready(function() {
-  grid.shuffle()
   // check cookies
   if (!document.cookie.includes("visited=true")) {
     $('#splashScreenModal').modal('show')
