@@ -846,14 +846,14 @@ input[type="range"]:focus::-ms-fill-upper {
 .popover-custom {
   top:10px !important;
   border:none;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.5);
 }
 .popover-custom .popover-body {
   text-align: center;
   font-size: 0.8em;
   font-weight: 600;
   padding: .25em .5em;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+  /* text-shadow: 1px 1px 5px rgba(0,0,0,0.2); */
 }
 
 /* ----- FORM CSS -----*/
