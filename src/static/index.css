@@ -686,7 +686,8 @@ input[type="range"]:focus::-ms-fill-upper {
   }
 }
   #main-content.sidebar-shown #secondary {
-    transform: translateX(0);
+    /* transform: translateX(0); */
+    transform: unset;
   }
 
   #main-content.sidebar-shown {
