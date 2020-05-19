@@ -390,6 +390,7 @@ $('#station-reset').click (function() {
   $('.on-off').prop('checked', false);
   $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").closest('.slider').removeClass('active');
   $("#porosity-slider, #economics-slider, #size-slider, #platform-slider, #governance-slider").val(null);
+  filter_cards();
 })
 
 // ----- HAMBURGER WORKING -----
