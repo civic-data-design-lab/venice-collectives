@@ -8,7 +8,7 @@ var dimensions = {
     description:
       "Economics refers to the entities who profit from the collective, the intent to profit or not, the degree to which the collective directly benefits from its members versus profiting from a private investor/ owner of a platform.",
     range: {
-      0: "COMMON GOOD",
+      0: "mix of common and private goods",
       10: "PRIVATE GOOD"
     }
   },
@@ -16,7 +16,7 @@ var dimensions = {
     description:
       "Size refers to the number of members in a collective; it is a way to evaluate quantity.",
       range: {
-      0: "SMALL",
+      0: "100 to 1,000",
       10: "LARGE"
     }
   },
@@ -24,7 +24,7 @@ var dimensions = {
     description:
       "Porosity refers to the ability of members to join and leave the collective n terms of process, time cycle, qualifications, etc. The two main factors include the (a) ease in which to join and leave and (b) the collective’s anticipation to changes in membership.",
     range: {
-      0: "OPEN",
+      0: "invitation required",
       10: "CLOSED"
     }
   },
@@ -32,7 +32,7 @@ var dimensions = {
     description:
       "Platform defines whether a collective exists on an exclusively digital or physical platform or somewhere in between.",
     range: {
-      0: "PHYSICAL",
+      0: "mix of physical and digital",
       10: "DIGITAL"
     }
   },
@@ -40,7 +40,7 @@ var dimensions = {
     description:
       "Governance assesses how a collective is managed.",
     range: {
-      0: "DECENTRALIZED",
+      0: "mixed or federated",
       10: "CENTRALIZED"
     }
   }
@@ -115,7 +115,8 @@ var initSlider = function() {
     slider.find(".iconLabel input").attr('id',`${key}_chk`);
     slider.find(".iconLabel label").attr('for',`${key}_chk`);
     slider.find("#left").text(value.range[0]);
-    slider.find("#right").text(value.range[10]);
+    slider.find("#left").attr('id', `${key}_label`)
+    // slider.find("#right").text(value.range[10]);
     slider
       .find("input[type=range]")
       .attr("id", key.toLowerCase().replace("/", "_") + "-slider");
@@ -237,6 +238,7 @@ function data_for_radar_chart(values) {
 }
 
 function filter_cards() {
+  
   let porosity_filter = parseInt($("#porosity-slider").val());
   let economics_filter = parseInt($("#economics-slider").val());
   let size_filter = parseInt($("#size-slider").val());
@@ -249,6 +251,12 @@ function filter_cards() {
   let platform_on = $("#platform-slider").closest('.slider').hasClass('active');
   let governance_on = $("#governance-slider").closest('.slider').hasClass('active');
 
+  $('#economics_label').html(`${FormText["FormEcon"][economics_filter]}`)
+  $('#size_label').html(`${FormText["FormSize"][size_filter]}`)
+  $('#porosity_label').html(`${FormText["FormPorous"][porosity_filter]}`)
+  $('#platform_label').html(`${FormText["FormPlatform"][platform_filter]}`)
+  $('#governance_label').html(`${FormText["FormGovern"][governance_filter]}`)
+  
   grid.arrange({
     filter: function() {
       var porosity_num = $(this)
@@ -281,7 +289,7 @@ function filter_cards() {
 
 /* Create generic template filter */
 
-$(".sideBar").on("change", "input[type=range]", ()=>filter_cards());
+$(".sideBar").on("input", "input[type=range]", ()=>filter_cards());
 
 // ----- Prevent cluttering of popovers -----
 $(document).click(function(e) {
@@ -416,6 +424,7 @@ $('#primary > .overlay').click(function() {
 });
 
 const allRanges = document.querySelectorAll(".range-wrap");
+
 allRanges.forEach(wrap => {
   const range = wrap.querySelector(".range");
   const bubble = wrap.querySelector(".range-value");

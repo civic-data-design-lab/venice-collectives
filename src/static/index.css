@@ -337,8 +337,11 @@ p{
 #right {
   float: right;
 }
-#left {
-  float: left;
+.range-label {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  text-transform: lowercase;
 }
 
 /* Card Styling */
