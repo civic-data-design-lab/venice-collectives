@@ -381,7 +381,8 @@ expireCaptcha = function() {
 }
 
 /* Add Collective Button */
-$('#addCollective').click(function() {
+$('#addCollective, #addCollective2').click(function() {
+  $('#aboutModal').modal('hide')
   $('#formIntroModal').modal('show');
 });
 
