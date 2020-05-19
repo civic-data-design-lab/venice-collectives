@@ -705,6 +705,18 @@ input[type="range"]:focus::-ms-fill-upper {
   #main-content.sidebar-shown #primary .overlay {
     display: block;
   }
+
+/* NavBar control */
+.navHeader{
+  position: sticky; 
+  top:0;
+  background: #ffffff;
+  border-bottom: 2px solid #ffffff;
+  padding: 5px 15px;
+  margin: 0 -15px;
+  z-index: 9;
+}
+
 /* } */
 /* ----- HAMBURGER ----- */
 .sidebar-control {
