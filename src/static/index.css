@@ -91,7 +91,7 @@ nav a, nav a.nav-link {
 }
 nav a:hover, nav a.nav-link:hover {
   text-decoration: none;
-  color: #F6A4B7;
+  color: red;
 }
 
 .sideBar {
@@ -314,7 +314,7 @@ p{
   fill:white;
 }
 .slider .btn-secondary:hover .info-svg {
-  fill:#F6A4B7;
+  fill:red;
 }
 
 .popover {
@@ -387,7 +387,7 @@ a {
 }
 
 a:hover{
-  color: #F6A4B7;
+  color: red;
   text-decoration: none;
 }
 
